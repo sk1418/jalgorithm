@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
+import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.algorithm.sorting.Sorting;
 import com.kent.test.BaseTest;
@@ -56,6 +57,14 @@ public class SortingTest extends BaseTest {
     public void testBubbleSort() {
 	testInfo("bubbleSort");
 	sorting = new BubbleSort();
+	sorting.sort(testArray);
+	Assert.assertArrayEquals(sortedArray, testArray);
+    }
+
+    @Test
+    public void testMergeSort() {
+	testInfo("MergeSort");
+	sorting = new MergeSort();
 	sorting.sort(testArray);
 	Assert.assertArrayEquals(sortedArray, testArray);
     }

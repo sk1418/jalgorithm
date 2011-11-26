@@ -1,7 +1,5 @@
 package com.kent.algorithm.sorting;
 
-import java.util.Arrays;
-
 import org.apache.log4j.Logger;
 
 import com.kent.util.Util;
@@ -27,12 +25,13 @@ public class BubbleSort implements Sorting {
     /** The Constant LOG. */
     private static final Logger LOG = Logger.getLogger(BubbleSort.class);
 
+    @Override
     public void sort(int[] data) {
 	for (int i = 0; i < data.length; i++)
 	    for (int j = data.length - 1; j > i; j--)
 		if (data[j - 1] > data[j]) {
 		    Util.swap(data, j, j - 1);
-		    LOG.debug(Arrays.toString(data));
+		    // LOG.debug(Arrays.toString(data));
 		}
 
     }
