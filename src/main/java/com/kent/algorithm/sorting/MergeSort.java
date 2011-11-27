@@ -4,15 +4,26 @@ import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 
+/**
+ * <b>Merge sort</b> is typical in Divide and Conquer way to solve sorting problem.<br/>
+ * <ol>
+ * <li>If the list is of length 0 or 1, then it is already sorted. Otherwise:</li>
+ * <li>Divide the unsorted list into two sublists of about half the size.</li>
+ * <li>Sort each sublist recursively by re-applying the merge sort.</li>
+ * <li>Merge the two sublists back into one sorted list.</li>
+ * </ol>
+ * <b>Time complexity:</b> O(n log n)
+ * </p>
+ * 
+ * @author kent
+ * 
+ */
 public class MergeSort implements Sorting {
     private static final Logger LOG = Logger.getLogger(MergeSort.class);
-    private int[] tmp;
 
     @Override
     public void sort(int[] data) {
-	tmp = new int[data.length];
 	mergeSorting(data, 0, data.length - 1);
-	// data = tmp;
     }
 
     private void mergeSorting(int[] data, int f, int t) {
@@ -22,15 +33,17 @@ public class MergeSort implements Sorting {
 	    return;
 
 	// partitioning the array into two sub-arrays
-	int m = (f + t) / 2;
+	final int m = (f + t) / 2;
 
 	// sort
 	mergeSorting(data, f, m);
 	mergeSorting(data, m + 1, t);
 
 	// merge two arrays
-	int[] left = Arrays.copyOfRange(data, f, m + 1 + 1);
-	int[] right = Arrays.copyOfRange(data, m + 1, t + 1 + 1);
+	final int[] left = Arrays.copyOfRange(data, f, m + 1 + 1);
+	final int[] right = Arrays.copyOfRange(data, m + 1, t + 1 + 1);
+
+	// add one infinitely great value at the end of each array
 	left[left.length - 1] = Integer.MAX_VALUE;
 	right[right.length - 1] = Integer.MAX_VALUE;
 
@@ -44,7 +57,6 @@ public class MergeSort implements Sorting {
 		data[k] = right[j];
 		j++;
 	    }
-
 	}
 
 	// LOG.debug("result:" + Arrays.toString(data));

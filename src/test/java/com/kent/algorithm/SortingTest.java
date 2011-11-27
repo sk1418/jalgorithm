@@ -1,7 +1,5 @@
 package com.kent.algorithm;
 
-import java.util.Arrays;
-
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
@@ -28,13 +26,13 @@ public class SortingTest extends BaseTest {
 	// testArray = Util.getRandomIntArray(2000, 3000);
 	testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28 };
 	sortedArray = new int[] { 0, 2, 16, 17, 23, 23, 28, 32, 34, 39, 56, 82, 90, 106, 768 };
-	log.debug("Original Array:" + Arrays.toString(testArray));
+	// log.debug("Original Array:" + Arrays.toString(testArray));
 
     }
 
     @After
     public void printSortingResult() {
-	log.debug("After sorting: " + Arrays.toString(testArray));
+	// log.debug("After sorting: " + Arrays.toString(testArray));
     }
 
     @Test
