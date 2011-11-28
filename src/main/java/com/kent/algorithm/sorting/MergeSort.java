@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  * @author kent
  * 
  */
-public class MergeSort implements Sorting {
+public class MergeSort extends Sorting {
     private static final Logger LOG = Logger.getLogger(MergeSort.class);
 
     private final int SENTINEL = Integer.MAX_VALUE;

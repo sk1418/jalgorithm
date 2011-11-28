@@ -19,10 +19,11 @@ import org.apache.log4j.Logger;
  * @author kent
  * 
  */
-public class InsertionSort implements Sorting {
+public class InsertionSort extends Sorting {
     /** The Constant LOG. */
     private static final Logger LOG = Logger.getLogger(InsertionSort.class);
 
+    @Override
     public void sort(int[] data) {
 	int key;
 	for (int i = 0; i < data.length; i++) {

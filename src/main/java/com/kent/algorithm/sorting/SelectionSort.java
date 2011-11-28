@@ -21,15 +21,17 @@ import com.kent.util.Util;
  * @author kent
  * 
  */
-public class SelectionSort implements Sorting {
+public class SelectionSort extends Sorting {
     /** The Constant LOG. */
     private static final Logger LOG = Logger.getLogger(SelectionSort.class);
 
+    @Override
     public void sort(int[] data) {
 	for (int i = 0; i < data.length; i++) {
 	    for (int j = i + 1; j < data.length; j++) {
-		if (data[j] < data[i])
+		if (data[j] < data[i]) {
 		    Util.swap(data, i, j);
+		}
 	    }
 	}
     }
