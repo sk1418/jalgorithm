@@ -2,7 +2,7 @@ package com.kent.algorithm.sorting;
 
 import org.apache.log4j.Logger;
 
-import com.kent.util.Util;
+import com.kent.util.AlgUtil;
 
 /**
  * 
@@ -30,7 +30,7 @@ public class BubbleSort extends Sorting {
 	for (int i = 0; i < data.length; i++) {
 	    for (int j = data.length - 1; j > i; j--) {
 		if (data[j - 1] > data[j]) {
-		    Util.swap(data, j, j - 1);
+		    AlgUtil.swap(data, j, j - 1);
 		    // LOG.debug(Arrays.toString(data));
 		}
 	    }

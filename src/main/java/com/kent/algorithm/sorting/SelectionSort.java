@@ -2,7 +2,7 @@ package com.kent.algorithm.sorting;
 
 import org.apache.log4j.Logger;
 
-import com.kent.util.Util;
+import com.kent.util.AlgUtil;
 
 /**
  * 
@@ -30,7 +30,7 @@ public class SelectionSort extends Sorting {
 	for (int i = 0; i < data.length; i++) {
 	    for (int j = i + 1; j < data.length; j++) {
 		if (data[j] < data[i]) {
-		    Util.swap(data, i, j);
+		    AlgUtil.swap(data, i, j);
 		}
 	    }
 	}
