@@ -32,12 +32,18 @@ public class SortingDemo {
 		LOG.info(String.format("Sorting %7s elements", data.length));
 		LOG.info(SPLT);
 		for (final Sorting sort : demoList) {
+			// cp array
 			System.arraycopy(data, 0, testData, 0, data.length);
+
 			stopwatch.start();
+			// sort
 			sort.sort(testData);
+
 			stopwatch.stop();
+
 			LOG.info(String.format(FMT, sort.getClass().getSimpleName(), stopwatch.read()));
 			LOG.info(SPL);
+
 			stopwatch.reset();
 		}
 	}
