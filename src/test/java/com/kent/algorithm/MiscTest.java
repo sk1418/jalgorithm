@@ -14,6 +14,7 @@ public class MiscTest extends BaseTest {
 
 	@Test
 	public void countInversionsTest() {
+		testInfo("countInversions");
 		final int[] testArray = new int[] { 5, 4, 3, 2, 1 };
 		final int[] testArray2 = new int[] { 1, 2, 3, 4, 5 };
 		final int[] testArray3 = new int[] { 2, 3, 8, 5, 1 };
@@ -26,5 +27,4 @@ public class MiscTest extends BaseTest {
 		Assert.assertEquals(0l, c2);
 		Assert.assertEquals(5l, c3);
 	}
-
 }
