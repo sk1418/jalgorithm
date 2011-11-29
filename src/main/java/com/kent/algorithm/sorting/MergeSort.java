@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 
-// TODO: Auto-generated Javadoc
 /**
  * <b>Merge sort</b> is typical in Divide and Conquer way to solve sorting problem.<br/>
  * <ol>
