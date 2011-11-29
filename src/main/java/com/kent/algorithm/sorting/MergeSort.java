@@ -12,6 +12,12 @@ import org.apache.log4j.Logger;
  * <li>Sort each sublist recursively by re-applying the merge sort.</li>
  * <li>Merge the two sublists back into one sorted list.</li>
  * </ol>
+ * 
+ * 
+ * <p>
+ * In Merge process, there are two approaches: with or without sentinel
+ * </p>
+ * 
  * <b>Time complexity:</b> O(n log n) </p>
  * 
  * @author kent

@@ -13,65 +13,98 @@ import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.algorithm.sorting.Sorting;
 import com.kent.test.BaseTest;
 
+/**
+ * The Class SortingTest.
+ */
 public class SortingTest extends BaseTest {
-    private static final Logger LOG = Logger.getLogger(SortingTest.class);
 
-    private int[] testArray;// = RandomUtil.getRandomIntArray(2200, 300);
-    private int[] sortedArray;
-    private final SortingOld sortingo = new SortingOld();
-    private Sorting sorting;
+	/** The Constant LOG. */
+	private static final Logger LOG = Logger.getLogger(SortingTest.class);
 
-    @Before
-    public void initialize() {
-	// testArray = Util.getRandomIntArray(2000, 3000);
-	testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28 };
-	sortedArray = new int[] { 0, 2, 16, 17, 23, 23, 28, 32, 34, 39, 56, 82, 90, 106, 768 };
-	// log.debug("Original Array:" + Arrays.toString(testArray));
+	/** The test array. */
+	private int[] testArray;// = RandomUtil.getRandomIntArray(2200, 300);
 
-    }
+	/** The sorted array. */
+	private int[] sortedArray;
 
-    @After
-    public void printSortingResult() {
-	// log.debug("After sorting: " + Arrays.toString(testArray));
-    }
+	/** The sortingo. */
+	private final SortingOld sortingo = new SortingOld();
 
-    @Test
-    public void testInsertionSort() {
-	testInfo("insertSorting");
-	sorting = new InsertionSort();
-	sorting.sort(testArray);
-	Assert.assertArrayEquals(sortedArray, testArray);
-    }
+	/** The sorting. */
+	private Sorting sorting;
 
-    @Test
-    public void testSelectionSort() {
-	testInfo("selectionSort");
-	sorting = new SelectionSort();
-	sorting.sort(testArray);
-	Assert.assertArrayEquals(sortedArray, testArray);
-    }
+	/**
+	 * Initialize.
+	 */
+	@Before
+	public void initialize() {
+		// testArray = Util.getRandomIntArray(2000, 3000);
+		testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28 };
+		sortedArray = new int[] { 0, 2, 16, 17, 23, 23, 28, 32, 34, 39, 56, 82, 90, 106, 768 };
+		// log.debug("Original Array:" + Arrays.toString(testArray));
 
-    @Test
-    public void testBubbleSort() {
-	testInfo("bubbleSort");
-	sorting = new BubbleSort();
-	sorting.sort(testArray);
-	Assert.assertArrayEquals(sortedArray, testArray);
-    }
+	}
 
-    @Test
-    public void testMergeSort() {
-	testInfo("MergeSort");
-	sorting = new MergeSort();
-	sorting.sort(testArray);
-	Assert.assertArrayEquals(sortedArray, testArray);
-    }
+	/**
+	 * Prints the sorting result.
+	 */
+	@After
+	public void printSortingResult() {
+		// log.debug("After sorting: " + Arrays.toString(testArray));
+	}
 
-    @Test
-    public void testQuickSort() {
-	testInfo("quickSorting");
-	sortingo.quickSort(testArray, 0, testArray.length - 1);
-	Assert.assertArrayEquals(sortedArray, testArray);
-    }
+	/**
+	 * Test insertion sort.
+	 */
+	@Test
+	public void testInsertionSort() {
+		testInfo("insertSorting");
+		sorting = new InsertionSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	/**
+	 * Test selection sort.
+	 */
+	@Test
+	public void testSelectionSort() {
+		testInfo("selectionSort");
+		sorting = new SelectionSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	/**
+	 * Test bubble sort.
+	 */
+	@Test
+	public void testBubbleSort() {
+		testInfo("bubbleSort");
+		sorting = new BubbleSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	/**
+	 * Test merge sort.
+	 */
+	@Test
+	public void testMergeSort() {
+		testInfo("MergeSort");
+		sorting = new MergeSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	/**
+	 * Test quick sort.
+	 */
+	@Test
+	public void testQuickSort() {
+		testInfo("quickSorting");
+		sortingo.quickSort(testArray, 0, testArray.length - 1);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
 
 }

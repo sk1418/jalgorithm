@@ -10,8 +10,10 @@ import java.util.Arrays;
  */
 public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
 
+	/** The counts. */
 	private long counts = 0;
 
+	/** {@inheritDoc} */
 	@Override
 	public Long execute(int[] data) {
 		counts = 0;
@@ -19,6 +21,16 @@ public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
 		return counts;
 	}
 
+	/**
+	 * Count inversions.
+	 * 
+	 * @param data
+	 *            the data
+	 * @param f
+	 *            the f
+	 * @param t
+	 *            the t
+	 */
 	private void countInversions(final int[] data, int f, int t) {
 		// if the array has 0 or 1 element, it is sorted.
 		if (f == t) {
@@ -31,6 +43,18 @@ public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
 		mergeAndCount(data, f, m, t);
 	}
 
+	/**
+	 * Merge and count.
+	 * 
+	 * @param data
+	 *            the data
+	 * @param from
+	 *            the from
+	 * @param mid
+	 *            the mid
+	 * @param to
+	 *            the to
+	 */
 	private void mergeAndCount(int[] data, int from, int mid, int to) {
 		// merge two arrays
 		final int[] left = Arrays.copyOfRange(data, from, mid + 1);
@@ -72,6 +96,7 @@ public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
 		// LOG.debug("Step Result:" + Arrays.toString(data));
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String output() {
 		// TODO Auto-generated method stub

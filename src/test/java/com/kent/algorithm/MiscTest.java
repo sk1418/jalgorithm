@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package com.kent.algorithm;
 
 import junit.framework.Assert;
@@ -9,9 +12,17 @@ import com.kent.algorithm.misc.CountInversionPairs;
 import com.kent.algorithm.misc.MiscAlgorithm;
 import com.kent.test.BaseTest;
 
+/**
+ * The Class MiscTest.
+ */
 public class MiscTest extends BaseTest {
+
+	/** The Constant LOG. */
 	private static final Logger LOG = Logger.getLogger(MiscTest.class);
 
+	/**
+	 * Count inversions test.
+	 */
 	@Test
 	public void countInversionsTest() {
 		testInfo("countInversions");
@@ -23,8 +34,8 @@ public class MiscTest extends BaseTest {
 		final long c2 = misc.execute(testArray2);
 		final long c3 = misc.execute(testArray3);
 
-		Assert.assertEquals(10l, c);
-		Assert.assertEquals(0l, c2);
-		Assert.assertEquals(5l, c3);
+		Assert.assertEquals(10L, c);
+		Assert.assertEquals(0L, c2);
+		Assert.assertEquals(5L, c3);
 	}
 }
