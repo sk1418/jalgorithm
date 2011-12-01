@@ -11,9 +11,8 @@ import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.algorithm.sorting.Sorting;
 import com.kent.util.AlgUtil;
-import com.kent.util.Stopwatch;
 
-public class SortingDemo {
+public class SortingDemo extends Demo {
 	/** The Constant LOG. */
 	private static final Logger LOG = Logger.getLogger(SortingDemo.class);
 	private final String FMT = "%-15s| %7s ms.";
@@ -21,12 +20,12 @@ public class SortingDemo {
 	private final String SPLT = "=============================";
 
 	private int[] data;
-	private Stopwatch stopwatch;
 
 	List<Sorting> demoList = new LinkedList<Sorting>();
 
-	public void demo() {
-		prepareDemo();
+	@Override
+	protected void specificDemo() {
+
 		final int[] testData = new int[data.length];
 
 		LOG.info(String.format("Sorting %7s elements", data.length));
@@ -48,9 +47,9 @@ public class SortingDemo {
 		}
 	}
 
-	private void prepareDemo() {
+	@Override
+	protected void prepareDemo() {
 		data = AlgUtil.getRandomIntArray(20000, 500000);
-		stopwatch = new Stopwatch();
 		demoList.add(new InsertionSort());
 		demoList.add(new SelectionSort());
 		demoList.add(new BubbleSort());
@@ -59,6 +58,7 @@ public class SortingDemo {
 	}
 
 	public static void main(String[] args) {
-		new SortingDemo().demo();
+		final Demo sortingDemo = new SortingDemo();
+		sortingDemo.doDemo();
 	}
 }

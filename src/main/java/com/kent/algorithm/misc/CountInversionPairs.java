@@ -96,11 +96,4 @@ public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
 		// LOG.debug("Step Result:" + Arrays.toString(data));
 	}
 
-	/** {@inheritDoc} */
-	@Override
-	public String output() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

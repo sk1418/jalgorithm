@@ -1,5 +1,7 @@
 package com.kent.algorithm.misc;
 
+import org.apache.log4j.Logger;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class MiscAlgorithm.
@@ -11,8 +13,7 @@ package com.kent.algorithm.misc;
  */
 public abstract class MiscAlgorithm<E, T> {
 
-	/** The name. */
-	protected String name;
+	private static final Logger LOG = Logger.getLogger(MiscAlgorithm.class);
 
 	/**
 	 * Execute.
@@ -21,12 +22,6 @@ public abstract class MiscAlgorithm<E, T> {
 	 *            the dara
 	 * @return the t
 	 */
-	abstract public T execute(E dara);
+	abstract public T execute(E data);
 
-	/**
-	 * Output.
-	 * 
-	 * @return the string
-	 */
-	abstract public String output();
 }

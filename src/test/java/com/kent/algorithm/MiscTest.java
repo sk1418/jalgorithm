@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.kent.algorithm.misc.CountInversionPairs;
+import com.kent.algorithm.misc.MaxSubArray;
 import com.kent.algorithm.misc.MiscAlgorithm;
 import com.kent.test.BaseTest;
 
@@ -38,4 +39,16 @@ public class MiscTest extends BaseTest {
 		Assert.assertEquals(0L, c2);
 		Assert.assertEquals(5L, c3);
 	}
+
+	@Test
+	public void findMaxSubArrayTest() {
+		testInfo("findMaxSubArray");
+		final int[] testArray = new int[] { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+		final MiscAlgorithm<int[], int[]> maxSubTest = new MaxSubArray();
+		final int[] result = maxSubTest.execute(testArray);
+
+		Assert.assertEquals(7, result[0]);
+		Assert.assertEquals(10, result[1]);
+	}
+
 }
