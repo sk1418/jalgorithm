@@ -44,5 +44,13 @@ public class AlgUtil {
 
 		return intArray;
 	}
-
+	
+	
+	public static String lineSeparator(char c, int times){
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i <=times; i++) {
+			sb.append(c);
+		}
+		return sb.toString();
+	}
 }

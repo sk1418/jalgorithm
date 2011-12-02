@@ -15,6 +15,12 @@ public class MaxSubArray extends Problem<int[], int[]> {
 	private int end = 0;
 	private int maxSum = Integer.MIN_VALUE;
 
+	
+	@Override
+	public String getBigO() {
+		return "O(nlog(n))";
+	}
+	
 	/**
 	 * find the maxSubArray (the subMaxArray of @para data, which have max sum of all elements)
 	 * 

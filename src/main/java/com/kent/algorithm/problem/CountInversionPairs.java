@@ -13,6 +13,12 @@ public class CountInversionPairs extends Problem<int[], Long> {
 	/** The counts. */
 	private long counts = 0;
 
+	
+	@Override
+	public String getBigO() {
+		return "O(nlog(n))";
+	}
+	
 	/** {@inheritDoc} */
 	@Override
 	public Long solve(int[] data) {

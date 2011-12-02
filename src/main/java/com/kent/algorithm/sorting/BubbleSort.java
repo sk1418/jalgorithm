@@ -2,6 +2,7 @@ package com.kent.algorithm.sorting;
 
 import org.apache.log4j.Logger;
 
+import com.kent.algorithm.Sorting;
 import com.kent.util.AlgUtil;
 
 /**
@@ -22,19 +23,27 @@ import com.kent.util.AlgUtil;
  * 
  */
 public class BubbleSort extends Sorting {
-    /** The Constant LOG. */
-    private static final Logger LOG = Logger.getLogger(BubbleSort.class);
+	/** The Constant LOG. */
+	private static final Logger LOG = Logger.getLogger(BubbleSort.class);
 
-    @Override
-    public void sort(int[] data) {
-	for (int i = 0; i < data.length; i++) {
-	    for (int j = data.length - 1; j > i; j--) {
-		if (data[j - 1] > data[j]) {
-		    AlgUtil.swap(data, j, j - 1);
-		    // LOG.debug(Arrays.toString(data));
+	@Override
+	public void sort(int[] data) {
+		for (int i = 0; i < data.length; i++) {
+			for (int j = data.length - 1; j > i; j--) {
+				if (data[j - 1] > data[j]) {
+					AlgUtil.swap(data, j, j - 1);
+					// LOG.debug(Arrays.toString(data));
+				}
+			}
 		}
-	    }
+
 	}
 
-    }
+	@Override
+	public String getBigO() {
+		return "O(n^2)";
+	}
+	
+	
+	
 }

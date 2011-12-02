@@ -6,12 +6,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.kent.algorithm.Sorting;
 import com.kent.algorithm.SortingOld;
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.SelectionSort;
-import com.kent.algorithm.sorting.Sorting;
 import com.kent.test.BaseTest;
 
 /**

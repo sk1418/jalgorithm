@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 
+import com.kent.algorithm.Sorting;
+
 /**
  * <b>Merge sort</b> is typical in Divide and Conquer way to solve sorting problem.<br/>
  * <ol>
@@ -30,7 +32,11 @@ public class MergeSort extends Sorting {
 
 	/** The SENTINEL. */
 	private final int SENTINEL = Integer.MAX_VALUE;
-
+	@Override
+	public String getBigO() {
+		return "O(nlog(n))";
+	}
+	
 	/** {@inheritDoc} */
 	@Override
 	public void sort(int[] data) {
