@@ -1,4 +1,4 @@
-package com.kent.algorithm.misc;
+package com.kent.algorithm.problem;
 
 import org.apache.log4j.Logger;
 
@@ -11,9 +11,9 @@ import org.apache.log4j.Logger;
  * @param <T>
  *            the generic type
  */
-public abstract class MiscAlgorithm<E, T> {
+public abstract class Problem<E, T> {
 
-	private static final Logger LOG = Logger.getLogger(MiscAlgorithm.class);
+	private static final Logger LOG = Logger.getLogger(Problem.class);
 
 	/**
 	 * Execute.
@@ -22,6 +22,6 @@ public abstract class MiscAlgorithm<E, T> {
 	 *            the dara
 	 * @return the t
 	 */
-	abstract public T execute(E data);
+	abstract public T solve(E data);
 
 }

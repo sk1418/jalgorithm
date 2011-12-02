@@ -1,4 +1,4 @@
-package com.kent.algorithm;
+package com.kent.algorithm.sorting;
 
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.kent.algorithm.SortingOld;
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;

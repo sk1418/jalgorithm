@@ -1,4 +1,4 @@
-package com.kent.algorithm.misc;
+package com.kent.algorithm.problem;
 
 import java.util.Arrays;
 
@@ -8,14 +8,14 @@ import java.util.Arrays;
  * @author kent
  * 
  */
-public class CountInversionPairs extends MiscAlgorithm<int[], Long> {
+public class CountInversionPairs extends Problem<int[], Long> {
 
 	/** The counts. */
 	private long counts = 0;
 
 	/** {@inheritDoc} */
 	@Override
-	public Long execute(int[] data) {
+	public Long solve(int[] data) {
 		counts = 0;
 		countInversions(data, 0, data.length - 1);
 		return counts;

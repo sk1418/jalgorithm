@@ -1,10 +1,11 @@
-package com.kent.algorithm.demo;
+package com.kent.algorithm.demo.sort;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.kent.algorithm.demo.Demo;
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;

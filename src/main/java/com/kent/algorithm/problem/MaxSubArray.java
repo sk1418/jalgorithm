@@ -1,4 +1,4 @@
-package com.kent.algorithm.misc;
+package com.kent.algorithm.problem;
 
 import org.apache.log4j.Logger;
 
@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
  * @author kent
  * 
  */
-public class MaxSubArray extends MiscAlgorithm<int[], int[]> {
+public class MaxSubArray extends Problem<int[], int[]> {
 
 	private static final Logger LOG = Logger.getLogger(MaxSubArray.class);
 
@@ -23,7 +23,7 @@ public class MaxSubArray extends MiscAlgorithm<int[], int[]> {
 	 * @return a tuple int[3]={startIdx, endIdx, maxSum}
 	 */
 	@Override
-	public int[] execute(int[] data) {
+	public int[] solve(int[] data) {
 		int[] result = null;
 		if (data != null) {
 			this.array = data;
