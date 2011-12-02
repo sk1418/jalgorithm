@@ -9,10 +9,10 @@ import com.kent.util.AlgUtil;
  * 
  * <b>Selection sort</b><br/>
  * <ol>
- * <li>initially minIdx is at the 1st element</li>
- * <li>find the smallest element from the element next to pointer to the last element</li>
- * <li>if the smallest element's idx is not equal to the pre-defined minIdx, swap the two elements</li>
- * <li>pointer moving to the next at right, repeat step2.</li>
+ * <li>Find the minimum value in the list</li>
+ * <li>Swap it with the value in the first position</li>
+ * <li>Repeat the steps above for the remainder of the list (starting at the second position and advancing each time)</li>
+ * 
  * </ol>
  * <p>
  * 

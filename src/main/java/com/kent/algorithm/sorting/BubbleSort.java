@@ -16,6 +16,16 @@ import com.kent.util.AlgUtil;
  * </ol>
  * <p>
  * 
+ * 
+ * The Jargon file, which famously calls bogosort "the archetypical perversely awful algorithm", also calls bubble sort "the generic bad algorithm".
+ * Donald Knuth, in his famous book The Art of Computer Programming, concluded that
+ * "the bubble sort seems to have nothing to recommend it, except a catchy name and the fact that it leads to some interesting theoretical problems",
+ * some of which he then discusses. <br/>
+ * Bubble sort is asymptotically equivalent in running time to insertion sort in the worst case, but the two algorithms differ greatly in the number
+ * of swaps necessary. Experimental results such as those of Astrachan have also shown that insertion sort performs considerably better even on random
+ * lists. For these reasons many modern algorithm textbooks avoid using the bubble sort algorithm in favor of insertion sort.
+ * 
+ * <br/>
  * <b>Time complexity:</b> O(n^2)
  * </p>
  * 
@@ -43,7 +53,5 @@ public class BubbleSort extends Sorting {
 	public String getBigO() {
 		return "O(n^2)";
 	}
-	
-	
-	
+
 }
