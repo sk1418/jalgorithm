@@ -15,12 +15,11 @@ public class MaxSubArray extends Problem<int[], int[]> {
 	private int end = 0;
 	private int maxSum = Integer.MIN_VALUE;
 
-	
 	@Override
 	public String getBigO() {
 		return "O(nlog(n))";
 	}
-	
+
 	/**
 	 * find the maxSubArray (the subMaxArray of @para data, which have max sum of all elements)
 	 * 
@@ -29,7 +28,7 @@ public class MaxSubArray extends Problem<int[], int[]> {
 	 * @return a tuple int[3]={startIdx, endIdx, maxSum}
 	 */
 	@Override
-	public int[] solve(int[] data) {
+	public int[] solve(final int[] data) {
 		int[] result = null;
 		if (data != null) {
 			this.array = data;
@@ -50,7 +49,7 @@ public class MaxSubArray extends Problem<int[], int[]> {
 	// LOG.info("Sub Array  :" + Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
 	// }
 
-	private int[] findMaxSubArray(int[] a, int from, int to) {
+	private int[] findMaxSubArray(final int[] a, final int from, final int to) {
 		if (from == to) {
 			return new int[] { from, to, a[from] };
 		} else {
@@ -72,7 +71,7 @@ public class MaxSubArray extends Problem<int[], int[]> {
 
 	}
 
-	private int[] findMaxCrossingSubArray(int[] a, int from, int mid, int to) {
+	private int[] findMaxCrossingSubArray(final int[] a, final int from, final int mid, final int to) {
 		int maxLeftIdx = from;
 		int maxRightIdx = to;
 		int sum = 0;

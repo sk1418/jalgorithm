@@ -3,8 +3,6 @@ package com.kent.algorithm.demo;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.kent.algorithm.Sorting;
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
@@ -12,16 +10,19 @@ import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.util.AlgUtil;
 
+/**
+ * The Class SortingDemo.
+ * 
+ * Demo all sorting algorithms
+ */
 public class SortingDemo extends Demo {
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(SortingDemo.class);
 	private final String FMT = "%-10s| %-15s| %7s ms.";
 	private final String SPL = AlgUtil.lineSeparator('-', 40);
 	private final String SPLT = AlgUtil.lineSeparator('=', 40);
 
 	private int[] data;
 
-	List<Sorting> demoList = new LinkedList<Sorting>();
+	private final List<Sorting> demoList = new LinkedList<Sorting>();
 
 	@Override
 	protected void specificDemo() {
@@ -40,7 +41,7 @@ public class SortingDemo extends Demo {
 
 			stopwatch.stop();
 
-			printInfo(String.format(FMT,  sort.getBigO(),sort.getClass().getSimpleName(), stopwatch.read()));
+			printInfo(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
 			printInfo(SPL);
 
 			stopwatch.reset();
@@ -49,7 +50,7 @@ public class SortingDemo extends Demo {
 
 	@Override
 	protected void prepareDemo() {
-		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE*5);
+		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5);
 		demoList.add(new InsertionSort());
 		demoList.add(new SelectionSort());
 		demoList.add(new BubbleSort());
@@ -57,7 +58,7 @@ public class SortingDemo extends Demo {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		final Demo sortingDemo = new SortingDemo();
 		sortingDemo.doDemo();
 	}
