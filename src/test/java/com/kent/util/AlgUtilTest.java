@@ -7,8 +7,8 @@ import org.junit.Test;
 public class AlgUtilTest {
 	@Test
 	public void getRandomIntArrayTest() {
-		int[] a = AlgUtil.getRandomIntArray2(100, 10000, false);
-		int[] b = AlgUtil.getRandomIntArray2(100, 20, true);
+		final int[] a = AlgUtil.getRandomIntArray2(100, 10000, false);
+		final int[] b = AlgUtil.getRandomIntArray2(100, 20, true);
 
 		for (int i = 0; i < a.length; i++) {
 			Assert.assertTrue(a[i] >= 0 && a[i] < 10000);
@@ -22,4 +22,5 @@ public class AlgUtilTest {
 		Assert.assertTrue(hasNegative);
 
 	}
+
 }
