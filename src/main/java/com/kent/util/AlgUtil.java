@@ -34,26 +34,17 @@ public final class AlgUtil {
 	}
 
 	/**
-	 * get a random int array.
+	 * get a random int[] array
 	 * 
 	 * @param len
-	 *            length of the array
+	 *            the length of the array
 	 * @param max
-	 *            max integer
-	 * @return random int array
+	 *            the max element of the array
+	 * @param allowNegative
+	 *            if the array allows negative element
+	 * @return the array
 	 */
-	public static int[] getRandomIntArray(int len, int max) {
-		final int[] intArray = new int[len];
-		final Random rand = new Random();
-		rand.setSeed(20100102);
-		for (int i = 0; i < intArray.length; i++) {
-			intArray[i] = rand.nextInt(max);
-		}
-
-		return intArray;
-	}
-
-	public static int[] getRandomIntArray2(int len, int max, boolean allowNegative) {
+	public static int[] getRandomIntArray(final int len, final int max, boolean allowNegative) {
 		final int[] intArray = new int[len];
 		final Random rand = new Random();
 		rand.setSeed(20100102);
@@ -89,11 +80,15 @@ public final class AlgUtil {
 	 *            the times
 	 * @return the string
 	 */
-	public static String lineSeparator(char c, int times) {
-		StringBuilder sb = new StringBuilder();
+	public static String lineSeparator(final char c, final int times) {
+		final StringBuilder sb = new StringBuilder();
 		for (int i = 1; i <= times; i++) {
 			sb.append(c);
 		}
 		return sb.toString();
+	}
+
+	public static void print(final String text) {
+		System.out.println(text);
 	}
 }

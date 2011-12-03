@@ -2,14 +2,14 @@ package com.kent.algorithm.demo.problem;
 
 import java.util.Arrays;
 
-import com.kent.algorithm.demo.Demo;
+import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.CountInversionPairs;
 import com.kent.util.AlgUtil;
 
 /**
  * The Class CountInversionPairsDemo.
  */
-public class CountInversionPairsDemo extends Demo {
+public class CountInversionPairsDemo extends AbstractDemo {
 
 	/** The small array. */
 	private int[] smallArray;
@@ -23,8 +23,8 @@ public class CountInversionPairsDemo extends Demo {
 	/** {@inheritDoc} */
 	@Override
 	protected void prepareDemo() {
-		smallArray = AlgUtil.getRandomIntArray(SMALL_ARRAY_SIZE, 5 * SMALL_ARRAY_SIZE);
-		bigArray = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, 5 * BIG_ARRAY_SIZE);
+		smallArray = AlgUtil.getRandomIntArray(SMALL_ARRAY_SIZE, 5 * SMALL_ARRAY_SIZE, false);
+		bigArray = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, 5 * BIG_ARRAY_SIZE, false);
 		problem = new CountInversionPairs();
 	}
 
@@ -64,7 +64,7 @@ public class CountInversionPairsDemo extends Demo {
 	 *            the arguments
 	 */
 	public static void main(final String[] args) {
-		Demo demo = new CountInversionPairsDemo();
+		final AbstractDemo demo = new CountInversionPairsDemo();
 		demo.doDemo();
 	}
 }

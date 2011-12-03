@@ -15,7 +15,7 @@ import com.kent.util.AlgUtil;
  * 
  * Demo all sorting algorithms
  */
-public class SortingDemo extends Demo {
+public class SortingDemo extends AbstractDemo {
 	private final String FMT = "%-10s| %-15s| %7s ms.";
 	private final String SPL = AlgUtil.lineSeparator('-', 40);
 	private final String SPLT = AlgUtil.lineSeparator('=', 40);
@@ -50,7 +50,7 @@ public class SortingDemo extends Demo {
 
 	@Override
 	protected void prepareDemo() {
-		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5);
+		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5, false);
 		demoList.add(new InsertionSort());
 		demoList.add(new SelectionSort());
 		demoList.add(new BubbleSort());
@@ -59,7 +59,7 @@ public class SortingDemo extends Demo {
 	}
 
 	public static void main(final String[] args) {
-		final Demo sortingDemo = new SortingDemo();
+		final AbstractDemo sortingDemo = new SortingDemo();
 		sortingDemo.doDemo();
 	}
 }
