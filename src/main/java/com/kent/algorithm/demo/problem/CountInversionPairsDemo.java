@@ -34,6 +34,12 @@ public class CountInversionPairsDemo extends AbstractDemo {
 		printInfo(String.format("Counting inversion pairs algorithm with %s complexity\n", problem.getBigO()));
 		doJob(bigArray);
 		doJob(smallArray);
+	}
+
+	@Override
+	protected void warmingUp() {
+		problem.solve(smallArray);
+		problem.solve(bigArray);
 
 	}
 
@@ -57,14 +63,4 @@ public class CountInversionPairsDemo extends AbstractDemo {
 		stopwatch.reset();
 	}
 
-	/**
-	 * The main method.
-	 * 
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(final String[] args) {
-		final AbstractDemo demo = new CountInversionPairsDemo();
-		demo.doDemo();
-	}
 }

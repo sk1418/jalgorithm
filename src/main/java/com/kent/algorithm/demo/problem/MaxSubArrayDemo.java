@@ -16,4 +16,8 @@ public class MaxSubArrayDemo extends AbstractDemo {
 
 	}
 
+	@Override
+	protected void warmingUp() {
+
+	}
 }

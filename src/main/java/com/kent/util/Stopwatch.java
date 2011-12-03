@@ -1,5 +1,7 @@
 package com.kent.util;
 
+import java.math.BigDecimal;
+
 /**
  * The Class StopWatch.
  */
@@ -12,14 +14,14 @@ public class Stopwatch {
 	private long startTime;
 
 	/** The elapsed millisec. */
-	private long elapsedMillisec;
+	private long elapsedNanoSec;
 
 	/**
 	 * Start the stopwatch
 	 */
 	public void start() {
 		if (!running) {
-			this.startTime = System.currentTimeMillis();
+			this.startTime = System.nanoTime();
 			running = true;
 		} else {
 			throw new IllegalStateException("the stopwatch is already running");
@@ -31,7 +33,7 @@ public class Stopwatch {
 	 */
 	public void stop() {
 		if (running) {
-			elapsedMillisec = System.currentTimeMillis() - startTime;
+			elapsedNanoSec = System.nanoTime() - startTime;
 			running = false;
 		} else {
 			throw new IllegalStateException("the stopwatch is not running");
@@ -42,7 +44,7 @@ public class Stopwatch {
 	 * reset the stopwatch, elapsedTime will be set to 0, start time will be set to current timestamp status will be kept.
 	 */
 	public void reset() {
-		elapsedMillisec = 0;
+		elapsedNanoSec = 0;
 
 	}
 
@@ -51,11 +53,16 @@ public class Stopwatch {
 	 * 
 	 * @return the long
 	 */
-	public long read() {
+	public BigDecimal read() {
+		final BigDecimal b = new BigDecimal(readInNano());
+		return b.divide(new BigDecimal("1000000"), 1, BigDecimal.ROUND_HALF_UP);
+	}
+
+	public long readInNano() {
 		if (running) {
-			elapsedMillisec = System.currentTimeMillis() - startTime;
+			elapsedNanoSec = System.nanoTime() - startTime;
 		}
-		return this.elapsedMillisec;
+		return this.elapsedNanoSec;
 	}
 
 	/**
