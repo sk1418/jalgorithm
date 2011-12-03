@@ -8,10 +8,6 @@ import org.junit.Test;
 
 import com.kent.algorithm.Sorting;
 import com.kent.algorithm.SortingOld;
-import com.kent.algorithm.sorting.BubbleSort;
-import com.kent.algorithm.sorting.InsertionSort;
-import com.kent.algorithm.sorting.MergeSort;
-import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.test.BaseTest;
 
 /**
@@ -94,6 +90,14 @@ public class SortingTest extends BaseTest {
 	public void testMergeSort() {
 		testInfo("MergeSort");
 		sorting = new MergeSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	@Test
+	public void testOptimizedMergeSort() {
+		testInfo("OpetimizedMergeSort");
+		sorting = new OptimizedMergeSort();
 		sorting.sort(testArray);
 		Assert.assertArrayEquals(sortedArray, testArray);
 	}

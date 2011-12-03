@@ -4,10 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.kent.algorithm.Sorting;
-import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
-import com.kent.algorithm.sorting.SelectionSort;
+import com.kent.algorithm.sorting.OptimizedMergeSort;
 import com.kent.util.AlgUtil;
 
 /**
@@ -16,9 +15,9 @@ import com.kent.util.AlgUtil;
  * Demo all sorting algorithms
  */
 public class SortingDemo extends AbstractDemo {
-	private final String FMT = "%-10s| %-15s| %7s ms.";
-	private final String SPL = AlgUtil.lineSeparator('-', 40);
-	private final String SPLT = AlgUtil.lineSeparator('=', 40);
+	private static final String FMT = "%-10s| %-21s| %7s ms.";
+	private static final String SPL = AlgUtil.lineSeparator('-', 45);
+	private static final String SPLT = AlgUtil.lineSeparator('=', 45);
 
 	private int[] data;
 
@@ -27,14 +26,14 @@ public class SortingDemo extends AbstractDemo {
 	@Override
 	protected void specificDemo() {
 
-		final int[] testData = new int[data.length];
+		int[] testData;
 
 		printInfo(String.format("Sorting %7s elements", data.length));
 		printInfo(SPLT);
 		for (final Sorting sort : demoList) {
 			// cp array
+			testData = new int[data.length];
 			System.arraycopy(data, 0, testData, 0, data.length);
-
 			stopwatch.start();
 			// sort
 			sort.sort(testData);
@@ -52,9 +51,10 @@ public class SortingDemo extends AbstractDemo {
 	protected void prepareDemo() {
 		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5, false);
 		demoList.add(new InsertionSort());
-		demoList.add(new SelectionSort());
-		demoList.add(new BubbleSort());
+		// demoList.add(new SelectionSort());
+		// demoList.add(new BubbleSort());
 		demoList.add(new MergeSort());
+		demoList.add(new OptimizedMergeSort());
 
 	}
 

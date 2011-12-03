@@ -32,11 +32,12 @@ public class MergeSort extends Sorting {
 
 	/** The SENTINEL. */
 	private final int SENTINEL = Integer.MAX_VALUE;
+
 	@Override
 	public String getBigO() {
 		return "O(nlog(n))";
 	}
-	
+
 	/** {@inheritDoc} */
 	@Override
 	public void sort(int[] data) {
@@ -53,7 +54,7 @@ public class MergeSort extends Sorting {
 	 * @param t
 	 *            the t
 	 */
-	private void mergeSorting(int[] data, int f, int t) {
+	protected void mergeSorting(int[] data, int f, int t) {
 
 		// if the array has 0 or 1 element, it is sorted.
 		if (f == t) {
@@ -84,7 +85,7 @@ public class MergeSort extends Sorting {
 	 * @param to
 	 *            end idx
 	 */
-	private void mergeWithSentinel(int[] data, int from, int mid, int to) {
+	protected void mergeWithSentinel(int[] data, int from, int mid, int to) {
 		// merge two arrays
 		final int[] left = Arrays.copyOfRange(data, from, mid + 1 + 1);
 		final int[] right = Arrays.copyOfRange(data, mid + 1, to + 1 + 1);
@@ -119,7 +120,7 @@ public class MergeSort extends Sorting {
 	 * @param to
 	 *            the to
 	 */
-	private void mergeWithoutSentinel(int[] data, int from, int mid, int to) {
+	protected void mergeWithoutSentinel(int[] data, int from, int mid, int to) {
 		// merge two arrays
 		final int[] left = Arrays.copyOfRange(data, from, mid + 1);
 		final int[] right = Arrays.copyOfRange(data, mid + 1, to + 1);

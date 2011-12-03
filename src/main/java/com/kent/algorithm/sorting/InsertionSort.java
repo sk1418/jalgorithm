@@ -10,10 +10,8 @@ import com.kent.algorithm.Sorting;
  * <ol>
  * <li>using the 2nd element as key</li>
  * <li>compare key with element at left of Key's position.</li>
- * <li>if find element which is larger than key, insert Key before this
- * element(at left), till hit the element that smaller(or equals to) Key</li>
- * <li>take the next element (on right side) of key as new Key, repeat step 3.
- * till the last element as key.
+ * <li>if find element which is larger than key, insert Key before this element(at left), till hit the element that smaller(or equals to) Key</li>
+ * <li>take the next element (on right side) of key as new Key, repeat step 3. till the last element as key.
  * <li>the left part of key is always sorted.</li>
  * </ol>
  * <p>
@@ -30,7 +28,7 @@ public class InsertionSort extends Sorting {
 	@Override
 	public void sort(int[] data) {
 		int key;
-		for (int i = 0; i < data.length; i++) {
+		for (int i = 1; i < data.length; i++) {
 			key = data[i];
 			int j = i - 1;
 			while (j >= 0 && data[j] > key) {
@@ -45,9 +43,10 @@ public class InsertionSort extends Sorting {
 		}
 
 	}
+
 	@Override
 	public String getBigO() {
 		return "O(n^2)";
 	}
-	
+
 }
