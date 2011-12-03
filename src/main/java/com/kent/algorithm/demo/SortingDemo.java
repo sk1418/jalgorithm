@@ -4,9 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.kent.algorithm.Sorting;
+import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.OptimizedMergeSort;
+import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.util.AlgUtil;
 
 /**
@@ -25,7 +27,6 @@ public class SortingDemo extends AbstractDemo {
 
 	@Override
 	protected void specificDemo() {
-
 		int[] testData;
 
 		printInfo(String.format("Sorting %7s elements", data.length));
@@ -42,6 +43,7 @@ public class SortingDemo extends AbstractDemo {
 
 			printInfo(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
 			printInfo(SPL);
+			testData = null;
 
 			stopwatch.reset();
 		}
@@ -50,11 +52,11 @@ public class SortingDemo extends AbstractDemo {
 	@Override
 	protected void prepareDemo() {
 		data = AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5, false);
-		demoList.add(new InsertionSort());
-		// demoList.add(new SelectionSort());
-		// demoList.add(new BubbleSort());
 		demoList.add(new MergeSort());
 		demoList.add(new OptimizedMergeSort());
+		demoList.add(new InsertionSort());
+		demoList.add(new SelectionSort());
+		demoList.add(new BubbleSort());
 
 	}
 

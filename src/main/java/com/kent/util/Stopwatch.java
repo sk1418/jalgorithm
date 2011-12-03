@@ -37,9 +37,9 @@ public class Stopwatch {
 			throw new IllegalStateException("the stopwatch is not running");
 		}
 	}
+
 	/**
-	 * reset the stopwatch, elapsedTime will be set to 0, start time will be set
-	 * to current timestamp status will be kept.
+	 * reset the stopwatch, elapsedTime will be set to 0, start time will be set to current timestamp status will be kept.
 	 */
 	public void reset() {
 		elapsedMillisec = 0;
@@ -63,7 +63,7 @@ public class Stopwatch {
 	 * 
 	 * @return the string
 	 */
-	public String readInString() {
+	public String readAsString() {
 		return "Elapsed " + this.read() + " ms.";
 	}
 }
