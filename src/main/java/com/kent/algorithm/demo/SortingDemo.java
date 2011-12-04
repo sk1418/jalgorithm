@@ -40,24 +40,22 @@ public class SortingDemo extends AbstractDemo {
 
 		printInfo(String.format("Sorting %7s elements", data.length));
 		printInfo(SPLT);
-		for (int x = 1; x <= 5; x++) {
-			for (final Sorting sort : demoList) {
-				// cp array
-				testData = new int[data.length];
-				System.arraycopy(data, 0, testData, 0, data.length);
-				System.gc();
-				stopwatch.start();
-				// sort
-				sort.sort(testData);
+		for (final Sorting sort : demoList) {
+			// cp array
+			testData = new int[data.length];
+			System.arraycopy(data, 0, testData, 0, data.length);
+			System.gc();
+			stopwatch.start();
+			// sort
+			sort.sort(testData);
 
-				stopwatch.stop();
+			stopwatch.stop();
 
-				printInfo(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
-				printInfo(SPL);
-				testData = null;
+			printInfo(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
+			printInfo(SPL);
+			testData = null;
 
-				stopwatch.reset();
-			}
+			stopwatch.reset();
 		}
 	}
 

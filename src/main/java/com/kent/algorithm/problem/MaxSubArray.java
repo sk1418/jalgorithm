@@ -2,26 +2,49 @@ package com.kent.algorithm.problem;
 
 import org.apache.log4j.Logger;
 
+// TODO: Auto-generated Javadoc
 /**
+ * find the nonempty, contiguous subarray of given array, whose values have the largest sum.
+ * 
+ * 
+ * <p>
+ * using <b>divide and conquer</b> way to solve the problem.
+ * <ul>
+ * <li>the maxSubarray can entirely in the subarray A[low .. mid]</li>
+ * <li>entirely in the subarray A[mid+1 .. high]</li>
+ * <li>crossing the midpoint: ..i.. (maxSumLeft) ... <-mid -> .(maxSumRight)..j...</li>
+ * </ul>
+ * </p>
+ * <b>Time Complexity</b>: O(nlogn)
+ * 
  * @author kent
  * 
  */
 public class MaxSubArray extends Problem<int[], int[]> {
 
+	/** The Constant LOG. */
 	private static final Logger LOG = Logger.getLogger(MaxSubArray.class);
 
+	/** The array. */
 	private int[] array = null;
+
+	/** The start. */
 	private int start = 0;
+
+	/** The end. */
 	private int end = 0;
+
+	/** The max sum. */
 	private int maxSum = Integer.MIN_VALUE;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getBigO() {
 		return "O(nlog(n))";
 	}
 
 	/**
-	 * find the maxSubArray (the subMaxArray of @para data, which have max sum of all elements)
+	 * find the maxSubArray (the subMaxArray of @para data, which have max sum of all elements).
 	 * 
 	 * @param data
 	 *            the array
@@ -41,14 +64,17 @@ public class MaxSubArray extends Problem<int[], int[]> {
 		return result;
 	}
 
-	// @Override
-	// protected void output() {
-	// LOG.info("from index :" + start);
-	// LOG.info("end  index :" + end);
-	// LOG.info("Max  Sum   :" + maxSum);
-	// LOG.info("Sub Array  :" + Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
-	// }
-
+	/**
+	 * Find max sub array.
+	 * 
+	 * @param a
+	 *            the a
+	 * @param from
+	 *            the from
+	 * @param to
+	 *            the to
+	 * @return the int[]
+	 */
 	private int[] findMaxSubArray(final int[] a, final int from, final int to) {
 		if (from == to) {
 			return new int[] { from, to, a[from] };
@@ -71,6 +97,19 @@ public class MaxSubArray extends Problem<int[], int[]> {
 
 	}
 
+	/**
+	 * Find max crossing sub array.
+	 * 
+	 * @param a
+	 *            the a
+	 * @param from
+	 *            the from
+	 * @param mid
+	 *            the mid
+	 * @param to
+	 *            the to
+	 * @return the int[]
+	 */
 	private int[] findMaxCrossingSubArray(final int[] a, final int from, final int mid, final int to) {
 		int maxLeftIdx = from;
 		int maxRightIdx = to;

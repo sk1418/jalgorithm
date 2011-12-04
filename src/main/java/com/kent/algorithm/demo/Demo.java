@@ -75,8 +75,8 @@ public class Demo {
 	enum DemoType {
 		//@formatter:off
 		Sorting(1, SortingDemo.class), 
-		Problem_MaxSubArray(2, CountInversionPairsDemo.class), 
-		Problem_CountInversionPairs(3, MaxSubArrayDemo.class);
+		Problem_MaxSubArray(2, MaxSubArrayDemo.class), 
+		Problem_CountInversionPairs(3, CountInversionPairsDemo.class);
 		//@formatter:on
 		int idx;
 		Class demoClass;

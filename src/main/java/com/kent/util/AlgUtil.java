@@ -47,7 +47,7 @@ public final class AlgUtil {
 	public static int[] getRandomIntArray(final int len, final int max, boolean allowNegative) {
 		final int[] intArray = new int[len];
 		final Random rand = new Random();
-		rand.setSeed(20100102);
+		rand.setSeed(181402);
 
 		if (!allowNegative) {
 			if (max <= 0) {
@@ -60,11 +60,17 @@ public final class AlgUtil {
 			int n;
 			int i = 0;
 			while (i < len) {
-				n = rand.nextInt();
-				if (n < max) {
+				n = rand.nextInt() % max;
+				if (max > 0) {
+					if (Math.abs(n) < max) {
+						intArray[i] = n;
+						i++;
+					}
+				} else {
 					intArray[i] = n;
 					i++;
 				}
+
 			}
 		}
 
