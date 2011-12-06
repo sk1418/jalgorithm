@@ -16,48 +16,46 @@ public class Demo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AlgUtil.print("Available Demos:");
-		AlgUtil.print(AlgUtil.lineSeparator('=', 70));
-		AlgUtil.print(getDemoTypePrintList());
-		AlgUtil.print(AlgUtil.lineSeparator('=', 70));
-		AlgUtil.print("select the demo index (press 0 to exit):");
+		// AlgUtil.print("Available Demos:");
+		// AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+		// AlgUtil.print(getDemoTypePrintList());
+		// AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+		// AlgUtil.print("select the demo index (press 0 to exit):");
 		Scanner scanner;
 		int input = -1;
 		String tmp;
 		boolean init = true;
 		scanner = new Scanner(System.in);
-		while (!demoTypeMap.containsKey(input) && input != 0) {
+		while (input != 0) {
 			try {
-				if (!init) {
-					AlgUtil.print(AlgUtil.lineSeparator('=', 70));
-					AlgUtil.print(getDemoTypePrintList());
-					AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+				AlgUtil.print(AlgUtil.lineSeparator('\n', 3));
+				AlgUtil.print("Available Demos:");
+				AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+				AlgUtil.print(getDemoTypePrintList());
+				AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+				if (!demoTypeMap.containsKey(input)) {
 					AlgUtil.print("unknow demo index, please input a valid demo index (0 to exit):");
+				} else {
+					AlgUtil.print("select the demo index (press 0 to exit):");
 				}
-				init = false;
 				tmp = scanner.nextLine();
 				input = Integer.valueOf(tmp);
-
+				if (input == 0) {
+					break;
+				}
+				if (demoTypeMap.containsKey(input)) {
+					final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
+					AlgUtil.print(AlgUtil.lineSeparator('\n', 2));
+					AlgUtil.print("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
+					demo.doDemo();
+				}
 			} catch (final Exception e) {
 				input = -1;
-			} finally {
-
 			}
 		}
-		if (input == 0) {
-			AlgUtil.print("exiting...");
-			System.exit(0);
-		} else {
 
-			try {
-				final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
-				demo.doDemo();
-			} catch (final InstantiationException e) {
-				e.printStackTrace();
-			} catch (final IllegalAccessException e) {
-				e.printStackTrace();
-			}
-		}
+		AlgUtil.print("exiting...");
+		System.exit(0);
 	}
 
 	private static String getDemoTypePrintList() {
@@ -73,11 +71,11 @@ public class Demo {
 	}
 
 	enum DemoType {
-		//@formatter:off
+		// @formatter:off
 		Sorting(1, SortingDemo.class), 
 		Problem_MaxSubArray(2, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(3, CountInversionPairsDemo.class);
-		//@formatter:on
+		// @formatter:on
 		int idx;
 		Class demoClass;
 
