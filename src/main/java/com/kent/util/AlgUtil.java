@@ -97,4 +97,10 @@ public final class AlgUtil {
 	public static void print(final String text) {
 		System.out.println(text);
 	}
+
+	public static void appendNewline(StringBuffer sb, String text) {
+		if (sb != null) {
+			sb.append(text).append("\n");
+		}
+	}
 }

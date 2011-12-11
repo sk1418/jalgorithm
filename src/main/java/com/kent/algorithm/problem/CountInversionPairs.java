@@ -14,6 +14,13 @@ public class CountInversionPairs extends Problem<int[], Long> {
 	private long counts = 0;
 
 	@Override
+	protected StringBuffer getDescription() {
+		final StringBuffer sb = new StringBuffer();
+		sb.append("test");
+		return sb;
+	}
+
+	@Override
 	public String getBigO() {
 		return "O(nlog(n))";
 	}
@@ -22,7 +29,7 @@ public class CountInversionPairs extends Problem<int[], Long> {
 	@Override
 	public Long solve(int[] data) {
 		// keep the original array
-		int[] arrayCp = new int[data.length];
+		final int[] arrayCp = new int[data.length];
 		System.arraycopy(data, 0, arrayCp, 0, data.length);
 		counts = 0;
 		countInversions(arrayCp, 0, arrayCp.length - 1);

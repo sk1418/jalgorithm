@@ -16,15 +16,10 @@ public class Demo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// AlgUtil.print("Available Demos:");
-		// AlgUtil.print(AlgUtil.lineSeparator('=', 70));
-		// AlgUtil.print(getDemoTypePrintList());
-		// AlgUtil.print(AlgUtil.lineSeparator('=', 70));
-		// AlgUtil.print("select the demo index (press 0 to exit):");
 		Scanner scanner;
 		int input = -1;
 		String tmp;
-		boolean init = true;
+		final boolean init = true;
 		scanner = new Scanner(System.in);
 		while (input != 0) {
 			try {

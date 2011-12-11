@@ -1,7 +1,9 @@
 package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Algorithm;
+import com.kent.util.AlgUtil;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MiscAlgorithm.
  * 
@@ -13,12 +15,26 @@ import com.kent.algorithm.Algorithm;
 public abstract class Problem<E, T> implements Algorithm {
 
 	/**
-	 * Execute.
+	 * Execute the implementation to solve the problem.
 	 * 
 	 * @param data
 	 *            the dara
 	 * @return the t
 	 */
-	abstract public T solve(E data);
+	public abstract T solve(E data);
+
+	/**
+	 * Gets the description.
+	 * 
+	 * @return the description
+	 */
+	protected abstract StringBuffer getDescription();
+
+	/**
+	 * Prints the desc.
+	 */
+	public void printDesc() {
+		AlgUtil.print(getDescription().toString());
+	}
 
 }

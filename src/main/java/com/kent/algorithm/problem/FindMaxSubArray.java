@@ -2,7 +2,8 @@ package com.kent.algorithm.problem;
 
 import org.apache.log4j.Logger;
 
-// TODO: Auto-generated Javadoc
+import com.kent.util.AlgUtil;
+
 /**
  * find the nonempty, contiguous subarray of given array, whose values have the largest sum.
  * 
@@ -20,10 +21,10 @@ import org.apache.log4j.Logger;
  * @author kent
  * 
  */
-public class MaxSubArray extends Problem<int[], int[]> {
+public class FindMaxSubArray extends Problem<int[], int[]> {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(MaxSubArray.class);
+	private static final Logger LOG = Logger.getLogger(FindMaxSubArray.class);
 
 	/** The array. */
 	private int[] array = null;
@@ -36,6 +37,21 @@ public class MaxSubArray extends Problem<int[], int[]> {
 
 	/** The max sum. */
 	private int maxSum = Integer.MIN_VALUE;
+
+	@Override
+	protected StringBuffer getDescription() {
+		final StringBuffer sb = new StringBuffer();
+		AlgUtil.appendNewline(sb, "Finding Max Subarray problem:");
+		AlgUtil.appendNewline(sb, "Find the nonempty, contiguous subarray of given array, whose values have the largest sum.");
+		AlgUtil.appendNewline(sb, "");
+		AlgUtil.appendNewline(sb, "Using Divide And Conquer way to solve the problem:");
+		AlgUtil.appendNewline(sb, "");
+		AlgUtil.appendNewline(sb, "- the maxSubarray can entirely in the subarray A[low .. mid]");
+		AlgUtil.appendNewline(sb, "- entirely in the subarray A[mid+1 .. high]");
+		AlgUtil.appendNewline(sb, "- crossing the midpoint: ..i.. (maxSumLeft) ... <-mid -> .(maxSumRight)..j...");
+
+		return sb;
+	}
 
 	/** {@inheritDoc} */
 	@Override
