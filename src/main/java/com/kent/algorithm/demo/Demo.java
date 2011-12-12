@@ -56,11 +56,13 @@ public class Demo {
 
 	private static String getDemoTypePrintList() {
 		demoTypeMap.clear();
-		final String format = "%-35s %s %s";
+		final String format = "%-30s %s %s";
 		final StringBuffer sb = new StringBuffer();
+		int i = 0;
 		for (final DemoType type : DemoType.values()) {
+			i++;
 			sb.append(String.format(format, type, AlgUtil.lineSeparator('.', 30), type.getIdx()));
-			sb.append("\n");
+			sb.append(i == DemoType.values().length ? "" : "\n");
 			demoTypeMap.put(type.getIdx(), type.getDemoClass());
 		}
 		return sb.toString();
@@ -73,10 +75,10 @@ public class Demo {
 		Problem_CountInversionPairs(3, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(4, FindHeavyIntegerDemo.class);
 		// @formatter:on
-		int idx;
-		Class demoClass;
+		private int idx;
+		private Class<? extends AbstractDemo> demoClass;
 
-		DemoType(int idx, Class demoClass) {
+		DemoType(int idx, Class<? extends AbstractDemo> demoClass) {
 			this.idx = idx;
 			this.demoClass = demoClass;
 		}
@@ -85,7 +87,7 @@ public class Demo {
 			return idx;
 		}
 
-		public Class getDemoClass() {
+		public Class<? extends AbstractDemo> getDemoClass() {
 			return demoClass;
 		}
 

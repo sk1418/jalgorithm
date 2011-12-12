@@ -13,14 +13,14 @@ public class FindHeavyIntegerDemo extends AbstractDemo {
 
 	@Override
 	protected void warmingUp() {
-		// problem.solve(firstRun);
-		// problem.solve(secondRun);
+		problem.solve(firstRun);
+		problem.solve(secondRun);
 	}
 
 	@Override
 	protected void prepareDemo() {
 		firstRun = new int[] { 1, 100 };
-		secondRun = new int[] { 1000, 100000 };
+		secondRun = new int[] { 1, 1000000 };
 		problem = new FindHeavyIntegers();
 
 	}
