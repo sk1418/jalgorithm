@@ -14,7 +14,7 @@ public class CountInversionPairs extends Problem<int[], Long> {
 	private long counts = 0;
 
 	@Override
-	protected StringBuffer getDescription() {
+	public StringBuffer getDescription() {
 		final StringBuffer sb = new StringBuffer();
 		sb.append("test");
 		return sb;

@@ -24,13 +24,6 @@ public abstract class Problem<E, T> implements Algorithm {
 	public abstract T solve(E data);
 
 	/**
-	 * Gets the description.
-	 * 
-	 * @return the description
-	 */
-	protected abstract StringBuffer getDescription();
-
-	/**
 	 * Prints the desc.
 	 */
 	public void printDesc() {

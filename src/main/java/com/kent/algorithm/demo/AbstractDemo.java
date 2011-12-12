@@ -1,5 +1,6 @@
 package com.kent.algorithm.demo;
 
+import com.kent.util.AlgUtil;
 import com.kent.util.Stopwatch;
 
 /**
@@ -21,14 +22,18 @@ public abstract class AbstractDemo {
 	 */
 	public final void doDemo() {
 		prepareDemo();
-		printInfo("Warming JVM up....");
+		print("Warming JVM up....");
 		// warming up
 		for (int x = 3; x > 0; x--) {
-			printInfo(x + "...");
+			print(x + "...");
 			warmingUp();
 		}
-		printInfo("Done\n");
-
+		print("Done\n");
+		print(AlgUtil.lineSeparator('#', 70));
+		printDescription();
+		print(AlgUtil.lineSeparator('#', 70));
+		print("");
+		print("");
 		specificDemo();
 	}
 
@@ -57,7 +62,9 @@ public abstract class AbstractDemo {
 	 * @param text
 	 *            the text
 	 */
-	protected final void printInfo(final String text) {
+	protected final void print(final String text) {
 		System.out.println(text);
 	}
+
+	protected abstract void printDescription();
 }

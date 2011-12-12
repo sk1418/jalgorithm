@@ -31,7 +31,7 @@ public class CountInversionPairsDemo extends AbstractDemo {
 	/** {@inheritDoc} */
 	@Override
 	protected void specificDemo() {
-		printInfo(String.format("Counting inversion pairs algorithm with %s complexity\n", problem.getBigO()));
+		print(String.format("Counting inversion pairs algorithm with %s complexity\n", problem.getBigO()));
 		doJob(bigArray);
 		doJob(smallArray);
 	}
@@ -50,17 +50,22 @@ public class CountInversionPairsDemo extends AbstractDemo {
 	 *            the a
 	 */
 	private void doJob(final int[] a) {
-		printInfo("array with " + a.length + " elements:");
+		print("array with " + a.length + " elements:");
 		if (a.length == SMALL_ARRAY_SIZE) {
-			printInfo("Array: " + Arrays.toString(a));
+			print("Array: " + Arrays.toString(a));
 		}
-		printInfo(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.lineSeparator('=', 50));
 		long c = 0;
 		stopwatch.start();
 		c = problem.solve(a);
 		stopwatch.stop();
-		printInfo(String.format("Count of inversion pairs: %s (%s ms)\n", c, stopwatch.read()));
+		print(String.format("Count of inversion pairs: %s (%s ms)\n", c, stopwatch.read()));
 		stopwatch.reset();
 	}
 
+	@Override
+	protected void printDescription() {
+		print(problem.getDescription().toString());
+
+	}
 }

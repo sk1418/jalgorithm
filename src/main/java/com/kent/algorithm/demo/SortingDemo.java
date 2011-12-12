@@ -38,8 +38,8 @@ public class SortingDemo extends AbstractDemo {
 	protected void specificDemo() {
 		int[] testData;
 
-		printInfo(String.format("Sorting %7s elements", data.length));
-		printInfo(SPLT);
+		print(String.format("Sorting %7s elements", data.length));
+		print(SPLT);
 		for (final Sorting sort : demoList) {
 			// cp array
 			testData = new int[data.length];
@@ -51,8 +51,8 @@ public class SortingDemo extends AbstractDemo {
 
 			stopwatch.stop();
 
-			printInfo(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
-			printInfo(SPL);
+			print(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
+			print(SPL);
 			testData = null;
 
 			stopwatch.reset();
@@ -77,6 +77,11 @@ public class SortingDemo extends AbstractDemo {
 		for (final Sorting s : demoList) {
 			s.sort(AlgUtil.getRandomIntArray(BIG_ARRAY_SIZE, BIG_ARRAY_SIZE * 5, false));
 		}
+	}
+
+	@Override
+	protected void printDescription() {
+		print("compare different sort algorithms:");
 	}
 
 }

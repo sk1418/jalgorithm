@@ -27,7 +27,7 @@ public final class AlgUtil {
 	 * @param j
 	 *            index j
 	 */
-	public static void swap(int[] data, int i, int j) {
+	public static void swap(final int[] data, final int i, final int j) {
 		final int tmp = data[i];
 		data[i] = data[j];
 		data[j] = tmp;
@@ -35,7 +35,7 @@ public final class AlgUtil {
 	}
 
 	/**
-	 * get a random int[] array
+	 * get a random int[] array.
 	 * 
 	 * @param len
 	 *            the length of the array
@@ -45,7 +45,7 @@ public final class AlgUtil {
 	 *            if the array allows negative element
 	 * @return the array
 	 */
-	public static int[] getRandomIntArray(final int len, final int max, boolean allowNegative) {
+	public static int[] getRandomIntArray(final int len, final int max, final boolean allowNegative) {
 		final int[] intArray = new int[len];
 		final Random rand = new Random();
 		rand.setSeed(181402);
@@ -78,7 +78,21 @@ public final class AlgUtil {
 		return intArray;
 	}
 
-	public static synchronized int[] addIntToArray(int[] a, int v) {
+	/**
+	 * Adds the int to array.
+	 * 
+	 * extend the int[] array and append the int value to the array.
+	 * 
+	 * @param a
+	 *            the a the array needs to be inserted
+	 * @param v
+	 *            the v
+	 * @return the int[] the new array object with the given v at the end
+	 */
+	public static synchronized int[] addIntToArray(final int[] a, final int v) {
+		if (a == null) {
+			return a;
+		}
 		final int l = a.length + 1;
 		final int[] newA = Arrays.copyOf(a, l);
 		newA[l - 1] = v;
@@ -102,11 +116,25 @@ public final class AlgUtil {
 		return sb.toString();
 	}
 
+	/**
+	 * Prints the text
+	 * 
+	 * @param text
+	 *            the text
+	 */
 	public static void print(final String text) {
 		System.out.println(text);
 	}
 
-	public static void appendNewline(StringBuffer sb, String text) {
+	/**
+	 * Append newline.
+	 * 
+	 * @param sb
+	 *            the sb
+	 * @param text
+	 *            the text
+	 */
+	public static void appendNewline(final StringBuffer sb, final String text) {
 		if (sb != null) {
 			sb.append(text).append("\n");
 		}

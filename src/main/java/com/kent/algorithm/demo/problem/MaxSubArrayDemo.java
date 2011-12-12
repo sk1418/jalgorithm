@@ -26,12 +26,8 @@ public class MaxSubArrayDemo extends AbstractDemo {
 
 	@Override
 	protected void specificDemo() {
-		printInfo(AlgUtil.lineSeparator('#', 70));
-		problem.printDesc();
-		printInfo(AlgUtil.lineSeparator('#', 70));
-		printInfo("");
-		printInfo("");
-		printInfo("Time complexity:" + problem.getBigO());
+
+		print("Time complexity:" + problem.getBigO());
 		doJob(bigArray);
 		doJob(smallArray);
 	}
@@ -50,21 +46,27 @@ public class MaxSubArrayDemo extends AbstractDemo {
 	 *            the a
 	 */
 	private void doJob(final int[] a) {
-		printInfo("\n\narray with " + a.length + " elements:");
+		print("\n\narray with " + a.length + " elements:");
 		if (a.length == SMALL_ARRAY_SIZE) {
-			printInfo("Array: " + Arrays.toString(a));
+			print("Array: " + Arrays.toString(a));
 		}
-		printInfo(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.lineSeparator('=', 50));
 
 		stopwatch.start();
 		final int[] result = problem.solve(a);
 		stopwatch.stop();
-		printInfo("Max Sub-Array found:");
-		printInfo("start idx:" + result[0]);
-		printInfo("end idx  :" + result[1]);
-		printInfo("Sum      :" + result[2]);
-		printInfo(AlgUtil.lineSeparator('=', 50));
-		printInfo(stopwatch.readAsString());
+		print("Max Sub-Array found:");
+		print("start idx:" + result[0]);
+		print("end idx  :" + result[1]);
+		print("Sum      :" + result[2]);
+		print(AlgUtil.lineSeparator('=', 50));
+		print(stopwatch.readAsString());
 		stopwatch.reset();
+	}
+
+	@Override
+	protected void printDescription() {
+		print(problem.getDescription().toString());
+
 	}
 }

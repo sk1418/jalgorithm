@@ -17,7 +17,7 @@ import com.kent.util.AlgUtil;
  * </p>
  * 
  * <p>
- * The trick is to skip the numbers which are guaranteed to give a sub-average value. If sumDigits is the sum of the digits and numDigits is the
+ * This algorithm is to skip the numbers which are guaranteed to give a sub-average value. If sumDigits is the sum of the digits and numDigits is the
  * number of digits, then if sumDigits <= 7 * numDigits, we skip it and we need at least (7 * numDigits)-sumDigits+1 to bring the digits avg above
  * 7.0. The trick is to increment the number (starting from the units place) so that the total average goes above 7.0; To take an example, if the
  * number is 10000, sumDigits = 1 and avg of digits = 0.2. The deficit in sum is 7*5-1 +1= 35, so we can increment 10000 by 8999 i.e we increase the
@@ -51,6 +51,7 @@ import com.kent.util.AlgUtil;
  */
 public class FindHeavyIntegers extends Problem<int[], int[]> {
 
+	/** The HEAV y_ threshold. */
 	private static int HEAVY_THRESHOLD = 7;
 
 	/** {@inheritDoc} */
@@ -93,6 +94,15 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 		return result;
 	}
 
+	/**
+	 * Gets the increment.
+	 * 
+	 * @param n
+	 *            the n, the integer below AVG
+	 * @param deficit
+	 *            the deficit to required sum of digits
+	 * @return the increment
+	 */
 	private int getIncrement(int n, int deficit) {
 		int incr = 0;
 		int d = 1; // the digit flag 1, 10, 100, 1000...
@@ -114,7 +124,7 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 
 	/** {@inheritDoc} */
 	@Override
-	protected StringBuffer getDescription() {
+	public StringBuffer getDescription() {
 		final StringBuffer sb = new StringBuffer();
 		AlgUtil.appendNewline(sb, "Finding Heavy integers:");
 		AlgUtil.appendNewline(sb, "A non-negative integer is called heavy if the average value of its digits in decimal representation");
@@ -124,7 +134,7 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 		AlgUtil.appendNewline(sb, "Given two non-negative integers A and B find the number of heavy integers ");
 		AlgUtil.appendNewline(sb, "in the interval [A..B] (A and B included),A and B are integers within the range [0..200,000,000].");
 		AlgUtil.appendNewline(sb, "");
-		AlgUtil.appendNewline(sb, "The trick is to skip the numbers which are guaranteed to give a sub-average value. ");
+		AlgUtil.appendNewline(sb, "The algorithm is to skip the numbers which are guaranteed to give a sub-average value. ");
 		AlgUtil.appendNewline(sb, "If sumDigits is the sum of the digits and numDigits is the number of digits, then ");
 		AlgUtil.appendNewline(sb, "if sumDigits <= 7 * numDigits, we skip it and we need at least ");
 		AlgUtil.appendNewline(sb, "(7 * numDigits)-sumDigits+1 to bring the digits avg above 7.0. The trick is to ");
