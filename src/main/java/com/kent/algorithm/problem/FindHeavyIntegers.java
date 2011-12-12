@@ -51,6 +51,8 @@ import com.kent.util.AlgUtil;
  */
 public class FindHeavyIntegers extends Problem<int[], int[]> {
 
+	private static int HEAVY_THRESHOLD = 7;
+
 	/** {@inheritDoc} */
 	@Override
 	public String getBigO() {
@@ -60,10 +62,54 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 	/** {@inheritDoc} */
 	@Override
 	public int[] solve(int[] input) {
-		final int a = input[0];
+		int a = input[0];
 		final int b = input[1];
+		int[] result = new int[] {};
+		int digSum;
+		int reqSum;
+		int d; // how many digits
+		final int dv;
+		while (a <= b) {
 
-		return null;
+			digSum = 0;
+			d = 0;
+			int n = a;
+			// calculate the integer has how many digits and the sum of all digits
+			while (n != 0) {
+				digSum += n % 10;
+				d++;
+				n /= 10;
+			}
+
+			reqSum = d * HEAVY_THRESHOLD + 1;
+			if (digSum < reqSum) {
+				a += getIncrement(a, reqSum - digSum);
+			} else { // heavy integer
+				result = AlgUtil.addIntToArray(result, a);
+				a++;
+			}
+		}
+
+		return result;
+	}
+
+	private int getIncrement(int n, int deficit) {
+		int incr = 0;
+		int d = 1; // the digit flag 1, 10, 100, 1000...
+		int t = n;
+		int dv = 0;
+		while (deficit >= 0) {
+			dv = t % 10;
+			if (dv < 9) {
+				final int incr_d = dv < deficit ? 9 - dv : deficit;
+				incr += incr_d * d;
+				deficit -= incr_d;
+				incr += deficit < 0 ? deficit * d : 0;
+			}
+			d *= 10;
+			t /= 10;
+		}
+		return incr;
 	}
 
 	/** {@inheritDoc} */

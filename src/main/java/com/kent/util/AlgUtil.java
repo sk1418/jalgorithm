@@ -1,5 +1,6 @@
 package com.kent.util;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -75,6 +76,13 @@ public final class AlgUtil {
 		}
 
 		return intArray;
+	}
+
+	public static synchronized int[] addIntToArray(int[] a, int v) {
+		final int l = a.length + 1;
+		final int[] newA = Arrays.copyOf(a, l);
+		newA[l - 1] = v;
+		return newA;
 	}
 
 	/**
