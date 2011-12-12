@@ -65,7 +65,7 @@ public class CountInversionPairsDemo extends AbstractDemo {
 
 	@Override
 	protected void printDescription() {
-		print(problem.getDescription().toString());
+		print(new StringBuffer("test").toString());
 
 	}
 }

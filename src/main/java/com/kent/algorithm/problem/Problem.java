@@ -1,7 +1,6 @@
 package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Algorithm;
-import com.kent.util.AlgUtil;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -22,12 +21,5 @@ public abstract class Problem<E, T> implements Algorithm {
 	 * @return the t
 	 */
 	public abstract T solve(E data);
-
-	/**
-	 * Prints the desc.
-	 */
-	public void printDesc() {
-		AlgUtil.print(getDescription().toString());
-	}
 
 }

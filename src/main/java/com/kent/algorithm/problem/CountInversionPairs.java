@@ -14,13 +14,6 @@ public class CountInversionPairs extends Problem<int[], Long> {
 	private long counts = 0;
 
 	@Override
-	public StringBuffer getDescription() {
-		final StringBuffer sb = new StringBuffer();
-		sb.append("test");
-		return sb;
-	}
-
-	@Override
 	public String getBigO() {
 		return "O(nlog(n))";
 	}
