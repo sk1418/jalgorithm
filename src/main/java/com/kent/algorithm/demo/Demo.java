@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
+import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.util.AlgUtil;
 
@@ -69,7 +70,8 @@ public class Demo {
 		// @formatter:off
 		Sorting(1, SortingDemo.class), 
 		Problem_MaxSubArray(2, MaxSubArrayDemo.class), 
-		Problem_CountInversionPairs(3, CountInversionPairsDemo.class);
+		Problem_CountInversionPairs(3, CountInversionPairsDemo.class),
+		Problem_FindHeavyIntegers(4, FindHeavyIntegerDemo.class);
 		// @formatter:on
 		int idx;
 		Class demoClass;

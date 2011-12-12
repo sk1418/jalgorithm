@@ -108,12 +108,12 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 		int d = 1; // the digit flag 1, 10, 100, 1000...
 		int t = n;
 		int dv = 0;
-		while (deficit >= 0) {
+		while (deficit > 0) {
 			dv = t % 10;
 			if (dv < 9) {
-				final int incr_d = dv < deficit ? 9 - dv : deficit;
-				incr += incr_d * d;
-				deficit -= incr_d;
+				final int incrD = dv < deficit ? 9 - dv : deficit;
+				incr += incrD * d;
+				deficit -= incrD;
 				incr += deficit < 0 ? deficit * d : 0;
 			}
 			d *= 10;
