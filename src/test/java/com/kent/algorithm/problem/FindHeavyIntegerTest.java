@@ -14,9 +14,9 @@ public class FindHeavyIntegerTest {
 	@Test
 	public void solutionTest() {
 		final FindHeavyIntegers problem = new FindHeavyIntegers();
-		final int[] input = new int[] { 1, 10000 };
+		final int[] input = new int[] { 1, 100 };
 		final int[] result = problem.solve(input);
-		LOG.debug(Arrays.toString(result));
-		Assert.assertTrue(true);
+		final int[] expected = new int[] { 8, 9, 69, 78, 79, 87, 88, 89, 96, 97, 98, 99 };
+		Assert.assertTrue("two array should equal", Arrays.equals(expected, result));
 	}
 }
