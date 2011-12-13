@@ -23,6 +23,9 @@ public class BinarySearchProblem extends Problem<int[][], Integer> {
 		if (start == end) {
 			return a[start] == v ? start : -1;
 		}
+		if (v < a[start] || v > a[end]) {
+			return -1;
+		}
 		final int mid = (end + start) / 2;
 		if (a[mid] == v) {
 			return mid;
