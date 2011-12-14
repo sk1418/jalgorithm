@@ -2,6 +2,8 @@ package com.kent.algorithm.problem;
 
 import java.util.Arrays;
 
+import com.kent.algorithm.Problem;
+
 /**
  * find out counts of inversion pairs in an array using (n log n) algorithm, e.g. MergeSort
  * 

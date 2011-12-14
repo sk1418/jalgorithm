@@ -2,6 +2,8 @@ package com.kent.algorithm.problem;
 
 import org.apache.log4j.Logger;
 
+import com.kent.algorithm.Problem;
+
 /**
  * find the nonempty, contiguous subarray of given array, whose values have the largest sum.
  * 

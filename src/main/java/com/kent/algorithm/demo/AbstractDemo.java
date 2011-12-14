@@ -7,13 +7,15 @@ import com.kent.util.Stopwatch;
  * The Class AbstractDemo.
  */
 public abstract class AbstractDemo {
-
+	/** The Constant SPLT. */
+	protected static final String SPLT = AlgUtil.lineSeparator('=', 70);
 	/** The Big array size, used by demo classes. */
-	protected final int BIG_ARRAY_SIZE = 30000;
+	protected static final int BIG_ARRAY_SIZE = 30000;
 
 	/** The Small array size, used by demo classes */
-	protected final int SMALL_ARRAY_SIZE = 14;
+	protected static final int SMALL_ARRAY_SIZE = 14;
 
+	protected static final int WARMING_UP_LOOPS = 3;
 	/** The stopwatch. */
 	protected Stopwatch stopwatch = new Stopwatch();
 
@@ -22,13 +24,13 @@ public abstract class AbstractDemo {
 	 */
 	public final void doDemo() {
 		prepareDemo();
-		print("Warming JVM up....");
+		System.out.print("Warming JVM up....");
 		// warming up
-		for (int x = 3; x > 0; x--) {
-			print(x + "...");
+		for (int x = WARMING_UP_LOOPS; x > 0; x--) {
+			System.out.print(x + "...");
 			warmingUp();
 		}
-		print("Done\n");
+		System.out.print("Done\n\n");
 		print(AlgUtil.lineSeparator('#', 70));
 		printDescription();
 		print(AlgUtil.lineSeparator('#', 70));

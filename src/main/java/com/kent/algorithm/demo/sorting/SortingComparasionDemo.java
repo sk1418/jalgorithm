@@ -1,9 +1,10 @@
-package com.kent.algorithm.demo;
+package com.kent.algorithm.demo.sorting;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import com.kent.algorithm.Sorting;
+import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.sorting.BubbleSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
@@ -12,11 +13,9 @@ import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.util.AlgUtil;
 
 /**
- * The Class SortingDemo.
- * 
- * Demo all sorting algorithms
+ * The Class SortingComparasionDemo.
  */
-public class SortingDemo extends AbstractDemo {
+public class SortingComparasionDemo extends AbstractDemo {
 
 	/** The Constant FMT. */
 	private static final String FMT = "%-10s| %-21s| %7s ms.";
@@ -79,6 +78,7 @@ public class SortingDemo extends AbstractDemo {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void printDescription() {
 		print("compare different sort algorithms:");
