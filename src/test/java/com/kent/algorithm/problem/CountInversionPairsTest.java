@@ -8,9 +8,9 @@ import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.kent.algorithm.Problem;
 import com.kent.algorithm.problem.CountInversionPairs;
 import com.kent.algorithm.problem.FindMaxSubArray;
-import com.kent.algorithm.problem.Problem;
 import com.kent.test.BaseTest;
 
 /**

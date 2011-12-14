@@ -7,11 +7,41 @@ import java.util.Scanner;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
+import com.kent.algorithm.demo.sorting.BubbleSortDemo;
+import com.kent.algorithm.demo.sorting.InsertionSortDemo;
+import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.util.AlgUtil;
 
 public class Demo {
 
 	private static Map<Integer, Class> demoTypeMap = new HashMap<Integer, Class>();
+
+	enum DemoType {
+		// @formatter:off
+		Sorting(1, SortingComparasionDemo.class), 
+		InsertionSort(2, InsertionSortDemo.class), 
+		BubbleSort(3, BubbleSortDemo.class), 
+		Problem_MaxSubArray(8, MaxSubArrayDemo.class), 
+		Problem_CountInversionPairs(9, CountInversionPairsDemo.class),
+		Problem_FindHeavyIntegers(10, FindHeavyIntegerDemo.class);
+		// @formatter:on
+		private final int idx;
+		private final Class<? extends AbstractDemo> demoClass;
+
+		DemoType(int idx, Class<? extends AbstractDemo> demoClass) {
+			this.idx = idx;
+			this.demoClass = demoClass;
+		}
+
+		public int getIdx() {
+			return idx;
+		}
+
+		public Class<? extends AbstractDemo> getDemoClass() {
+			return demoClass;
+		}
+
+	}
 
 	/**
 	 * @param args
@@ -66,31 +96,6 @@ public class Demo {
 			demoTypeMap.put(type.getIdx(), type.getDemoClass());
 		}
 		return sb.toString();
-	}
-
-	enum DemoType {
-		// @formatter:off
-		Sorting(1, SortingDemo.class), 
-		Problem_MaxSubArray(2, MaxSubArrayDemo.class), 
-		Problem_CountInversionPairs(3, CountInversionPairsDemo.class),
-		Problem_FindHeavyIntegers(4, FindHeavyIntegerDemo.class);
-		// @formatter:on
-		private int idx;
-		private Class<? extends AbstractDemo> demoClass;
-
-		DemoType(int idx, Class<? extends AbstractDemo> demoClass) {
-			this.idx = idx;
-			this.demoClass = demoClass;
-		}
-
-		public int getIdx() {
-			return idx;
-		}
-
-		public Class<? extends AbstractDemo> getDemoClass() {
-			return demoClass;
-		}
-
 	}
 
 }

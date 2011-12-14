@@ -1,5 +1,7 @@
 package com.kent.algorithm.sorting;
 
+import java.util.Arrays;
+
 import org.apache.log4j.Logger;
 
 import com.kent.algorithm.Sorting;
@@ -42,7 +44,11 @@ public class BubbleSort extends Sorting {
 			for (int j = data.length - 1; j > i; j--) {
 				if (data[j - 1] > data[j]) {
 					AlgUtil.swap(data, j, j - 1);
-					// LOG.debug(Arrays.toString(data));
+
+					// status after every step:
+					if (isPrintSteps()) {
+						AlgUtil.print(Arrays.toString(data));
+					}
 				}
 			}
 		}

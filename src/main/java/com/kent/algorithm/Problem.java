@@ -1,17 +1,15 @@
-package com.kent.algorithm.problem;
+package com.kent.algorithm;
 
-import com.kent.algorithm.Algorithm;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MiscAlgorithm.
  * 
- * @param <E>
+ * @param <I>
  *            the element type
  * @param <T>
  *            the generic type
  */
-public abstract class Problem<E, T> implements Algorithm {
+public abstract class Problem<I, T> implements Algorithm<I, T> {
 
 	/**
 	 * Execute the implementation to solve the problem.
@@ -20,6 +18,11 @@ public abstract class Problem<E, T> implements Algorithm {
 	 *            the dara
 	 * @return the t
 	 */
-	public abstract T solve(E data);
+	public abstract T solve(I data);
+
+	@Override
+	public T execute(I input) {
+		return solve(input);
+	}
 
 }

@@ -1,5 +1,6 @@
 package com.kent.algorithm.problem;
 
+import com.kent.algorithm.Problem;
 import com.kent.util.AlgUtil;
 
 /**

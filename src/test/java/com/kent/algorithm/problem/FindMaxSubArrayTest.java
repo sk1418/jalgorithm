@@ -4,8 +4,8 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import com.kent.algorithm.Problem;
 import com.kent.algorithm.problem.FindMaxSubArray;
-import com.kent.algorithm.problem.Problem;
 import com.kent.test.BaseTest;
 
 public class FindMaxSubArrayTest extends BaseTest{

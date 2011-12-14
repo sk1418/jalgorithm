@@ -1,5 +1,7 @@
 package com.kent.algorithm.problem;
 
+import com.kent.algorithm.Problem;
+
 public class BinarySearchProblem extends Problem<int[][], Integer> {
 
 	@Override

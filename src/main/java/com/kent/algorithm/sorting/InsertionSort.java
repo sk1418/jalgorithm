@@ -1,8 +1,11 @@
 package com.kent.algorithm.sorting;
 
+import java.util.Arrays;
+
 import org.apache.log4j.Logger;
 
 import com.kent.algorithm.Sorting;
+import com.kent.util.AlgUtil;
 
 /**
  * 
@@ -35,10 +38,12 @@ public class InsertionSort extends Sorting {
 				data[j + 1] = data[j];
 				j--;
 			}
-
 			data[j + 1] = key;
+
 			// status after every step:
-			// LOG.debug(Arrays.toString(data));
+			if (isPrintSteps()) {
+				AlgUtil.print("key:" + key + " \n" + Arrays.toString(data));
+			}
 
 		}
 
