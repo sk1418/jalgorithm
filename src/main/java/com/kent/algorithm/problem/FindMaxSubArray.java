@@ -1,7 +1,5 @@
 package com.kent.algorithm.problem;
 
-import org.apache.log4j.Logger;
-
 import com.kent.algorithm.Problem;
 
 /**
@@ -22,9 +20,6 @@ import com.kent.algorithm.Problem;
  * 
  */
 public class FindMaxSubArray extends Problem<int[], int[]> {
-
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(FindMaxSubArray.class);
 
 	/** The array. */
 	private int[] array = null;

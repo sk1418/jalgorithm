@@ -139,4 +139,20 @@ public final class AlgUtil {
 			sb.append(text).append("\n");
 		}
 	}
+
+	/**
+	 * simulating the clear command. this method print 25 "\n"s.
+	 * 
+	 * <pre>
+	 * System.out.print((char) 27 + &quot;[2J&quot;);
+	 * </pre>
+	 * 
+	 * works for linux console, however Windows NT console may not support it.
+	 */
+	public static void clear() {
+		final char[] c = new char[25];
+		Arrays.fill(c, '\n');
+		// System.out.print((char) 27 + "[2J");
+		print(String.copyValueOf(c));
+	}
 }

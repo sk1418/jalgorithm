@@ -54,6 +54,7 @@ public class Demo {
 		scanner = new Scanner(System.in);
 		while (input != 0) {
 			try {
+
 				AlgUtil.print(AlgUtil.lineSeparator('\n', 3));
 				AlgUtil.print("Available Demos:");
 				AlgUtil.print(AlgUtil.lineSeparator('=', 70));
@@ -72,6 +73,7 @@ public class Demo {
 				if (demoTypeMap.containsKey(input)) {
 					final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
 					AlgUtil.print(AlgUtil.lineSeparator('\n', 2));
+					AlgUtil.clear();
 					AlgUtil.print("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
 				}

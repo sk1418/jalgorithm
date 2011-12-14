@@ -2,8 +2,6 @@ package com.kent.algorithm.sorting;
 
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
-
 import com.kent.algorithm.Sorting;
 
 /**
@@ -26,9 +24,6 @@ import com.kent.algorithm.Sorting;
  * 
  */
 public class MergeSort extends Sorting {
-
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(MergeSort.class);
 
 	/** The SENTINEL. */
 	private final int SENTINEL = Integer.MAX_VALUE;

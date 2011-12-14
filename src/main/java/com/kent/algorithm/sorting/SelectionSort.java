@@ -1,7 +1,5 @@
 package com.kent.algorithm.sorting;
 
-import org.apache.log4j.Logger;
-
 import com.kent.algorithm.Sorting;
 import com.kent.util.AlgUtil;
 
@@ -23,8 +21,6 @@ import com.kent.util.AlgUtil;
  * 
  */
 public class SelectionSort extends Sorting {
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(SelectionSort.class);
 
 	@Override
 	public String getBigO() {

@@ -2,8 +2,6 @@ package com.kent.algorithm.sorting;
 
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
-
 import com.kent.algorithm.Sorting;
 import com.kent.util.AlgUtil;
 
@@ -35,8 +33,6 @@ import com.kent.util.AlgUtil;
  * 
  */
 public class BubbleSort extends Sorting {
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(BubbleSort.class);
 
 	@Override
 	public void sort(int[] data) {
