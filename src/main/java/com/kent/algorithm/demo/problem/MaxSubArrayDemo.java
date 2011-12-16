@@ -50,7 +50,7 @@ public class MaxSubArrayDemo extends AbstractDemo {
 		if (a.length == SMALL_ARRAY_SIZE) {
 			print("Array: " + Arrays.toString(a));
 		}
-		print(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.repeatString("=", 50));
 
 		stopwatch.start();
 		final int[] result = problem.solve(a);
@@ -59,7 +59,7 @@ public class MaxSubArrayDemo extends AbstractDemo {
 		print("start idx:" + result[0]);
 		print("end idx  :" + result[1]);
 		print("Sum      :" + result[2]);
-		print(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.repeatString("=", 50));
 		print(stopwatch.readAsString());
 		stopwatch.reset();
 	}

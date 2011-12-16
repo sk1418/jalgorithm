@@ -3,6 +3,7 @@ package com.kent.algorithm.sorting;
 import java.util.Arrays;
 
 import com.kent.algorithm.Sorting;
+import com.kent.util.AlgUtil;
 
 /**
  * <b>Merge sort</b> is typical in Divide and Conquer way to solve sorting problem.<br/>
@@ -27,6 +28,10 @@ public class MergeSort extends Sorting {
 
 	/** The SENTINEL. */
 	private final int SENTINEL = Integer.MAX_VALUE;
+
+	/** only for printing info */
+	private static final String MERGING = "Merging : ";
+	private static final String PLACE_H = "          ";
 
 	@Override
 	public String getBigO() {
@@ -85,6 +90,10 @@ public class MergeSort extends Sorting {
 		final int[] left = Arrays.copyOfRange(data, from, mid + 1 + 1);
 		final int[] right = Arrays.copyOfRange(data, mid + 1, to + 1 + 1);
 
+		// print info
+		if (isPrintSteps()) {
+			printMergeStep(left, right);
+		}
 		// add one infinitely great value at the end of each array
 		left[left.length - 1] = SENTINEL;
 		right[right.length - 1] = SENTINEL;
@@ -100,7 +109,9 @@ public class MergeSort extends Sorting {
 				j++;
 			}
 		}
-		// LOG.debug("Step Result:" + Arrays.toString(data));
+		if (isPrintSteps()) {
+			printMergeResult(Arrays.copyOfRange(data, from, to + 1));
+		}
 	}
 
 	/**
@@ -122,7 +133,9 @@ public class MergeSort extends Sorting {
 
 		int i = 0, j = 0; // idx of left and right arrays.
 		int k = from; // idx of original array (data)
-
+		if (isPrintSteps()) {
+			printMergeStep(left, right);
+		}
 		while (i < left.length && j < right.length) {
 
 			if (left[i] <= right[j]) {
@@ -152,6 +165,22 @@ public class MergeSort extends Sorting {
 				i++;
 			}
 		}
-		// LOG.debug("Step Result:" + Arrays.toString(data));
+		if (isPrintSteps()) {
+			printMergeResult(Arrays.copyOfRange(data, from, to + 1));
+		}
+	}
+
+	protected void printMergeStep(int[] left, int[] right) {
+		String ls = Arrays.toString(left);
+		String rs = Arrays.toString(right);
+		AlgUtil.print(MERGING + ls + " <-> " + rs);
+		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", ls.length() - 2) + " \\     / ");
+
+	}
+
+	protected void printMergeResult(int[] a) {
+		String as = Arrays.toString(a);
+		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", (as.length() - 3) / 4) + as);
+		AlgUtil.print("");
 	}
 }

@@ -1,7 +1,5 @@
 package com.kent.algorithm.sorting;
 
-import java.util.Arrays;
-
 import com.kent.algorithm.Sorting;
 import com.kent.util.AlgUtil;
 
@@ -43,7 +41,7 @@ public class BubbleSort extends Sorting {
 
 					// status after every step:
 					if (isPrintSteps()) {
-						AlgUtil.print(Arrays.toString(data));
+						AlgUtil.printIntArray(data);
 					}
 				}
 			}

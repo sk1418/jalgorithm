@@ -1,7 +1,5 @@
 package com.kent.algorithm.demo.problem;
 
-import java.util.Arrays;
-
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindHeavyIntegers;
 import com.kent.util.AlgUtil;
@@ -35,20 +33,20 @@ public class FindHeavyIntegerDemo extends AbstractDemo {
 	private void doJob(final int[] a) {
 		print("\nHeavy Integers between " + a[0] + " and " + a[1] + ":");
 
-		print(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.repeatString("=", 50));
 
 		stopwatch.start();
 		final int[] result = problem.solve(a);
 		stopwatch.stop();
 		print("Found Heavy Integers :" + result.length);
 		if (result.length < 20) {
-			print(Arrays.toString(result));
+			AlgUtil.printIntArray(result);
 		} else {
 			print("first  :" + result[0]);
 			print("last   :" + result[result.length - 1]);
 		}
 		print(stopwatch.readAsString());
-		print(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.repeatString("=", 50));
 		stopwatch.reset();
 	}
 

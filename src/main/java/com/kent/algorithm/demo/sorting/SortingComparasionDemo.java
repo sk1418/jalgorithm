@@ -21,10 +21,10 @@ public class SortingComparasionDemo extends AbstractDemo {
 	private static final String FMT = "%-10s| %-21s| %7s ms.";
 
 	/** The Constant SPL. */
-	private static final String SPL = AlgUtil.lineSeparator('-', 45);
+	private static final String SPL = AlgUtil.repeatString("-", 45);
 
 	/** The Constant SPLT. */
-	private static final String SPLT = AlgUtil.lineSeparator('=', 45);
+	private static final String SPLT = AlgUtil.repeatString("=", 45);
 
 	/** The data. */
 	private int[] data;

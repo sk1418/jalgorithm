@@ -9,6 +9,7 @@ import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.InsertionSortDemo;
+import com.kent.algorithm.demo.sorting.MergeSortDemo;
 import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.util.AlgUtil;
 
@@ -21,6 +22,7 @@ public class Demo {
 		Sorting(1, SortingComparasionDemo.class), 
 		InsertionSort(2, InsertionSortDemo.class), 
 		BubbleSort(3, BubbleSortDemo.class), 
+		MergeSort(4, MergeSortDemo.class), 
 		Problem_MaxSubArray(8, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(9, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(10, FindHeavyIntegerDemo.class);
@@ -55,11 +57,11 @@ public class Demo {
 		while (input != 0) {
 			try {
 
-				AlgUtil.print(AlgUtil.lineSeparator('\n', 3));
+				AlgUtil.print(AlgUtil.repeatString("\n", 3));
 				AlgUtil.print("Available Demos:");
-				AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+				AlgUtil.print(AlgUtil.repeatString("=", 70));
 				AlgUtil.print(getDemoTypePrintList());
-				AlgUtil.print(AlgUtil.lineSeparator('=', 70));
+				AlgUtil.print(AlgUtil.repeatString("=", 70));
 				if (!demoTypeMap.containsKey(input)) {
 					AlgUtil.print("unknow demo index, please input a valid demo index (0 to exit):");
 				} else {
@@ -72,7 +74,7 @@ public class Demo {
 				}
 				if (demoTypeMap.containsKey(input)) {
 					final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
-					AlgUtil.print(AlgUtil.lineSeparator('\n', 2));
+					AlgUtil.print(AlgUtil.repeatString("\n", 2));
 					AlgUtil.clear();
 					AlgUtil.print("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
@@ -93,11 +95,10 @@ public class Demo {
 		int i = 0;
 		for (final DemoType type : DemoType.values()) {
 			i++;
-			sb.append(String.format(format, type, AlgUtil.lineSeparator('.', 30), type.getIdx()));
+			sb.append(String.format(format, type, AlgUtil.repeatString(".", 30), type.getIdx()));
 			sb.append(i == DemoType.values().length ? "" : "\n");
 			demoTypeMap.put(type.getIdx(), type.getDemoClass());
 		}
 		return sb.toString();
 	}
-
 }

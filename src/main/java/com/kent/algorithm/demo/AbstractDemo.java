@@ -8,7 +8,7 @@ import com.kent.util.Stopwatch;
  */
 public abstract class AbstractDemo {
 	/** The Constant SPLT. */
-	protected static final String SPLT = AlgUtil.lineSeparator('=', 70);
+	protected static final String SPLT = AlgUtil.repeatString("=", 70);
 	/** The Big array size, used by demo classes. */
 	protected static final int BIG_ARRAY_SIZE = 30000;
 
@@ -31,9 +31,9 @@ public abstract class AbstractDemo {
 			warmingUp();
 		}
 		System.out.print("Done\n\n");
-		print(AlgUtil.lineSeparator('#', 70));
+		print(AlgUtil.repeatString("#", 70));
 		printDescription();
-		print(AlgUtil.lineSeparator('#', 70));
+		print(AlgUtil.repeatString("#", 70));
 		print("");
 		print("");
 		specificDemo();

@@ -23,7 +23,7 @@ public abstract class AbstractSortingDemo extends AbstractDemo {
 
 		print("Sorting array:" + Arrays.toString(data));
 		print(SPLT);
-		print(Arrays.toString(data));
+		AlgUtil.printIntArray(data);
 		// cp array
 		stopwatch.start();
 		// sort

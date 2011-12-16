@@ -54,7 +54,7 @@ public class CountInversionPairsDemo extends AbstractDemo {
 		if (a.length == SMALL_ARRAY_SIZE) {
 			print("Array: " + Arrays.toString(a));
 		}
-		print(AlgUtil.lineSeparator('=', 50));
+		print(AlgUtil.repeatString("=", 50));
 		long c = 0;
 		stopwatch.start();
 		c = problem.solve(a);

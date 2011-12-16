@@ -99,19 +99,23 @@ public final class AlgUtil {
 		return newA;
 	}
 
+	public static void printIntArray(final int[] a) {
+		print(Arrays.toString(a));
+	}
+
 	/**
 	 * Line separator.
 	 * 
-	 * @param c
-	 *            the c
+	 * @param s
+	 *            the string need to be repeated
 	 * @param times
 	 *            the times
 	 * @return the string
 	 */
-	public static String lineSeparator(final char c, final int times) {
+	public static String repeatString(final String s, final int times) {
 		final StringBuilder sb = new StringBuilder();
 		for (int i = 1; i <= times; i++) {
-			sb.append(c);
+			sb.append(s);
 		}
 		return sb.toString();
 	}
