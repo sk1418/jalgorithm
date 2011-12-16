@@ -10,6 +10,7 @@ import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.InsertionSortDemo;
 import com.kent.algorithm.demo.sorting.MergeSortDemo;
+import com.kent.algorithm.demo.sorting.OptimizedMergeSortDemo;
 import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.util.AlgUtil;
 
@@ -23,6 +24,7 @@ public class Demo {
 		InsertionSort(2, InsertionSortDemo.class), 
 		BubbleSort(3, BubbleSortDemo.class), 
 		MergeSort(4, MergeSortDemo.class), 
+		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),
 		Problem_MaxSubArray(8, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(9, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(10, FindHeavyIntegerDemo.class);
