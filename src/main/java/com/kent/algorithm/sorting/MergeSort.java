@@ -185,7 +185,7 @@ public class MergeSort extends Sorting {
 
 	protected void printMergeResult(int[] a) {
 		String as = Arrays.toString(a);
-		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", (as.length() - 3) / 4) + as);
+		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", (as.length()) / 4) + as);
 		AlgUtil.print("");
 	}
 }
