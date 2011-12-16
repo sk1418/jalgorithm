@@ -133,9 +133,12 @@ public class MergeSort extends Sorting {
 
 		int i = 0, j = 0; // idx of left and right arrays.
 		int k = from; // idx of original array (data)
+
+		// print info
 		if (isPrintSteps()) {
 			printMergeStep(left, right);
 		}
+
 		while (i < left.length && j < right.length) {
 
 			if (left[i] <= right[j]) {
@@ -165,6 +168,8 @@ public class MergeSort extends Sorting {
 				i++;
 			}
 		}
+
+		// print info
 		if (isPrintSteps()) {
 			printMergeResult(Arrays.copyOfRange(data, from, to + 1));
 		}
