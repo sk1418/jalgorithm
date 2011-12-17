@@ -164,11 +164,12 @@ public final class AlgUtil {
 		println(String.copyValueOf(c));
 	}
 
-	public static void printHeap(int[] a, int heapSize) {
+	public static void printHeap(int[] a, int heapSize, int flagIdx) {
 		final int h = (int) (Math.log(heapSize - 1) / Math.log(2)); // height of the tree/heap
 		int leadingBlanks = 2 << h; // leading spaces
 		int startIdx;
 		String fmt;
+		StringBuffer sb;
 		for (int i = 0; i <= h; i++) {
 			if (i == 0) {
 				startIdx = 0;
@@ -180,22 +181,33 @@ public final class AlgUtil {
 
 			int count = i == 0 ? 1 : 2 << i - 1;
 			int count2 = count;
+			fmt = "%-" + distance + "s";
 			while (count > 0 && startIdx < heapSize) {
-				fmt = "%-" + distance + "s";
-				final String s = String.format(fmt, a[startIdx]);
-				print(s);
+				final String node = String.valueOf(a[startIdx]) + (startIdx == flagIdx ? "*" : "");
+				print(String.format(fmt, node));
 				startIdx++;
 				count--;
 			}
 			println("");
+
+			// print node connections
 			if (i != h) {
 				print(repeatString(" ", leadingBlanks / 2 + 1));
+				fmt = "%-" + distance / 2 + "s";
 				while (count2 > 0) {
-					fmt = "%-" + distance / 2 + "s";
-					final String between = distance / 2 < 6 ? repeatString(" ", distance / 2 - 2) : repeatString("-", distance / 4 - 4)
-							+ repeatString(" ", 6) + repeatString("-", distance / 4 - 4);
-					final String s = String.format(fmt, "/" + between + "\\" + repeatString(" ", distance / 2));
-					print(s);
+					sb = new StringBuffer();
+					sb.append("/");
+					if (distance / 2 <= 4) {
+						sb.append(repeatString(" ", distance / 2 - 2));
+					} else {
+						final String conn = repeatString("`", distance / 4 - 4);
+						sb.append(conn);
+						sb.append(repeatString(" ", 6));
+						sb.append(conn);
+					}
+					sb.append("\\");
+					sb.append(repeatString(" ", distance / 2));
+					print(String.format(fmt, sb.toString()));
 					count2--;
 				}
 				println("");

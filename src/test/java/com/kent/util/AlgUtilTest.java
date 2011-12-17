@@ -46,8 +46,8 @@ public class AlgUtilTest {
 
 	@Test
 	public void testPrintHeap() {
-		final int[] testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28, 48, 88, 99, 100, 120 };
-		AlgUtil.printHeap(testArray, testArray.length);
+		final int[] testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28, 48, 88, 99, 100, 120, 8, 27, 31 };
+		AlgUtil.printHeap(testArray, testArray.length, 6);
 	}
 
 }
