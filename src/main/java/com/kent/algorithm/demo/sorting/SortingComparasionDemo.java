@@ -6,6 +6,7 @@ import java.util.List;
 import com.kent.algorithm.Sorting;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.sorting.BubbleSort;
+import com.kent.algorithm.sorting.HeapSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.OptimizedMergeSort;
@@ -67,6 +68,7 @@ public class SortingComparasionDemo extends AbstractDemo {
 		demoList.add(new BubbleSort());
 		demoList.add(new MergeSort());
 		demoList.add(new OptimizedMergeSort());
+		demoList.add(new HeapSort());
 
 	}
 

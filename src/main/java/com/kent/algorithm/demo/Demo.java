@@ -21,15 +21,18 @@ public class Demo {
 
 	enum DemoType {
 		// @formatter:off
-		Sorting(1, SortingComparasionDemo.class), 
+		
+		//sortings
+		SortingComparasion(1, SortingComparasionDemo.class), 
 		InsertionSort(2, InsertionSortDemo.class), 
 		BubbleSort(3, BubbleSortDemo.class), 
 		MergeSort(4, MergeSortDemo.class), 
 		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),
 		HeapSort(6,HeapSortDemo.class),
-		Problem_MaxSubArray(8, MaxSubArrayDemo.class), 
-		Problem_CountInversionPairs(9, CountInversionPairsDemo.class),
-		Problem_FindHeavyIntegers(10, FindHeavyIntegerDemo.class);
+		//problems
+		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
+		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
+		Problem_FindHeavyIntegers(12, FindHeavyIntegerDemo.class);
 		// @formatter:on
 		private final int idx;
 		private final Class<? extends AbstractDemo> demoClass;
@@ -64,9 +67,9 @@ public class Demo {
 
 				AlgUtil.println(AlgUtil.repeatString("\n", 3));
 				AlgUtil.println("Available Demos:");
-				AlgUtil.println(AlgUtil.repeatString("=", 70));
+				AlgUtil.println(AlgUtil.repeatString("=", 49));
 				AlgUtil.println(getDemoTypePrintList());
-				AlgUtil.println(AlgUtil.repeatString("=", 70));
+				AlgUtil.println(AlgUtil.repeatString("=", 49));
 				if (input == -9) {
 
 					AlgUtil.println("select the demo index (press 0 to exit):");
@@ -97,12 +100,12 @@ public class Demo {
 
 	private static String getDemoTypePrintList() {
 		demoTypeMap.clear();
-		final String format = "%-30s %s %s";
+		final String format = "%3s %s %-30s";
 		final StringBuffer sb = new StringBuffer();
 		int i = 0;
 		for (final DemoType type : DemoType.values()) {
 			i++;
-			sb.append(String.format(format, type, AlgUtil.repeatString(".", 30), type.getIdx()));
+			sb.append(String.format(format, type.getIdx(), AlgUtil.repeatString(".", 7), type));
 			sb.append(i == DemoType.values().length ? "" : "\n");
 			demoTypeMap.put(type.getIdx(), type.getDemoClass());
 		}
