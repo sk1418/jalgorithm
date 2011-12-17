@@ -8,6 +8,7 @@ import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
+import com.kent.algorithm.demo.sorting.HeapSortDemo;
 import com.kent.algorithm.demo.sorting.InsertionSortDemo;
 import com.kent.algorithm.demo.sorting.MergeSortDemo;
 import com.kent.algorithm.demo.sorting.OptimizedMergeSortDemo;
@@ -25,6 +26,7 @@ public class Demo {
 		BubbleSort(3, BubbleSortDemo.class), 
 		MergeSort(4, MergeSortDemo.class), 
 		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),
+		HeapSort(6,HeapSortDemo.class),
 		Problem_MaxSubArray(8, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(9, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(10, FindHeavyIntegerDemo.class);
@@ -52,10 +54,11 @@ public class Demo {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner;
-		int input = -1;
+		int input = -9;
 		String tmp;
 		final boolean init = true;
 		scanner = new Scanner(System.in);
+
 		while (input != 0) {
 			try {
 
@@ -64,10 +67,11 @@ public class Demo {
 				AlgUtil.println(AlgUtil.repeatString("=", 70));
 				AlgUtil.println(getDemoTypePrintList());
 				AlgUtil.println(AlgUtil.repeatString("=", 70));
-				if (!demoTypeMap.containsKey(input)) {
-					AlgUtil.println("unknow demo index, please input a valid demo index (0 to exit):");
-				} else {
+				if (input == -9) {
+
 					AlgUtil.println("select the demo index (press 0 to exit):");
+				} else if (!demoTypeMap.containsKey(input)) {
+					AlgUtil.println("unknow demo index, please input a valid demo index (0 to exit):");
 				}
 				tmp = scanner.nextLine();
 				input = Integer.valueOf(tmp);
@@ -80,6 +84,7 @@ public class Demo {
 					AlgUtil.clear();
 					AlgUtil.println("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
+					input = -9;
 				}
 			} catch (final Exception e) {
 				input = -1;

@@ -99,6 +99,12 @@ public final class AlgUtil {
 		return newA;
 	}
 
+	/**
+	 * Prints the int array.
+	 * 
+	 * @param a
+	 *            the a
+	 */
 	public static void printIntArray(final int[] a) {
 		println(Arrays.toString(a));
 	}
@@ -121,7 +127,7 @@ public final class AlgUtil {
 	}
 
 	/**
-	 * Prints the text
+	 * Prints the text.
 	 * 
 	 * @param text
 	 *            the text
@@ -130,6 +136,12 @@ public final class AlgUtil {
 		System.out.println(text);
 	}
 
+	/**
+	 * Prints the.
+	 * 
+	 * @param text
+	 *            the text
+	 */
 	public static void print(final String text) {
 		System.out.print(text);
 	}
@@ -164,12 +176,23 @@ public final class AlgUtil {
 		println(String.copyValueOf(c));
 	}
 
-	public static void printHeap(int[] a, int heapSize, int flagIdx) {
+	/**
+	 * Prints given array into Binary Tree format output
+	 * 
+	 * @param a
+	 *            the array
+	 * @param heapSize
+	 *            the heap size
+	 * @param flagIdx
+	 *            the index of node, which needs to be highlighted
+	 */
+	public static void printBinaryTree(int[] a, int heapSize, int flagIdx) {
 		final int h = (int) (Math.log(heapSize - 1) / Math.log(2)); // height of the tree/heap
 		int leadingBlanks = 2 << h; // leading spaces
 		int startIdx;
 		String fmt;
 		StringBuffer sb;
+		println("");
 		for (int i = 0; i <= h; i++) {
 			if (i == 0) {
 				startIdx = 0;
@@ -214,6 +237,6 @@ public final class AlgUtil {
 			}
 			leadingBlanks /= 2; // blanks/=2
 		}
-
+		println("");
 	}
 }

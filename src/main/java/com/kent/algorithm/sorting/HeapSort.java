@@ -1,5 +1,7 @@
 package com.kent.algorithm.sorting;
 
+import java.util.Arrays;
+
 import com.kent.algorithm.Sorting;
 import com.kent.util.AlgUtil;
 
@@ -29,13 +31,29 @@ public class HeapSort extends Sorting {
 
 	@Override
 	public void sort(int[] data) {
+		if (isPrintSteps()) {
+			AlgUtil.println("Init Heap:");
+			AlgUtil.printBinaryTree(data, data.length, Integer.MIN_VALUE);
+		}
 		doHeapSort(data);
 	}
 
 	private void doHeapSort(int[] a) {
+
 		buildMaxHeap(a);
+
+		if (isPrintSteps()) {
+			AlgUtil.println("Max Heap:");
+			AlgUtil.printBinaryTree(a, HeapSize, Integer.MIN_VALUE);
+		}
+
 		for (int i = a.length - 1; i >= 1; i--) {
 			AlgUtil.swap(a, 0, i);
+			if (isPrintSteps()) {
+				AlgUtil.printBinaryTree(a, HeapSize, i);
+				AlgUtil.print("array status:");
+				AlgUtil.printIntArray(Arrays.copyOfRange(a, i, a.length));
+			}
 			HeapSize--;
 			maxHeapify(a, 0);
 		}
