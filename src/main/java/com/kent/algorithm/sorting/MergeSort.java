@@ -178,14 +178,14 @@ public class MergeSort extends Sorting {
 	protected void printMergeStep(int[] left, int[] right) {
 		String ls = Arrays.toString(left);
 		String rs = Arrays.toString(right);
-		AlgUtil.print(MERGING + ls + " <-> " + rs);
-		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", ls.length() - 2) + " \\     / ");
+		AlgUtil.println(MERGING + ls + " <-> " + rs);
+		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", ls.length() - 2) + " \\     / ");
 
 	}
 
 	protected void printMergeResult(int[] a) {
 		String as = Arrays.toString(a);
-		AlgUtil.print(PLACE_H + AlgUtil.repeatString(" ", (as.length()) / 4) + as);
-		AlgUtil.print("");
+		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", (as.length()) / 4) + as);
+		AlgUtil.println("");
 	}
 }

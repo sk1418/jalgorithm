@@ -15,7 +15,7 @@ public class AlgUtilTest {
 	 * 
 	 */
 	@Test
-	public void getRandomIntArrayTest() {
+	public void testGetRandomIntArray() {
 		final int[] a = AlgUtil.getRandomIntArray(100, 10000, false);
 		final int[] b = AlgUtil.getRandomIntArray(100, 20, true);
 
@@ -36,12 +36,18 @@ public class AlgUtilTest {
 	 * Adds the int to array test.
 	 */
 	@Test
-	public void addIntToArrayTest() {
-		int[] a = new int[] { 1, 2, 3 };
-		int[] result = AlgUtil.addIntToArray(a, 4);
+	public void testAddIntToArray() {
+		final int[] a = new int[] { 1, 2, 3 };
+		final int[] result = AlgUtil.addIntToArray(a, 4);
 		Assert.assertEquals(4, result.length);
 		Assert.assertEquals(4, result[result.length - 1]);
 
+	}
+
+	@Test
+	public void testPrintHeap() {
+		final int[] testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28, 48, 88, 99, 100, 120 };
+		AlgUtil.printHeap(testArray, testArray.length);
 	}
 
 }

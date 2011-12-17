@@ -10,7 +10,6 @@ public class BaseTest {
 
 	protected void testInfo(String methodName) {
 		log.debug("");
-		log.debug("");
 		log.debug("============================");
 		log.debug(" Testing " + methodName);
 		log.debug("============================");
@@ -24,6 +23,5 @@ public class BaseTest {
 	@After
 	public void endTest() {
 		log.info("Elapsed: " + (System.currentTimeMillis() - this.startTime) + " ms.");
-		log.debug("\n\n");
 	}
 }

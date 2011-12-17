@@ -100,7 +100,7 @@ public final class AlgUtil {
 	}
 
 	public static void printIntArray(final int[] a) {
-		print(Arrays.toString(a));
+		println(Arrays.toString(a));
 	}
 
 	/**
@@ -126,8 +126,12 @@ public final class AlgUtil {
 	 * @param text
 	 *            the text
 	 */
-	public static void print(final String text) {
+	public static void println(final String text) {
 		System.out.println(text);
+	}
+
+	public static void print(final String text) {
+		System.out.print(text);
 	}
 
 	/**
@@ -157,6 +161,47 @@ public final class AlgUtil {
 		final char[] c = new char[25];
 		Arrays.fill(c, '\n');
 		// System.out.print((char) 27 + "[2J");
-		print(String.copyValueOf(c));
+		println(String.copyValueOf(c));
+	}
+
+	public static void printHeap(int[] a, int heapSize) {
+		final int h = (int) (Math.log(heapSize - 1) / Math.log(2)); // height of the tree/heap
+		int leadingBlanks = 2 << h; // leading spaces
+		int startIdx;
+		String fmt;
+		for (int i = 0; i <= h; i++) {
+			if (i == 0) {
+				startIdx = 0;
+			} else {
+				startIdx = (2 << i - 1) - 1;
+			}
+			print(repeatString(" ", leadingBlanks));
+			final int distance = 2 * leadingBlanks;
+
+			int count = i == 0 ? 1 : 2 << i - 1;
+			int count2 = count;
+			while (count > 0 && startIdx < heapSize) {
+				fmt = "%-" + distance + "s";
+				final String s = String.format(fmt, a[startIdx]);
+				print(s);
+				startIdx++;
+				count--;
+			}
+			println("");
+			if (i != h) {
+				print(repeatString(" ", leadingBlanks / 2 + 1));
+				while (count2 > 0) {
+					fmt = "%-" + distance / 2 + "s";
+					final String between = distance / 2 < 6 ? repeatString(" ", distance / 2 - 2) : repeatString("-", distance / 4 - 4)
+							+ repeatString(" ", 6) + repeatString("-", distance / 4 - 4);
+					final String s = String.format(fmt, "/" + between + "\\" + repeatString(" ", distance / 2));
+					print(s);
+					count2--;
+				}
+				println("");
+			}
+			leadingBlanks /= 2; // blanks/=2
+		}
+
 	}
 }

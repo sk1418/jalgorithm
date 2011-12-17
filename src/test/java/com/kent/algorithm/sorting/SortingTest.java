@@ -94,10 +94,24 @@ public class SortingTest extends BaseTest {
 		Assert.assertArrayEquals(sortedArray, testArray);
 	}
 
+	/**
+	 * Test optimized merge sort.
+	 */
 	@Test
 	public void testOptimizedMergeSort() {
 		testInfo("OpetimizedMergeSort");
 		sorting = new OptimizedMergeSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	/**
+	 * Test HeapSort
+	 */
+	@Test
+	public void testHeapSort() {
+		testInfo("HeapSort");
+		sorting = new HeapSort();
 		sorting.sort(testArray);
 		Assert.assertArrayEquals(sortedArray, testArray);
 	}

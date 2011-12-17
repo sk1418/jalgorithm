@@ -59,15 +59,15 @@ public class Demo {
 		while (input != 0) {
 			try {
 
-				AlgUtil.print(AlgUtil.repeatString("\n", 3));
-				AlgUtil.print("Available Demos:");
-				AlgUtil.print(AlgUtil.repeatString("=", 70));
-				AlgUtil.print(getDemoTypePrintList());
-				AlgUtil.print(AlgUtil.repeatString("=", 70));
+				AlgUtil.println(AlgUtil.repeatString("\n", 3));
+				AlgUtil.println("Available Demos:");
+				AlgUtil.println(AlgUtil.repeatString("=", 70));
+				AlgUtil.println(getDemoTypePrintList());
+				AlgUtil.println(AlgUtil.repeatString("=", 70));
 				if (!demoTypeMap.containsKey(input)) {
-					AlgUtil.print("unknow demo index, please input a valid demo index (0 to exit):");
+					AlgUtil.println("unknow demo index, please input a valid demo index (0 to exit):");
 				} else {
-					AlgUtil.print("select the demo index (press 0 to exit):");
+					AlgUtil.println("select the demo index (press 0 to exit):");
 				}
 				tmp = scanner.nextLine();
 				input = Integer.valueOf(tmp);
@@ -76,9 +76,9 @@ public class Demo {
 				}
 				if (demoTypeMap.containsKey(input)) {
 					final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
-					AlgUtil.print(AlgUtil.repeatString("\n", 2));
+					AlgUtil.println(AlgUtil.repeatString("\n", 2));
 					AlgUtil.clear();
-					AlgUtil.print("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
+					AlgUtil.println("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
 				}
 			} catch (final Exception e) {
@@ -86,7 +86,7 @@ public class Demo {
 			}
 		}
 
-		AlgUtil.print("exiting...");
+		AlgUtil.println("exiting...");
 		System.exit(0);
 	}
 
