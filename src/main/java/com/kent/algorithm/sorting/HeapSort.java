@@ -8,11 +8,12 @@ import com.kent.util.AlgUtil;
 /**
  * 
  * <b>HeapSort</b><br/>
+ * Sorting with Max-Heap (nearly a complete binary tree) data structure to sort.
  * <ol>
- * <li></li>
- * <li></li>
- * <li></li>
- * <li></li>
+ * <li>build the Max heap</li>
+ * <li>pop the root as the largest element, heapSize-1</li>
+ * <li>max-heapify the rest heap nodes</li>
+ * <li>continue step2 and 3 till the heap is empty.</li>
  * </ol>
  * <p>
  * 
