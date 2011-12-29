@@ -27,6 +27,38 @@ import com.kent.util.AlgUtil;
  * worst case:O(n^2) <br/>
  * average O(nlogn)
  * </p>
+ * <p>
+ * <b>quote from wikipedia:<br/>
+ * </b> <b>Comparison with other sorting algorithms</b><br>
+ * Quicksort is a space-optimized version of the binary tree sort. Instead of inserting items sequentially into an explicit tree, quicksort organizes
+ * them concurrently into a tree that is implied by the recursive calls. The algorithms make exactly the same comparisons, but in a different order.
+ * An often desirable property of a sorting algorithm is stability - that is the order of elements that compare equal is not changed, allowing
+ * controlling order of multikey tables (e.g. directory or folder listings) in a natural way. This property is hard to maintain for in situ (or in
+ * place) quicksort (that uses only constant additional space for pointers and buffers, and logN additional space for the management of explicit or
+ * implicit recursion). For variant quicksorts involving extra memory due to representations using pointers (e.g. lists or trees) or files
+ * (effectively lists), it is trivial to maintain stability. The more complex, or disk-bound, data structures tend to increase time cost, in general
+ * making increasing use of virtual memory or disk.
+ * </p>
+ * <p>
+ * The most direct competitor of quicksort is heapsort. Heapsort's worst-case running time is always O(n log n). But, heapsort is assumed to be on
+ * average somewhat slower than standard in-place quicksort. This is still debated and in research, with some publications indicating the
+ * opposite.[13][14] Introsort is a variant of quicksort that switches to heapsort when a bad case is detected to avoid quicksort's worst-case running
+ * time. If it is known in advance that heapsort is going to be necessary, using it directly will be faster than waiting for introsort to switch to
+ * it.
+ * </P>
+ * <p>
+ * Quicksort also competes with mergesort, another recursive sort algorithm but with the benefit of worst-case O(n log n) running time. Mergesort is a
+ * stable sort, unlike standard in-place quicksort and heapsort, and can be easily adapted to operate on linked lists and very large lists stored on
+ * slow-to-access media such as disk storage or network attached storage. Like mergesort, quicksort can be implemented as an in-place stable sort
+ * [15], but this is seldom done. Although quicksort can be written to operate on linked lists, it will often suffer from poor pivot choices without
+ * random access. The main disadvantage of mergesort is that, when operating on arrays, efficient implementations require O(n) auxiliary space,
+ * whereas the variant of quicksort with in-place partitioning and tail recursion uses only O(log n) space. (Note that when operating on linked lists,
+ * mergesort only requires a small, constant amount of auxiliary storage.)
+ * </p>
+ * <p>
+ * Bucket sort with two buckets is very similar to quicksort; the pivot in this case is effectively the value in the middle of the value range, which
+ * does well on average for uniformly distributed inputs.
+ * </p>
  * 
  * @author kent
  * 
