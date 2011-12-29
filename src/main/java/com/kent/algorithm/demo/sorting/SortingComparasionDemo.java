@@ -10,6 +10,7 @@ import com.kent.algorithm.sorting.HeapSort;
 import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.OptimizedMergeSort;
+import com.kent.algorithm.sorting.QuickSort;
 import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.util.AlgUtil;
 
@@ -19,13 +20,13 @@ import com.kent.util.AlgUtil;
 public class SortingComparasionDemo extends AbstractDemo {
 
 	/** The Constant FMT. */
-	private static final String FMT = "%-10s| %-21s| %7s ms.";
+	private static final String FMT = "%-20s| %-21s| %7s ms.";
 
 	/** The Constant SPL. */
-	private static final String SPL = AlgUtil.repeatString("-", 45);
+	private static final String SPL = AlgUtil.repeatString("-", 65);
 
 	/** The Constant SPLT. */
-	private static final String SPLT = AlgUtil.repeatString("=", 45);
+	private static final String SPLT = AlgUtil.repeatString("=", 65);
 
 	/** The data. */
 	private int[] data;
@@ -40,6 +41,8 @@ public class SortingComparasionDemo extends AbstractDemo {
 
 		print(String.format("Sorting %7s elements", data.length));
 		print(SPLT);
+		print(String.format(FMT, "Sort", "Complexity(BigO)", "time elasped -"));
+		print(SPLT);
 		for (final Sorting sort : demoList) {
 			// cp array
 			testData = new int[data.length];
@@ -51,7 +54,7 @@ public class SortingComparasionDemo extends AbstractDemo {
 
 			stopwatch.stop();
 
-			print(String.format(FMT, sort.getBigO(), sort.getClass().getSimpleName(), stopwatch.read()));
+			print(String.format(FMT, sort.getClass().getSimpleName(), sort.getBigO(), stopwatch.read()));
 			print(SPL);
 			testData = null;
 
@@ -69,6 +72,7 @@ public class SortingComparasionDemo extends AbstractDemo {
 		demoList.add(new MergeSort());
 		demoList.add(new OptimizedMergeSort());
 		demoList.add(new HeapSort());
+		demoList.add(new QuickSort());
 
 	}
 

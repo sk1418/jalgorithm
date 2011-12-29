@@ -3,7 +3,7 @@ package com.kent.algorithm.demo.sorting;
 import com.kent.algorithm.sorting.HeapSort;
 
 /**
- * The Class InsertionSortDemo.
+ * The Class HeapSortDemo.
  */
 public class HeapSortDemo extends AbstractSortingDemo {
 

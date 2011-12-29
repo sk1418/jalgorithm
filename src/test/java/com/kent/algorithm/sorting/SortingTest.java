@@ -120,10 +120,19 @@ public class SortingTest extends BaseTest {
 	 * Test quick sort.
 	 */
 	@Test
-	public void testQuickSort() {
+	public void testOldQuickSort() {
 		testInfo("quickSorting");
 		sortingo.quickSort(testArray, 0, testArray.length - 1);
 		Assert.assertArrayEquals(sortedArray, testArray);
+	}
+
+	@Test
+	public void testQuichSort() {
+		testInfo("quickSorting");
+		sorting = new QuickSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+
 	}
 
 }

@@ -12,6 +12,7 @@ import com.kent.algorithm.demo.sorting.HeapSortDemo;
 import com.kent.algorithm.demo.sorting.InsertionSortDemo;
 import com.kent.algorithm.demo.sorting.MergeSortDemo;
 import com.kent.algorithm.demo.sorting.OptimizedMergeSortDemo;
+import com.kent.algorithm.demo.sorting.QuickSortDemo;
 import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.util.AlgUtil;
 
@@ -27,8 +28,9 @@ public class Demo {
 		InsertionSort(2, InsertionSortDemo.class), 
 		BubbleSort(3, BubbleSortDemo.class), 
 		MergeSort(4, MergeSortDemo.class), 
-		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),
-		HeapSort(6,HeapSortDemo.class),
+		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),   
+		HeapSort(6,HeapSortDemo.class), 
+		QuickSort(7,QuickSortDemo.class), 
 		//problems
 		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
@@ -37,7 +39,7 @@ public class Demo {
 		private final int idx;
 		private final Class<? extends AbstractDemo> demoClass;
 
-		DemoType(int idx, Class<? extends AbstractDemo> demoClass) {
+		DemoType(final int idx, final Class<? extends AbstractDemo> demoClass) {
 			this.idx = idx;
 			this.demoClass = demoClass;
 		}
