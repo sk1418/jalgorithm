@@ -14,8 +14,8 @@ import com.kent.util.AlgUtil;
  * 
  * 
  * <ol>
- * <li>select the last element(r) as Privot.</li>
- * <li>all elements with index 0->i are smaller than privot, and all elements with index i-(r-1) are greater than privot</li>
+ * <li>select the last element(r) as pivot.</li>
+ * <li>all elements with index 0->i are smaller than pivot, and all elements with index i-(r-1) are greater than pivot</li>
  * <li>recursively partitioning, will finish the sorting.</li>
  * </ol>
  * <p>
@@ -115,16 +115,16 @@ public class QuickSort extends Sorting {
 	 */
 	private int patition(final int[] a, final int p, final int r) {
 
-		// set the last element as privot
-		final int privot = a[r];
+		// set the last element as pivot
+		final int pivot = a[r];
 		int i = p - 1, j = p;
 		for (; j < r; j++) {
-			if (a[j] < privot) {
+			if (a[j] < pivot) {
 				i++;
 				AlgUtil.swap(a, i, j);
 			}
 		}
-		// swap a[i+1] and privot
+		// swap a[i+1] and pivot
 		AlgUtil.swap(a, i + 1, r);
 		return i + 1;
 	}

@@ -187,12 +187,20 @@ public final class AlgUtil {
 	 *            the index of node, which needs to be highlighted
 	 */
 	public static void printBinaryTree(int[] a, int heapSize, int flagIdx) {
+		println("");
+		if (heapSize == 2) {
+			println("  " + a[0] + String.valueOf(flagIdx == 0 ? "*" : ""));
+			println("  |");
+			println("  " + a[1] + String.valueOf(flagIdx == 1 ? "*" : ""));
+			println("");
+			return;
+		}
 		final int h = (int) (Math.log(heapSize - 1) / Math.log(2)); // height of the tree/heap
 		int leadingBlanks = 2 << h; // leading spaces
 		int startIdx;
 		String fmt;
 		StringBuffer sb;
-		println("");
+
 		for (int i = 0; i <= h; i++) {
 			if (i == 0) {
 				startIdx = 0;

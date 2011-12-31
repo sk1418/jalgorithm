@@ -47,7 +47,9 @@ public class AlgUtilTest {
 	@Test
 	public void testPrintHeap() {
 		final int[] testArray = new int[] { 82, 2, 32, 768, 23, 106, 0, 23, 39, 34, 56, 16, 90, 17, 28, 48, 88, 99, 100, 120, 8, 27, 31 };
+		final int[] testArray2 = new int[] { 82, 2 };
 		AlgUtil.printBinaryTree(testArray, testArray.length, 6);
+		AlgUtil.printBinaryTree(testArray2, testArray2.length, 1);
 	}
 
 }

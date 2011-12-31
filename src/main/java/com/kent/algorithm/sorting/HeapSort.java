@@ -57,6 +57,10 @@ public class HeapSort extends Sorting {
 			}
 			HeapSize--;
 			maxHeapify(a, 0);
+			if (isPrintSteps()) {
+				AlgUtil.println("after max-heapifing:");
+				AlgUtil.printBinaryTree(a, HeapSize, i);
+			}
 		}
 	}
 

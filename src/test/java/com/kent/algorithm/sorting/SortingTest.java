@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.kent.algorithm.Sorting;
-import com.kent.algorithm.SortingOld;
 import com.kent.test.BaseTest;
 
 /**
@@ -23,9 +22,6 @@ public class SortingTest extends BaseTest {
 
 	/** The sorted array. */
 	private int[] sortedArray;
-
-	/** The sortingo. */
-	private final SortingOld sortingo = new SortingOld();
 
 	/** The sorting. */
 	private Sorting sorting;
@@ -119,13 +115,6 @@ public class SortingTest extends BaseTest {
 	/**
 	 * Test quick sort.
 	 */
-	@Test
-	public void testOldQuickSort() {
-		testInfo("quickSorting");
-		sortingo.quickSort(testArray, 0, testArray.length - 1);
-		Assert.assertArrayEquals(sortedArray, testArray);
-	}
-
 	@Test
 	public void testQuichSort() {
 		testInfo("quickSorting");
