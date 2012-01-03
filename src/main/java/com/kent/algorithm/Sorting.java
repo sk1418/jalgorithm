@@ -4,8 +4,8 @@ public abstract class Sorting implements Algorithm<int[], int[]> {
 	private boolean printSteps = false;
 
 	/**
-	 * For <b>Comparison Sorts</b>, the same array object would be sorted and returned. For Linear Time Sorting, the returned sorted array is a new
-	 * object
+	 * For <b>Comparison Sorts</b>, the same array object would be sorted and returned (In fact returning is not necessary). For Linear Time Sorting,
+	 * the returned sorted array is a new object
 	 * 
 	 * @param data
 	 *            , the array needs to be sorted
