@@ -33,7 +33,7 @@ import com.kent.util.AlgUtil;
 public class BubbleSort extends Sorting {
 
 	@Override
-	public void sort(int[] data) {
+	public int[] sort(int[] data) {
 		for (int i = 0; i < data.length; i++) {
 			for (int j = data.length - 1; j > i; j--) {
 				if (data[j - 1] > data[j]) {
@@ -47,6 +47,7 @@ public class BubbleSort extends Sorting {
 			}
 		}
 
+		return data;
 	}
 
 	@Override

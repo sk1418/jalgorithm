@@ -73,8 +73,9 @@ public class QuickSort extends Sorting {
 
 	/** {@inheritDoc} */
 	@Override
-	public void sort(final int[] data) {
+	public int[] sort(final int[] data) {
 		quickSort(data, 0, data.length - 1);
+		return data;
 
 	}
 

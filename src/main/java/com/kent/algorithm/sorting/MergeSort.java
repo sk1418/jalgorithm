@@ -40,8 +40,9 @@ public class MergeSort extends Sorting {
 
 	/** {@inheritDoc} */
 	@Override
-	public void sort(int[] data) {
+	public int[] sort(int[] data) {
 		mergeSorting(data, 0, data.length - 1);
+		return data;
 	}
 
 	/**

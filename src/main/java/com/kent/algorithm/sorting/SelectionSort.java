@@ -28,7 +28,7 @@ public class SelectionSort extends Sorting {
 	}
 
 	@Override
-	public void sort(int[] data) {
+	public int[] sort(int[] data) {
 		int minIdx;
 		for (int i = 0; i < data.length; i++) {
 			minIdx = i;
@@ -41,6 +41,7 @@ public class SelectionSort extends Sorting {
 				AlgUtil.swap(data, i, minIdx);
 			}
 		}
+		return data;
 	}
 
 }

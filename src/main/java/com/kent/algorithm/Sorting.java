@@ -3,12 +3,19 @@ package com.kent.algorithm;
 public abstract class Sorting implements Algorithm<int[], int[]> {
 	private boolean printSteps = false;
 
-	public abstract void sort(int[] data);
+	/**
+	 * For <b>Comparison Sorts</b>, the same array object would be sorted and returned. For Linear Time Sorting, the returned sorted array is a new
+	 * object
+	 * 
+	 * @param data
+	 *            , the array needs to be sorted
+	 * @return sorted array
+	 */
+	public abstract int[] sort(int[] data);
 
 	@Override
 	public int[] execute(int[] input) {
-		sort(input);
-		return input;
+		return sort(input);
 	}
 
 	public boolean isPrintSteps() {

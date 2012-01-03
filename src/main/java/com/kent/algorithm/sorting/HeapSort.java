@@ -31,12 +31,13 @@ public class HeapSort extends Sorting {
 	private static int HeapSize;
 
 	@Override
-	public void sort(int[] data) {
+	public int[] sort(int[] data) {
 		if (isPrintSteps()) {
 			AlgUtil.println("Init Heap:");
 			AlgUtil.printBinaryTree(data, data.length, Integer.MIN_VALUE);
 		}
 		doHeapSort(data);
+		return data;
 	}
 
 	private void doHeapSort(int[] a) {

@@ -25,7 +25,7 @@ import com.kent.util.AlgUtil;
 public class InsertionSort extends Sorting {
 
 	@Override
-	public void sort(int[] data) {
+	public int[] sort(int[] data) {
 		int key;
 		for (int i = 1; i < data.length; i++) {
 			key = data[i];
@@ -42,7 +42,7 @@ public class InsertionSort extends Sorting {
 			}
 
 		}
-
+		return data;
 	}
 
 	@Override
