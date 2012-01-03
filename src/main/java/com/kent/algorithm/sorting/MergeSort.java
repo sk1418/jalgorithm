@@ -19,7 +19,7 @@ import com.kent.util.AlgUtil;
  * In Merge process, there are two approaches: with or without sentinel
  * </p>
  * 
- * <b>Time complexity:</b> O(n log n) </p>
+ * <b>Time complexity:</b> O(n log n)
  * 
  * @author kent
  * 
@@ -177,16 +177,16 @@ public class MergeSort extends Sorting {
 	}
 
 	protected void printMergeStep(int[] left, int[] right) {
-		String ls = Arrays.toString(left);
-		String rs = Arrays.toString(right);
+		final String ls = Arrays.toString(left);
+		final String rs = Arrays.toString(right);
 		AlgUtil.println(MERGING + ls + " <-> " + rs);
 		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", ls.length() - 2) + " \\     / ");
 
 	}
 
 	protected void printMergeResult(int[] a) {
-		String as = Arrays.toString(a);
-		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", (as.length()) / 4) + as);
+		final String as = Arrays.toString(a);
+		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", as.length() / 4) + as);
 		AlgUtil.println("");
 	}
 }

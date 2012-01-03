@@ -18,7 +18,7 @@ public class SortingTest extends BaseTest {
 	private static final Logger LOG = Logger.getLogger(SortingTest.class);
 
 	/** The test array. */
-	private int[] testArray;// = RandomUtil.getRandomIntArray(2200, 300);
+	private int[] testArray;
 
 	/** The sorted array. */
 	private int[] sortedArray;

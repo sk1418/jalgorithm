@@ -19,7 +19,7 @@ import com.kent.util.AlgUtil;
 
 public class Demo {
 
-	private static Map<Integer, Class> demoTypeMap = new HashMap<Integer, Class>();
+	private static Map<Integer, Class<? extends AbstractDemo>> demoTypeMap = new HashMap<Integer, Class<? extends AbstractDemo>>();
 
 	enum DemoType {
 		// @formatter:off
@@ -29,10 +29,10 @@ public class Demo {
 		InsertionSort(2, InsertionSortDemo.class), 
 		BubbleSort(3, BubbleSortDemo.class), 
 		MergeSort(4, MergeSortDemo.class), 
-		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),   
-		HeapSort(6,HeapSortDemo.class), 
-		QuickSort(7,QuickSortDemo.class), 
-		CountingSort(8,CountingSortDemo.class), 
+		MergeSort_Optimized(5, OptimizedMergeSortDemo.class),   
+		HeapSort(6, HeapSortDemo.class), 
+		QuickSort(7 , QuickSortDemo.class), 
+		CountingSort(8, CountingSortDemo.class), 
 		//problems
 		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
@@ -86,7 +86,7 @@ public class Demo {
 					break;
 				}
 				if (demoTypeMap.containsKey(input)) {
-					final AbstractDemo demo = (AbstractDemo) demoTypeMap.get(input).newInstance();
+					final AbstractDemo demo = demoTypeMap.get(input).newInstance();
 					AlgUtil.println(AlgUtil.repeatString("\n", 2));
 					AlgUtil.clear();
 					AlgUtil.println("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");

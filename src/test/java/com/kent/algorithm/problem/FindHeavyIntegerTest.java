@@ -7,10 +7,17 @@ import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+/**
+ * The Class FindHeavyIntegerTest.
+ */
 public class FindHeavyIntegerTest {
 
+	/** The Constant LOG. */
 	private static final Logger LOG = Logger.getLogger(FindHeavyIntegerTest.class);
 
+	/**
+	 * Solution test.
+	 */
 	@Test
 	public void solutionTest() {
 		final FindHeavyIntegers problem = new FindHeavyIntegers();

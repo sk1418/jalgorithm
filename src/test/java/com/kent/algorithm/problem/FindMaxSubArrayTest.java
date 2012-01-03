@@ -5,10 +5,16 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.kent.algorithm.Problem;
-import com.kent.algorithm.problem.FindMaxSubArray;
 import com.kent.test.BaseTest;
 
-public class FindMaxSubArrayTest extends BaseTest{
+/**
+ * The Class FindMaxSubArrayTest.
+ */
+public class FindMaxSubArrayTest extends BaseTest {
+
+	/**
+	 * Find max sub array test.
+	 */
 	@Test
 	public void findMaxSubArrayTest() {
 		testInfo("findMaxSubArray");

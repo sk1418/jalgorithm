@@ -4,8 +4,14 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+/**
+ * The Class BinarySearchProblemTest.
+ */
 public class BinarySearchProblemTest {
 
+	/**
+	 * Binary search test.
+	 */
 	@Test
 	public void binarySearchTest() {
 

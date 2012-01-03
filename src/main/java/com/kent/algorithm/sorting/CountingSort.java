@@ -29,8 +29,8 @@ public class CountingSort extends Sorting {
 	/** {@inheritDoc} */
 	@Override
 	public int[] sort(int[] data) {
-		int[] count = new int[maxValue + 1]; // temp array
-		int[] r = new int[data.length]; // result
+		final int[] count = new int[maxValue + 1]; // temp array
+		final int[] r = new int[data.length]; // result
 		for (int i = 0; i < data.length; i++) {
 			count[data[i]]++;
 		}
@@ -51,6 +51,13 @@ public class CountingSort extends Sorting {
 		return r;
 	}
 
+	/**
+	 * print the step info
+	 * 
+	 * @param data
+	 * @param count
+	 * @param r
+	 */
 	private void printStep(int[] data, int[] count, int[] r) {
 		if (isPrintSteps()) {
 			AlgUtil.print("    original: ");
