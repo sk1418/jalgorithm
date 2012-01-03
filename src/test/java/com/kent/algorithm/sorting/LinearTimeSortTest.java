@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.kent.algorithm.demo.sorting.CountingSort;
 import com.kent.test.BaseTest;
 
 public class LinearTimeSortTest extends BaseTest {

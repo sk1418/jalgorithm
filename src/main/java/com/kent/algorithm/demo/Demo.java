@@ -8,6 +8,7 @@ import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
+import com.kent.algorithm.demo.sorting.CountingSortDemo;
 import com.kent.algorithm.demo.sorting.HeapSortDemo;
 import com.kent.algorithm.demo.sorting.InsertionSortDemo;
 import com.kent.algorithm.demo.sorting.MergeSortDemo;
@@ -31,6 +32,7 @@ public class Demo {
 		MergeSort_Optimized(5,OptimizedMergeSortDemo.class),   
 		HeapSort(6,HeapSortDemo.class), 
 		QuickSort(7,QuickSortDemo.class), 
+		CountingSort(8,CountingSortDemo.class), 
 		//problems
 		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
