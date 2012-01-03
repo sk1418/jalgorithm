@@ -22,10 +22,21 @@ public class LinearTimeSortTest extends BaseTest {
 		testArray = new int[] { 3, 2, 4, 1, 3, 4, 0, 6, 0, 2, 1, 4 };
 		sortedArray = new int[] { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 6 };
 		testInfo("CountingSort");
-		CountingSort sorting = new CountingSort();
+		final CountingSort sorting = new CountingSort();
 		sorting.setMaxValue(6);
 		sorting.setPrintSteps(true);
-		int[] c = sorting.sort(testArray);
+		final int[] c = sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, c);
+	}
+
+	@Test
+	public void testRadixSort() {
+		testArray = new int[] { 233, 442, 349, 102, 477 };
+		sortedArray = new int[] { 102, 233, 349, 442, 477 };
+		testInfo("RadixSort");
+		final RadixSort sorting = new RadixSort();
+		sorting.setPrintSteps(true);
+		final int[] c = sorting.sort(testArray);
 		Assert.assertArrayEquals(sortedArray, c);
 	}
 }

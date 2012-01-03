@@ -41,7 +41,7 @@ public class CountingSort extends Sorting {
 		// print step
 		printStep(data, count, r);
 
-		for (int i = 0; i < data.length; i++) {
+		for (int i = data.length - 1; i >= 0; i--) {
 			r[count[data[i]] - 1] = data[i];
 			count[data[i]]--;
 			// print step
