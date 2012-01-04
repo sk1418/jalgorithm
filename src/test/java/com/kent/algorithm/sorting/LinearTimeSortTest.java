@@ -31,8 +31,8 @@ public class LinearTimeSortTest extends BaseTest {
 
 	@Test
 	public void testRadixSort() {
-		testArray = new int[] { 233, 442, 349, 102, 477 };
-		sortedArray = new int[] { 102, 233, 349, 442, 477 };
+		testArray = new int[] { 233, 442, 349, 102, 477, 35, 20, 200 };
+		sortedArray = new int[] { 20, 35, 102, 200, 233, 349, 442, 477 };
 		testInfo("RadixSort");
 		final RadixSort sorting = new RadixSort();
 		sorting.setPrintSteps(true);
