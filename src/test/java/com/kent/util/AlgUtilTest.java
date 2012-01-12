@@ -51,5 +51,4 @@ public class AlgUtilTest {
 		AlgUtil.printBinaryTree(testArray, testArray.length, 6);
 		AlgUtil.printBinaryTree(testArray2, testArray2.length, 1);
 	}
-
 }

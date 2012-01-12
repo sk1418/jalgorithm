@@ -39,4 +39,18 @@ public class LinearTimeSortTest extends BaseTest {
 		final int[] c = sorting.sort(testArray);
 		Assert.assertArrayEquals(sortedArray, c);
 	}
+
+	@Test
+	public void testBucketSort() {
+		testArray = new int[] { 85, 12, 2, 22, 33, 44, 55, 66, 77, 87, 81, 67, 83, 89, 82, 88, 86, 84, 88, 99 };
+		sortedArray = new int[] { 2, 12, 22, 33, 44, 55, 66, 67, 77, 81, 82, 83, 84, 85, 86, 87, 88, 88, 89, 99 };
+		testInfo("BucketSort");
+		final BucketSort sorting = new BucketSort();
+		sorting.setMaxValue(100);
+		sorting.setMinValue(1);
+		sorting.setNumberOfElements(20);
+		sorting.setPrintSteps(true);
+		final int[] c = sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, c);
+	}
 }
