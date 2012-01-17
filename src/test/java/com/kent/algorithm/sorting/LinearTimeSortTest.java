@@ -48,7 +48,6 @@ public class LinearTimeSortTest extends BaseTest {
 		final BucketSort sorting = new BucketSort();
 		sorting.setMaxValue(100);
 		sorting.setMinValue(1);
-		sorting.setNumberOfElements(20);
 		sorting.setPrintSteps(true);
 		final int[] c = sorting.sort(testArray);
 		Assert.assertArrayEquals(sortedArray, c);
