@@ -32,7 +32,7 @@ public class HeapSort extends Sorting {
 
 	@Override
 	public int[] sort(int[] data) {
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.println("Init Heap:");
 			AlgUtil.printBinaryTree(data, data.length, Integer.MIN_VALUE);
 		}
@@ -44,21 +44,21 @@ public class HeapSort extends Sorting {
 
 		buildMaxHeap(a);
 
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.println("Max Heap:");
 			AlgUtil.printBinaryTree(a, HeapSize, Integer.MIN_VALUE);
 		}
 
 		for (int i = a.length - 1; i >= 1; i--) {
 			AlgUtil.swap(a, 0, i);
-			if (isPrintSteps()) {
+			if (printSteps()) {
 				AlgUtil.printBinaryTree(a, HeapSize, i);
 				AlgUtil.print("array status:");
 				AlgUtil.printIntArray(Arrays.copyOfRange(a, i, a.length));
 			}
 			HeapSize--;
 			maxHeapify(a, 0);
-			if (isPrintSteps()) {
+			if (printSteps()) {
 				AlgUtil.println("after max-heapifing:");
 				AlgUtil.printBinaryTree(a, HeapSize, i);
 			}

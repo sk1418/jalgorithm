@@ -59,7 +59,7 @@ public class CountingSort extends Sorting {
 	 * @param r
 	 */
 	private void printStep(int[] data, int[] count, int[] r) {
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.print("    original: ");
 			AlgUtil.printIntArray(data);
 			AlgUtil.print("count  array: ");

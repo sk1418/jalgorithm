@@ -18,7 +18,8 @@ public abstract class Sorting implements Algorithm<int[], int[]> {
 		return sort(input);
 	}
 
-	public boolean isPrintSteps() {
+	@Override
+	public boolean printSteps() {
 		return printSteps;
 	}
 

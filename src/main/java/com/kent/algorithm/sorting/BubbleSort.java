@@ -40,7 +40,7 @@ public class BubbleSort extends Sorting {
 					AlgUtil.swap(data, j, j - 1);
 
 					// status after every step:
-					if (isPrintSteps()) {
+					if (printSteps()) {
 						AlgUtil.printIntArray(data);
 					}
 				}

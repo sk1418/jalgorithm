@@ -92,7 +92,7 @@ public class QuickSort extends Sorting {
 	public void quickSort(final int[] a, final int p, final int r) {
 		final int q = patition(a, p, r);
 		// print step info
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.printIntArray(a);
 		}
 		if (q > p) {

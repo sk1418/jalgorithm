@@ -35,6 +35,7 @@ public class SortingPositiveIntegersWithTotalNDigits extends Problem<int[], int[
 
 		int[] tmp;
 		int j = 0;
+
 		for (int i = 1; i < groups.length; i++) {
 			radixSort.setFixDigits(i);
 			tmp = radixSort.sort(groups[i]);
@@ -42,6 +43,11 @@ public class SortingPositiveIntegersWithTotalNDigits extends Problem<int[], int[
 				data[j++] = t;
 			}
 		}
+		if (printSteps()) {
+			AlgUtil.println("finally sort each group with radix sort: ");
+			AlgUtil.printIntArray(data);
+		}
+
 		return data;
 	}
 
@@ -52,31 +58,46 @@ public class SortingPositiveIntegersWithTotalNDigits extends Problem<int[], int[
 	 */
 	private int[][] scattering(int[] input) {
 		final int d = findMaxDigits(input);
+		// print info
+		if (printSteps()) {
+			AlgUtil.println("Max digits among all elements : " + d);
+		}
 		final int[][] groups = new int[d + 1][0];
 		for (int i = 0; i < input.length; i++) {
 			final int e = input[i];
 			final int di = (int) Math.log10(e) + 1;
 			groups[di] = AlgUtil.addIntToArray(groups[di], e);
 		}
+
+		// print info
+		AlgUtil.println("group elements by digits numbers : ");
+		printGroupsInfo(groups);
 		return groups;
+
 	}
 
-	private int findMaxDigits(int[] input) {
-		final int maxE = findMaxElement(input);
-		return (int) Math.log10(maxE) + 1;
+	private void printGroupsInfo(final int[][] groups) {
+		if (printSteps()) {
+			final String fmt = " numbers with %2d digits : ";
+			for (int x = 1; x < groups.length; x++) {
+				AlgUtil.print(String.format(fmt, x));
+				AlgUtil.printIntArray(groups[x]);
+			}
+		}
 	}
 
 	/**
-	 * O(m)
+	 * find the largest digits among all elements
 	 * 
 	 * @param input
 	 * @return
 	 */
-	private int findMaxElement(int[] input) {
-		int max = 0;
+	private int findMaxDigits(int[] input) {
+		int maxE = 0;
 		for (final int e : input) {
-			max = e > max ? e : max;
+			maxE = e > maxE ? e : maxE;
 		}
-		return max;
+		return (int) Math.log10(maxE) + 1;
 	}
+
 }

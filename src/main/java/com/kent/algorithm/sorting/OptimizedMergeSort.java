@@ -19,7 +19,7 @@ public class OptimizedMergeSort extends MergeSort {
 		if (len < INSERTIONSORT_THRESHOLD) {
 
 			// print info
-			if (isPrintSteps()) {
+			if (printSteps()) {
 				System.out.print("InsertionSort : " + Arrays.toString(Arrays.copyOfRange(data, f, t + 1)) + " -> ");
 			}
 
@@ -34,7 +34,7 @@ public class OptimizedMergeSort extends MergeSort {
 			}
 
 			// print info
-			if (isPrintSteps()) {
+			if (printSteps()) {
 				AlgUtil.printIntArray(Arrays.copyOfRange(data, f, t + 1));
 			}
 			return;

@@ -5,4 +5,11 @@ public interface Algorithm<I, T> {
 
 	T execute(I input);
 
+	/**
+	 * the flag, if print the step info. this method could be used by demo classes.
+	 * 
+	 * @return
+	 */
+	boolean printSteps();
+
 }

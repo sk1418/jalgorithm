@@ -1,6 +1,5 @@
 package com.kent.algorithm;
 
-
 /**
  * The Class MiscAlgorithm.
  * 
@@ -10,6 +9,7 @@ package com.kent.algorithm;
  *            the generic type
  */
 public abstract class Problem<I, T> implements Algorithm<I, T> {
+	private boolean printSteps = false;
 
 	/**
 	 * Execute the implementation to solve the problem.
@@ -23,6 +23,15 @@ public abstract class Problem<I, T> implements Algorithm<I, T> {
 	@Override
 	public T execute(I input) {
 		return solve(input);
+	}
+
+	@Override
+	public boolean printSteps() {
+		return printSteps;
+	}
+
+	public void setPrintSteps(boolean printSteps) {
+		this.printSteps = printSteps;
 	}
 
 }

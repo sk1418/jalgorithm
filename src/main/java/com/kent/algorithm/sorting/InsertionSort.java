@@ -37,7 +37,7 @@ public class InsertionSort extends Sorting {
 			data[j + 1] = key;
 
 			// status after every step:
-			if (isPrintSteps()) {
+			if (printSteps()) {
 				AlgUtil.println("key:" + key + " \n" + Arrays.toString(data));
 			}
 

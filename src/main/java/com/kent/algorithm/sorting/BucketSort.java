@@ -47,7 +47,7 @@ public class BucketSort extends Sorting {
 			buckets[i] = new LinkedList<Integer>();
 		}
 
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.print("Original Array : ");
 			AlgUtil.printIntArray(data);
 			AlgUtil.println("");
@@ -66,7 +66,7 @@ public class BucketSort extends Sorting {
 				data[i++] = e;
 			}
 		}
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.println("Gathering: put element in buckets back to original Array : ");
 			AlgUtil.printIntArray(data);
 			AlgUtil.println("");
@@ -84,7 +84,7 @@ public class BucketSort extends Sorting {
 			data[j + 1] = k;
 
 		}
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.println("Do insert Sort on original array:");
 			AlgUtil.printIntArray(data);
 			AlgUtil.println("");
@@ -94,7 +94,7 @@ public class BucketSort extends Sorting {
 	}
 
 	private void stepInfoAfterScattering(List<Integer>[] buckets) {
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			AlgUtil.println("");
 			AlgUtil.println("scattering: distribute the elements into buckets:");
 			for (int i = 0; i < buckets.length; i++) {

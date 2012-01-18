@@ -92,7 +92,7 @@ public class MergeSort extends Sorting {
 		final int[] right = Arrays.copyOfRange(data, mid + 1, to + 1 + 1);
 
 		// print info
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			printMergeStep(left, right);
 		}
 		// add one infinitely great value at the end of each array
@@ -110,7 +110,7 @@ public class MergeSort extends Sorting {
 				j++;
 			}
 		}
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			printMergeResult(Arrays.copyOfRange(data, from, to + 1));
 		}
 	}
@@ -136,7 +136,7 @@ public class MergeSort extends Sorting {
 		int k = from; // idx of original array (data)
 
 		// print info
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			printMergeStep(left, right);
 		}
 
@@ -171,7 +171,7 @@ public class MergeSort extends Sorting {
 		}
 
 		// print info
-		if (isPrintSteps()) {
+		if (printSteps()) {
 			printMergeResult(Arrays.copyOfRange(data, from, to + 1));
 		}
 	}
