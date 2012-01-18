@@ -25,6 +25,9 @@ import com.kent.algorithm.Sorting;
  */
 public class RadixSort extends Sorting {
 
+	/** The fix digits. */
+	private int fixDigits;
+
 	/** {@inheritDoc} */
 	@Override
 	public String getBigO() {
@@ -34,7 +37,7 @@ public class RadixSort extends Sorting {
 	/** {@inheritDoc} */
 	@Override
 	public int[] sort(int[] data) {
-		final int d = getMaxNumberOfDigits(data);
+		final int d = fixDigits > 0 ? fixDigits : getMaxNumberOfDigits(data);
 		final int[] t = doRadixSort(data, d, 1);
 		return t;
 	}
@@ -121,6 +124,16 @@ public class RadixSort extends Sorting {
 		}
 		return maxAbs;
 
+	}
+
+	/**
+	 * Sets the fix digits.
+	 * 
+	 * @param fixDigits
+	 *            the new fix digits
+	 */
+	public void setFixDigits(int fixDigits) {
+		this.fixDigits = fixDigits;
 	}
 
 }
