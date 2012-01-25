@@ -87,7 +87,7 @@ public class FindHeavyIntegers extends Problem<int[], int[]> {
 			if (digSum < reqSum) {
 				a += getIncrement(a, reqSum - digSum);
 			} else { // heavy integer
-				result = AlgUtil.addIntToArray(result, a);
+				result = AlgUtil.appendIntArray(result, a);
 				a++;
 			}
 		}

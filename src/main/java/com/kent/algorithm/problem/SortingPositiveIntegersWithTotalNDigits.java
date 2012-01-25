@@ -66,7 +66,7 @@ public class SortingPositiveIntegersWithTotalNDigits extends Problem<int[], int[
 		for (int i = 0; i < input.length; i++) {
 			final int e = input[i];
 			final int di = (int) Math.log10(e) + 1;
-			groups[di] = AlgUtil.addIntToArray(groups[di], e);
+			groups[di] = AlgUtil.appendIntArray(groups[di], e);
 		}
 
 		// print info

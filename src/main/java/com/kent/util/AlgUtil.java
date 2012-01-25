@@ -89,12 +89,22 @@ public final class AlgUtil {
 	 *            the v
 	 * @return the int[] the new array object with the given v at the end
 	 */
-	public static synchronized int[] addIntToArray(final int[] a, final int v) {
+	public static synchronized int[] appendIntArray(final int[] a, final int v) {
 		if (a == null) {
 			return a;
 		}
 		final int l = a.length + 1;
 		final int[] newA = Arrays.copyOf(a, l);
+		newA[l - 1] = v;
+		return newA;
+	}
+
+	public static synchronized String[] addStringToArray(final String[] a, final String v) {
+		if (a == null) {
+			return a;
+		}
+		final int l = a.length + 1;
+		final String[] newA = Arrays.copyOf(a, l);
 		newA[l - 1] = v;
 		return newA;
 	}

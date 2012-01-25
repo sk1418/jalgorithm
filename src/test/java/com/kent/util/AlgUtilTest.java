@@ -38,7 +38,7 @@ public class AlgUtilTest {
 	@Test
 	public void testAddIntToArray() {
 		final int[] a = new int[] { 1, 2, 3 };
-		final int[] result = AlgUtil.addIntToArray(a, 4);
+		final int[] result = AlgUtil.appendIntArray(a, 4);
 		Assert.assertEquals(4, result.length);
 		Assert.assertEquals(4, result[result.length - 1]);
 
@@ -51,4 +51,5 @@ public class AlgUtilTest {
 		AlgUtil.printBinaryTree(testArray, testArray.length, 6);
 		AlgUtil.printBinaryTree(testArray2, testArray2.length, 1);
 	}
+
 }

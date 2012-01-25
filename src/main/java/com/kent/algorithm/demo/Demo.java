@@ -8,6 +8,7 @@ import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
+import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.CountingSortDemo;
 import com.kent.algorithm.demo.sorting.HeapSortDemo;
@@ -38,7 +39,9 @@ public class Demo {
 		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
 		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(12, FindHeavyIntegerDemo.class),
-		Problem_SortingIntegerWithNDigits(13, SortingIntegersWithNDigitsDemo.class);
+		Problem_SortingIntegerWithNDigits(13, SortingIntegersWithNDigitsDemo.class),
+		Problem_SortingStringsWithNChars(14, SortingStringsWithNCharsDemo.class);
+		
 		// @formatter:on
 		private final int idx;
 		private final Class<? extends AbstractDemo> demoClass;
