@@ -34,6 +34,12 @@ public final class AlgUtil {
 
 	}
 
+	public static int getRandomInRange(int min, int max) {
+		final Random rand = new Random();
+		return rand.nextInt(max - min + 1) + min;
+
+	}
+
 	/**
 	 * get a random int[] array.
 	 * 

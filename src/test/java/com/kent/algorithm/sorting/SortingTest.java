@@ -124,4 +124,14 @@ public class SortingTest extends BaseTest {
 
 	}
 
+	/**
+	 * Test randomized quick sort.
+	 */
+	@Test
+	public void testRandomizedQuichSort() {
+		testInfo("RandomizedQuickSorting");
+		sorting = new RandomizedQuickSort();
+		sorting.sort(testArray);
+		Assert.assertArrayEquals(sortedArray, testArray);
+	}
 }

@@ -90,7 +90,7 @@ public class QuickSort extends Sorting {
 	 *            the r the end index of sorting
 	 */
 	public void quickSort(final int[] a, final int p, final int r) {
-		final int q = patition(a, p, r);
+		final int q = partition(a, p, r);
 		// print step info
 		if (printSteps()) {
 			AlgUtil.printIntArray(a);
@@ -114,7 +114,7 @@ public class QuickSort extends Sorting {
 	 *            the r end index
 	 * @return the partition index.
 	 */
-	private int patition(final int[] a, final int p, final int r) {
+	protected int partition(final int[] a, final int p, final int r) {
 
 		// set the last element as pivot
 		final int pivot = a[r];

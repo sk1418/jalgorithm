@@ -11,6 +11,7 @@ import com.kent.algorithm.sorting.InsertionSort;
 import com.kent.algorithm.sorting.MergeSort;
 import com.kent.algorithm.sorting.OptimizedMergeSort;
 import com.kent.algorithm.sorting.QuickSort;
+import com.kent.algorithm.sorting.RandomizedQuickSort;
 import com.kent.algorithm.sorting.SelectionSort;
 import com.kent.util.AlgUtil;
 
@@ -73,6 +74,7 @@ public class SortingComparasionDemo extends AbstractDemo {
 		demoList.add(new OptimizedMergeSort());
 		demoList.add(new HeapSort());
 		demoList.add(new QuickSort());
+		demoList.add(new RandomizedQuickSort());
 
 	}
 
