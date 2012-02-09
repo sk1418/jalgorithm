@@ -115,9 +115,13 @@ public class QuickSort extends Sorting {
 	 * @return the partition index.
 	 */
 	protected int partition(final int[] a, final int p, final int r) {
-
 		// set the last element as pivot
 		final int pivot = a[r];
+
+		if (printSteps()) {
+			AlgUtil.print(String.format("pivot: %-5s ", a[r]));
+		}
+
 		int i = p - 1, j = p;
 		for (; j < r; j++) {
 			if (a[j] < pivot) {

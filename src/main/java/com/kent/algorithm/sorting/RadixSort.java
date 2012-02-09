@@ -1,6 +1,7 @@
 package com.kent.algorithm.sorting;
 
 import com.kent.algorithm.Sorting;
+import com.kent.util.AlgUtil;
 
 /**
  * Sort from the least significant digit (LSD).
@@ -38,6 +39,10 @@ public class RadixSort extends Sorting {
 	@Override
 	public int[] sort(int[] data) {
 		final int d = fixDigits > 0 ? fixDigits : getMaxNumberOfDigits(data);
+		if (printSteps()) {
+			AlgUtil.println("max number of digits among all numbers: " + d);
+			AlgUtil.println("Start Radix Sort");
+		}
 		final int[] t = doRadixSort(data, d, 1);
 		return t;
 	}
@@ -54,6 +59,11 @@ public class RadixSort extends Sorting {
 	 * @return the int[]
 	 */
 	public int[] doRadixSort(int[] a, int d, int s) {
+		if (s > 1 && printSteps()) {
+			AlgUtil.println("After round " + (s - 1) + " : ");
+			AlgUtil.printIntArrayVertically(a);
+		}
+
 		if (s > d) {
 			return a;
 		}

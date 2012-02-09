@@ -17,6 +17,8 @@ import com.kent.algorithm.demo.sorting.InsertionSortDemo;
 import com.kent.algorithm.demo.sorting.MergeSortDemo;
 import com.kent.algorithm.demo.sorting.OptimizedMergeSortDemo;
 import com.kent.algorithm.demo.sorting.QuickSortDemo;
+import com.kent.algorithm.demo.sorting.RadixSortDemo;
+import com.kent.algorithm.demo.sorting.RandomizedQuickSortDemo;
 import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.util.AlgUtil;
 
@@ -35,14 +37,17 @@ public class Demo {
 		MergeSort_Optimized(5, OptimizedMergeSortDemo.class),   
 		HeapSort(6, HeapSortDemo.class), 
 		QuickSort(7 , QuickSortDemo.class), 
-		CountingSort(8, CountingSortDemo.class), 
-		BucketSort(9, BucketSortDemo.class), 
+		RandomizedQuickSort(8 , RandomizedQuickSortDemo.class), 
+		//sorting in linear time
+		CountingSort(11, CountingSortDemo.class), 
+		BucketSort(12, BucketSortDemo.class), 
+		RadixSort(13, RadixSortDemo.class), 
 		//problems
-		Problem_MaxSubArray(10, MaxSubArrayDemo.class), 
-		Problem_CountInversionPairs(11, CountInversionPairsDemo.class),
-		Problem_FindHeavyIntegers(12, FindHeavyIntegerDemo.class),
-		Problem_SortingIntegerWithNDigits(13, SortingIntegersWithNDigitsDemo.class),
-		Problem_SortingStringsWithNChars(14, SortingStringsWithNCharsDemo.class);
+		Problem_MaxSubArray(100, MaxSubArrayDemo.class), 
+		Problem_CountInversionPairs(101, CountInversionPairsDemo.class),
+		Problem_FindHeavyIntegers(102, FindHeavyIntegerDemo.class),
+		Problem_SortingIntegerWithNDigits(103, SortingIntegersWithNDigitsDemo.class),
+		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class);
 		
 		// @formatter:on
 		private final int idx;
@@ -111,11 +116,19 @@ public class Demo {
 
 	private static String getDemoTypePrintList() {
 		demoTypeMap.clear();
-		final String format = "%3s %s %-30s";
+		final String format = "%4s %s %-30s";
 		final StringBuffer sb = new StringBuffer();
-		int i = 0;
+		int i = 0, idx = 0;
 		for (final DemoType type : DemoType.values()) {
 			i++;
+			idx = type.getIdx();
+			if (idx == 1) {
+				sb.append("\n-- Sortings --\n\n");
+			} else if (idx == 11) {
+				sb.append("\n-- Sorting in linear time --\n\n");
+			} else if (idx == 100) {
+				sb.append("\n-- Problems --\n\n");
+			}
 			sb.append(String.format(format, type.getIdx(), AlgUtil.repeatString(".", 7), type));
 			sb.append(i == DemoType.values().length ? "" : "\n");
 			demoTypeMap.put(type.getIdx(), type.getDemoClass());

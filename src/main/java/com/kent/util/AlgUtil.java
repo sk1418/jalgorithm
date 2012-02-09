@@ -10,6 +10,8 @@ import java.util.Random;
  */
 public final class AlgUtil {
 
+	final static Random rand = new Random();
+
 	/**
 	 * Instantiates a new alg util.
 	 */
@@ -35,7 +37,6 @@ public final class AlgUtil {
 	}
 
 	public static int getRandomInRange(int min, int max) {
-		final Random rand = new Random();
 		return rand.nextInt(max - min + 1) + min;
 
 	}
@@ -53,7 +54,6 @@ public final class AlgUtil {
 	 */
 	public static int[] getRandomIntArray(final int len, final int max, final boolean allowNegative) {
 		final int[] intArray = new int[len];
-		final Random rand = new Random();
 		rand.setSeed(181402);
 
 		if (!allowNegative) {
@@ -123,6 +123,17 @@ public final class AlgUtil {
 	 */
 	public static void printIntArray(final int[] a) {
 		println(Arrays.toString(a));
+	}
+
+	/**
+	 * prints the int array vertically
+	 * 
+	 * @param a
+	 */
+	public static void printIntArrayVertically(final int[] a) {
+		for (int x : a) {
+			System.out.printf("%7d\n", x);
+		}
 	}
 
 	/**
