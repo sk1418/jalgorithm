@@ -1,10 +1,13 @@
 package com.kent.algorithm.sorting;
 
+import static com.kent.util.AlgUtil.print;
+import static com.kent.util.AlgUtil.printIntArray;
+import static com.kent.util.AlgUtil.println;
+
 import java.util.LinkedList;
 import java.util.List;
 
 import com.kent.algorithm.Sorting;
-import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -29,7 +32,7 @@ public class BucketSort extends Sorting {
 	/** The max value. */
 	private int maxValue;
 	private int minValue;
-	private int interval = 10;
+	private final int interval = 10;
 
 	/** {@inheritDoc} */
 	@Override
@@ -48,9 +51,9 @@ public class BucketSort extends Sorting {
 		}
 
 		if (printSteps()) {
-			AlgUtil.print("Original Array : ");
-			AlgUtil.printIntArray(data);
-			AlgUtil.println("");
+			print("Original Array : ");
+			printIntArray(data);
+			println("");
 		}
 
 		// scatter
@@ -67,9 +70,9 @@ public class BucketSort extends Sorting {
 			}
 		}
 		if (printSteps()) {
-			AlgUtil.println("Gathering: put element in buckets back to original Array : ");
-			AlgUtil.printIntArray(data);
-			AlgUtil.println("");
+			println("Gathering: put element in buckets back to original Array : ");
+			printIntArray(data);
+			println("");
 		}
 
 		// insertion Sort on data
@@ -85,9 +88,9 @@ public class BucketSort extends Sorting {
 
 		}
 		if (printSteps()) {
-			AlgUtil.println("Do insert Sort on original array:");
-			AlgUtil.printIntArray(data);
-			AlgUtil.println("");
+			println("Do insert Sort on original array:");
+			printIntArray(data);
+			println("");
 		}
 
 		return data;
@@ -95,15 +98,15 @@ public class BucketSort extends Sorting {
 
 	private void stepInfoAfterScattering(List<Integer>[] buckets) {
 		if (printSteps()) {
-			AlgUtil.println("");
-			AlgUtil.println("scattering: distribute the elements into buckets:");
+			println("");
+			println("scattering: distribute the elements into buckets:");
 			for (int i = 0; i < buckets.length; i++) {
-				AlgUtil.print("Bucket " + i * interval + " - " + (1 + i) * interval + " : ");
+				print("Bucket " + i * interval + " - " + (1 + i) * interval + " : ");
 
 				for (int j = 0; j < buckets[i].size(); j++) {
-					AlgUtil.print(String.valueOf(buckets[i].get(j)).concat(j == buckets[i].size() - 1 ? "" : ", "));
+					print(String.valueOf(buckets[i].get(j)).concat(j == buckets[i].size() - 1 ? "" : ", "));
 				}
-				AlgUtil.println("");
+				println("");
 			}
 		}
 	}
