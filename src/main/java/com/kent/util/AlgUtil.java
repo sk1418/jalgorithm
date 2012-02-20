@@ -36,6 +36,13 @@ public final class AlgUtil {
 
 	}
 
+	public static void swap(final char[] data, final int i, final int j) {
+		final char tmp = data[i];
+		data[i] = data[j];
+		data[j] = tmp;
+
+	}
+
 	public static int getRandomInRange(int min, int max) {
 		return rand.nextInt(max - min + 1) + min;
 
@@ -131,7 +138,7 @@ public final class AlgUtil {
 	 * @param a
 	 */
 	public static void printIntArrayVertically(final int[] a) {
-		for (int x : a) {
+		for (final int x : a) {
 			System.out.printf("%7d\n", x);
 		}
 	}
@@ -274,4 +281,20 @@ public final class AlgUtil {
 		}
 		println("");
 	}
+
+	public static void reverseIntArray(int[] input) {
+
+		final int last = input.length - 1;
+		if (last < 0) {
+			return;
+		}
+		for (int i = 0; i < input.length / 2 + 1; i++) {
+			if (last - i <= i) {
+				return;
+			}
+			swap(input, i, last - i);
+		}
+
+	}
+
 }

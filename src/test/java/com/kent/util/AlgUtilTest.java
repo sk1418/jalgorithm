@@ -1,7 +1,6 @@
 package com.kent.util;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -50,6 +49,18 @@ public class AlgUtilTest {
 		final int[] testArray2 = new int[] { 82, 2 };
 		AlgUtil.printBinaryTree(testArray, testArray.length, 6);
 		AlgUtil.printBinaryTree(testArray2, testArray2.length, 1);
+	}
+
+	@Test
+	public void testReverseIntArray() {
+		final int[] a = new int[] { 1, 2, 3, 4, 5, 6 };
+		final int[] b = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+		final int[] resultA = new int[] { 6, 5, 4, 3, 2, 1 };
+		final int[] resultB = new int[] { 7, 6, 5, 4, 3, 2, 1 };
+		AlgUtil.reverseIntArray(a);
+		AlgUtil.reverseIntArray(b);
+		Assert.assertArrayEquals(a, resultA);
+		Assert.assertArrayEquals(b, resultB);
 	}
 
 }
