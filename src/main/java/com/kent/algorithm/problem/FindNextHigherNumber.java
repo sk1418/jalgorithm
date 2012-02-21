@@ -1,5 +1,8 @@
 package com.kent.algorithm.problem;
 
+import static com.kent.util.AlgUtil.println;
+import static com.kent.util.AlgUtil.swap;
+
 import com.kent.algorithm.Problem;
 import com.kent.util.AlgUtil;
 
@@ -31,12 +34,12 @@ import com.kent.util.AlgUtil;
  * 123456784 987654321
  *               ^find the smallest digit larger than 4 to the right
  * 
- * 123456785 4 98764321
- *         ^place it to the left of 4
+ * 123456785 987644321
+ *               ^ swap it with x
  * 
- * 123456785 4 12346789
+ * 123456785 123446789
  * 123456785123446789
- *          ^sort the digits to the right of 5.  Since all of them except the '4' were already in descending order, all we need to do is reverse their order, and find the correct place for the '4'
+ *          ^sort the digits to the right of 5.  Since all of them were already in descending order, all we need to do is reverse their order
  * 
  * </pre>
  * 
@@ -64,7 +67,14 @@ public class FindNextHigherNumber extends Problem<Long, Long> {
 				max = i;
 			}
 		}
-
+		// print demo info
+		if (printSteps()) {
+			String s = "";
+			for (int i = 0; i < c.length; i++) {
+				s += i == x ? "(" + c[i] + ")" : c[i];
+			}
+			println("Found the 'x' :" + s);
+		}
 		// find the smallest digit, that greater than c[x]
 		int y = c.length - 1;
 		for (int i = c.length - 1; i > x; i--) {
@@ -74,8 +84,16 @@ public class FindNextHigherNumber extends Problem<Long, Long> {
 			}
 		}
 
+		// print step info for demo
+		if (printSteps()) {
+			String s = "";
+			for (int i = 0; i < c.length; i++) {
+				s += i == x || i == y ? "(" + c[i] + ")" : c[i];
+			}
+			println("Found the smallest digit, that greater than x :" + s);
+		}
 		// swap
-		AlgUtil.swap(c, x, y);
+		swap(c, x, y);
 
 		reverseArray(c, x + 1, c.length - 1);
 		final Long l = Long.valueOf(String.valueOf(c));

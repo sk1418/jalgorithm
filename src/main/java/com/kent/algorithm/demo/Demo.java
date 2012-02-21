@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
+import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
@@ -47,7 +48,8 @@ public class Demo {
 		Problem_CountInversionPairs(101, CountInversionPairsDemo.class),
 		Problem_FindHeavyIntegers(102, FindHeavyIntegerDemo.class),
 		Problem_SortingIntegerWithNDigits(103, SortingIntegersWithNDigitsDemo.class),
-		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class);
+		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class),
+		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class);
 		
 		// @formatter:on
 		private final int idx;
