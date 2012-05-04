@@ -35,6 +35,7 @@ public class CountingSort extends Sorting {
 			count[data[i]]++;
 		}
 
+		// calculate how many elements <= the certain input element x
 		for (int j = 1; j < count.length; j++) {
 			count[j] += count[j - 1];
 		}
