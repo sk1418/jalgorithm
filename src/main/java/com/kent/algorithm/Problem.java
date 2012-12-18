@@ -4,9 +4,10 @@ package com.kent.algorithm;
  * The Class MiscAlgorithm.
  * 
  * @param <I>
- *            the element type
+ *            the input type
  * @param <T>
- *            the generic type
+ *            the output type
+ * 
  */
 public abstract class Problem<I, T> implements Algorithm<I, T> {
 	private boolean printSteps = false;
@@ -21,7 +22,7 @@ public abstract class Problem<I, T> implements Algorithm<I, T> {
 	public abstract T solve(I data);
 
 	@Override
-	public T execute(I input) {
+	public T execute(final I input) {
 		return solve(input);
 	}
 
@@ -30,7 +31,7 @@ public abstract class Problem<I, T> implements Algorithm<I, T> {
 		return printSteps;
 	}
 
-	public void setPrintSteps(boolean printSteps) {
+	public void setPrintSteps(final boolean printSteps) {
 		this.printSteps = printSteps;
 	}
 

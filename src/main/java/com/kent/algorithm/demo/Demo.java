@@ -73,11 +73,10 @@ public class Demo {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner scanner;
 		int input = -9;
 		String tmp;
-		final boolean init = true;
 		scanner = new Scanner(System.in);
 
 		while (input != 0) {
@@ -113,6 +112,7 @@ public class Demo {
 		}
 
 		AlgUtil.println("exiting...");
+		scanner.close();
 		System.exit(0);
 	}
 
