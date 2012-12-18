@@ -5,13 +5,13 @@ package com.kent.algorithm.problem;
 
 import junit.framework.Assert;
 
-import org.apache.log4j.Logger;
-import org.junit.Test;
-
 import com.kent.algorithm.Problem;
-import com.kent.algorithm.problem.CountInversionPairs;
-import com.kent.algorithm.problem.FindMaxSubArray;
 import com.kent.test.BaseTest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.junit.Test;
 
 /**
  * The Class MiscTest.
@@ -19,7 +19,7 @@ import com.kent.test.BaseTest;
 public class CountInversionPairsTest extends BaseTest {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(CountInversionPairsTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CountInversionPairsTest.class);
 
 	/**
 	 * Count inversions test.
@@ -39,7 +39,5 @@ public class CountInversionPairsTest extends BaseTest {
 		Assert.assertEquals(0L, c2);
 		Assert.assertEquals(5L, c3);
 	}
-
-	
 
 }

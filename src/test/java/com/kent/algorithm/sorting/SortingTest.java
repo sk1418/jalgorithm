@@ -1,13 +1,15 @@
 package com.kent.algorithm.sorting;
 
-import org.apache.log4j.Logger;
+import com.kent.algorithm.Sorting;
+import com.kent.test.BaseTest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.kent.algorithm.Sorting;
-import com.kent.test.BaseTest;
 
 /**
  * The Class SortingTest.
@@ -15,7 +17,7 @@ import com.kent.test.BaseTest;
 public class SortingTest extends BaseTest {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(SortingTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SortingTest.class);
 
 	/** The test array. */
 	private int[] testArray;

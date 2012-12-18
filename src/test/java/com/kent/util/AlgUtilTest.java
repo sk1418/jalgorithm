@@ -4,34 +4,36 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.junit.Assert;
 import org.junit.Test;
+
+//import org.apache.log4j.Logger;
 
 /**
  * The Class AlgUtilTest.
  */
 public class AlgUtilTest {
-	protected static final Logger log = Logger.getLogger(AlgUtilTest.class);
+	private static final Logger log = LoggerFactory.getLogger(AlgUtilTest.class);
 
 	/**
 	 * Gets the random int array test.
-	 * 
-	 * 
 	 */
 	@Test
 	public void testGetRandomIntArray() {
 		final int[] a = AlgUtil.getRandomIntArray(100, 10000, false);
 		final int[] b = AlgUtil.getRandomIntArray(100, 20, true);
 
-		for (int i = 0; i < a.length; i++) {
-			Assert.assertTrue(a[i] >= 0 && a[i] < 10000);
+		for (final int element : a) {
+			Assert.assertTrue(element >= 0 && element < 10000);
 		}
 
 		boolean hasNegative = false;
-		for (int i = 0; i < b.length; i++) {
-			Assert.assertTrue(b[i] < 10000);
-			hasNegative = b[i] < 0 ? true : hasNegative;
+		for (final int element : b) {
+			Assert.assertTrue(element < 10000);
+			hasNegative = element < 0 ? true : hasNegative;
 		}
 		Assert.assertTrue(hasNegative);
 

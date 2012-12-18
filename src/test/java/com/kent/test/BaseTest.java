@@ -1,14 +1,16 @@
 package com.kent.test;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.junit.After;
 import org.junit.Before;
 
 public class BaseTest {
-	protected static final Logger log = Logger.getLogger(BaseTest.class);
+	protected static final Logger log = LoggerFactory.getLogger(BaseTest.class);
 	private long startTime = System.currentTimeMillis();
 
-	protected void testInfo(String methodName) {
+	protected void testInfo(final String methodName) {
 		log.debug("");
 		log.debug("============================");
 		log.debug(" Testing " + methodName);
@@ -22,6 +24,6 @@ public class BaseTest {
 
 	@After
 	public void endTest() {
-		log.info("Elapsed: " + (System.currentTimeMillis() - this.startTime) + " ms.");
+		log.info("Elapsed: " + (System.currentTimeMillis() - startTime) + " ms.");
 	}
 }

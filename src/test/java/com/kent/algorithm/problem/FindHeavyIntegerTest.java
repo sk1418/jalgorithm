@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 import junit.framework.Assert;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.junit.Test;
 
 /**
@@ -13,7 +15,7 @@ import org.junit.Test;
 public class FindHeavyIntegerTest {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(FindHeavyIntegerTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(FindHeavyIntegerTest.class);
 
 	/**
 	 * Solution test.
