@@ -1,5 +1,7 @@
 package com.kent.algorithm.problem;
 
+import java.util.Arrays;
+
 import com.kent.algorithm.Problem;
 
 /**
@@ -29,15 +31,44 @@ public class TwoSumInArray extends Problem<int[], int[]> {
 	/** {@inheritDoc} */
 	@Override
 	public String getBigO() {
-		// TODO Auto-generated method stub
-		return null;
+		return "unknown";
 	}
 
-	/** {@inheritDoc} */
+	/**
+	 * @param the
+	 *            input array, since this problem needs 1-based array, the index 0 is the target sum.
+	 * */
 	@Override
 	public int[] solve(final int[] data) {
-		// TODO Auto-generated method stub
-		return null;
+		final int[] result = new int[2];
+		final int target = data[0];
+		data[0] = Integer.MAX_VALUE;
+		final int[] sorted = Arrays.copyOf(data, data.length);
+		Arrays.sort(sorted);
+		int t, end = sorted.length;
+		for (int i = 1; i < end; i++) {
+			t = sorted[i];
+
+			for (int j = i + 1; j < end; j++) {
+				if (t + sorted[j] == target) {
+					// here find out the orignal index
+					for (int x = 1; x < data.length; x++) {
+						result[0] = data[x] == sorted[i] ? x : result[0];
+						result[1] = data[x] == sorted[j] ? x : result[1];
+						if (result[0] * result[1] > 0) {
+							return result;
+						}
+					}
+				}
+				if (t + data[j] > target) {
+					end = j;
+					break;
+				}
+			}
+
+		}
+		// should not be here, since problem defined there is exactly one solution in input
+		return result;
 	}
 
 }
