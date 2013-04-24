@@ -1,9 +1,8 @@
 package com.kent.algorithm.demo.problem;
 
-import static com.kent.util.AlgUtil.appendNewline;
-import static com.kent.util.AlgUtil.printIntArray;
-import static com.kent.util.AlgUtil.repeatString;
+import static com.kent.util.AlgUtil.*;
 
+import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindHeavyIntegers;
 
@@ -55,26 +54,30 @@ public class FindHeavyIntegerDemo extends AbstractDemo {
 
 	@Override
 	protected void printDescription() {
-		final StringBuffer sb = new StringBuffer();
-		appendNewline(sb, "Finding Heavy integers:");
-		appendNewline(sb, "A non-negative integer is called heavy if the average value of its digits in decimal representation");
-		appendNewline(sb, "exceeds 7. For example the number 8698 is heavy, because the average value of its digits equal to");
-		appendNewline(sb, "(8+6+9+8)/4 = 7.75");
-		appendNewline(sb, "");
-		appendNewline(sb, "Given two non-negative integers A and B find the number of heavy integers ");
-		appendNewline(sb, "in the interval [A..B] (A and B included),A and B are integers within the range [0..200,000,000].");
-		appendNewline(sb, "");
-		appendNewline(sb, "The algorithm is to skip the numbers which are guaranteed to give a sub-average value. ");
-		appendNewline(sb, "If sumDigits is the sum of the digits and numDigits is the number of digits, then ");
-		appendNewline(sb, "if sumDigits <= 7 * numDigits, we skip it and we need at least ");
-		appendNewline(sb, "(7 * numDigits)-sumDigits+1 to bring the digits avg above 7.0. The trick is to ");
-		appendNewline(sb, "increment the number (starting from the units place) so that the total average goes ");
-		appendNewline(sb, "above 7.0; To take an example, if the number is 10000, sumDigits = 1 and avg of ");
-		appendNewline(sb, "digits = 0.2. The deficit in sum is 7*5-1 +1= 35, so we can increment 10000 by 8999 ");
-		appendNewline(sb, "i.e we increase the sum by 8+9+9+9 = 35 and new number = 18999 has sumDigits =36 ");
-		appendNewline(sb, "and average of digits becomes greater than 7.0");
 
-		print(sb.toString());
+		//@formatter:off
+		final String d =Joiner.on("\n").join(
+				"Finding Heavy integers:",
+				"A non-negative integer is called heavy if the average value of its digits in decimal representation",
+				"exceeds 7. For example the number 8698 is heavy, because the average value of its digits equal to",
+				"(8+6+9+8)/4 = 7.75",
+				"",
+				"Given two non-negative integers A and B find the number of heavy integers ",
+				"in the interval [A..B] (A and B included),A and B are integers within the range [0..200,000,000].",
+				"",
+				"The algorithm is to skip the numbers which are guaranteed to give a sub-average value. ",
+				"If sumDigits is the sum of the digits and numDigits is the number of digits, then ",
+				"if sumDigits <= 7 * numDigits, we skip it and we need at least ",
+				"(7 * numDigits)-sumDigits+1 to bring the digits avg above 7.0. The trick is to ",
+				"increment the number (starting from the units place) so that the total average goes ",
+				"above 7.0; To take an example, if the number is 10000, sumDigits = 1 and avg of ",
+				"digits = 0.2. The deficit in sum is 7*5-1 +1= 35, so we can increment 10000 by 8999 ",
+				"i.e we increase the sum by 8+9+9+9 = 35 and new number = 18999 has sumDigits =36 ",
+				"and average of digits becomes greater than 7.0"		
+		);
+		//@formatter:on
+
+		print(d);
 
 	}
 }

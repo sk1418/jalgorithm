@@ -2,6 +2,7 @@ package com.kent.algorithm.demo.problem;
 
 import java.util.Arrays;
 
+import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindMaxSubArray;
 import com.kent.util.AlgUtil;
@@ -66,17 +67,20 @@ public class MaxSubArrayDemo extends AbstractDemo {
 
 	@Override
 	protected void printDescription() {
-		final StringBuffer sb = new StringBuffer();
-		AlgUtil.appendNewline(sb, "Finding Max Subarray problem:");
-		AlgUtil.appendNewline(sb, "Find the nonempty, contiguous subarray of given array, whose values have the largest sum.");
-		AlgUtil.appendNewline(sb, "");
-		AlgUtil.appendNewline(sb, "Using Divide And Conquer way to solve the problem:");
-		AlgUtil.appendNewline(sb, "");
-		AlgUtil.appendNewline(sb, "- the maxSubarray can entirely in the subarray A[low .. mid]");
-		AlgUtil.appendNewline(sb, "- entirely in the subarray A[mid+1 .. high]");
-		AlgUtil.appendNewline(sb, "- crossing the midpoint: ..i.. (maxSumLeft) ... <-mid -> .(maxSumRight)..j...");
+		//@formatter:off
+		final String d =Joiner.on("\n").join(
+				 "Finding Max Subarray problem:",
+				 "Find the nonempty, contiguous subarray of given array, whose values have the largest sum.",
+				 "",
+				 "Using Divide And Conquer way to solve the problem:",
+				 "",
+				 "- the maxSubarray can entirely in the subarray A[low .. mid]",
+				 "- entirely in the subarray A[mid+1 .. high]",
+				 "- crossing the midpoint: ..i.. (maxSumLeft) ... <-mid -> .(maxSumRight)..j..."
+				);
+		//@formatter:on
 
-		print(sb.toString());
+		print(d);
 
 	}
 }

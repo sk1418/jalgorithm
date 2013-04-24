@@ -65,7 +65,10 @@ public class CountInversionPairsDemo extends AbstractDemo {
 
 	@Override
 	protected void printDescription() {
-		print(new StringBuffer("test").toString());
+		//@formatter:off
+		final String d ="find out counts of inversion pairs in an array using (n log n) algorithm, e.g. MergeSort";
+		//@formatter:on
+		print(d);
 
 	}
 }

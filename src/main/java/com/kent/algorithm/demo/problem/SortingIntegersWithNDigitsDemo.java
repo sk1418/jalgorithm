@@ -2,6 +2,7 @@ package com.kent.algorithm.demo.problem;
 
 import java.util.Arrays;
 
+import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.SortingPositiveIntegersWithTotalNDigits;
 import com.kent.util.AlgUtil;
@@ -58,18 +59,22 @@ public class SortingIntegersWithNDigitsDemo extends AbstractDemo {
 
 	@Override
 	protected void printDescription() {
-		final StringBuffer sb = new StringBuffer();
-		AlgUtil.appendNewline(sb, "You are given an array of integers, where different integers may have");
-		AlgUtil.appendNewline(sb, "different numbers of digits, but the total number of digits over all the");
-		AlgUtil.appendNewline(sb, "integers in the array is n. Show how to sort the array in O(n) time.");
-		AlgUtil.appendNewline(sb, "  ");
-		AlgUtil.appendNewline(sb, "Let us assume that all the integers are positive and have no leading");
-		AlgUtil.appendNewline(sb, "zeros. Under this assumption, we can observe that integers with more");
-		AlgUtil.appendNewline(sb, "digits are always greater than integers with fewer digits. Thus, we can");
-		AlgUtil.appendNewline(sb, "first sort the integers by number of digits (using counting sort), and");
-		AlgUtil.appendNewline(sb, "then use radix sort to sort each group of integers with the same length.");
+		//@formatter:off
+		final String d =Joiner.on("\n").join(
 
-		print(sb.toString());
+				"You are given an array of integers, where different integers may have",
+				"different numbers of digits, but the total number of digits over all the",
+				"integers in the array is n. Show how to sort the array in O(n) time.",
+				"  ",
+				"Let us assume that all the integers are positive and have no leading",
+				"zeros. Under this assumption, we can observe that integers with more",
+				"digits are always greater than integers with fewer digits. Thus, we can",
+				"first sort the integers by number of digits (using counting sort), and",
+				"then use radix sort to sort each group of integers with the same length."
+		);
+		//@formatter:on
+
+		print(d);
 
 	}
 }
