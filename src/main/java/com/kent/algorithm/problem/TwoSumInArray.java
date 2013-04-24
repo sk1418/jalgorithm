@@ -32,7 +32,7 @@ public class TwoSumInArray extends Problem<Map<String, Object>, int[]> {
 	/** {@inheritDoc} */
 	@Override
 	public String getBigO() {
-		return "unknown";
+		return "O(nlogn+n)";
 	}
 
 	/**
@@ -42,6 +42,8 @@ public class TwoSumInArray extends Problem<Map<String, Object>, int[]> {
 	 *            <pre>
 	 * map{"target":int, "array":int[]}
 	 * </pre>
+	 * 
+	 *            The solution in TwoSumInArrayII is better.
 	 * */
 	@Override
 	public int[] solve(final Map<String, Object> input) {
