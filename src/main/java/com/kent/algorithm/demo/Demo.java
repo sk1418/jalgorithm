@@ -10,6 +10,7 @@ import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
+import com.kent.algorithm.demo.problem.TwoSumInArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.BucketSortDemo;
 import com.kent.algorithm.demo.sorting.CountingSortDemo;
@@ -49,7 +50,8 @@ public class Demo {
 		Problem_FindHeavyIntegers(102, FindHeavyIntegerDemo.class),
 		Problem_SortingIntegerWithNDigits(103, SortingIntegersWithNDigitsDemo.class),
 		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class),
-		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class);
+		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class),
+		Problem_TwoSumInArray(106, TwoSumInArrayDemo.class);
 		
 		// @formatter:on
 		private final int idx;
@@ -107,6 +109,7 @@ public class Demo {
 					input = -9;
 				}
 			} catch (final Exception e) {
+				e.printStackTrace();
 				input = -1;
 			}
 		}
