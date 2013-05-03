@@ -21,10 +21,9 @@ public class PlusOne extends Problem<int[], int[]> {
 
 	@Override
 	public int[] solve(final int[] data) {
-		final int carry = 1;
 		for (int i = data.length - 1; i >= 0; i--) {
 			if (data[i] < 9) {
-				data[i] += carry;
+				data[i]++;
 				return data;
 			} else {
 				data[i] = 0;
