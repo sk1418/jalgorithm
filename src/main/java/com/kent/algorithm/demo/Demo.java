@@ -9,6 +9,7 @@ import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.PlusOneDemo;
+import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
 import com.kent.algorithm.demo.problem.TwoSumInArrayDemo;
@@ -53,7 +54,8 @@ public class Demo {
 		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class),
 		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class),
 		Problem_TwoSumInArray(106, TwoSumInArrayDemo.class),
-		Problem_PlusOne(107, PlusOneDemo.class);
+		Problem_PlusOne(107, PlusOneDemo.class),
+		Problem_ReverseInteger(108, ReverseIntegerDemo.class);
 		
 		// @formatter:on
 		private final int idx;
