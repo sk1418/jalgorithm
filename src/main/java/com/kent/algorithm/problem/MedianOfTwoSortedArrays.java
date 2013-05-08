@@ -47,7 +47,6 @@ public class MedianOfTwoSortedArrays extends Problem<List<int[]>, Double> {
 		}
 		final int i = (left + right) / 2;
 		final int j = (m + n) / 2 - i - 1;
-		System.out.println("i,j" + i + "," + j);
 		if (j < n - 1 && a[i] > b[j + 1]) {
 			return findMedian(a, b, left, i - 1, m, n);
 		} else if (j >= 0 && a[i] < b[j]) {
