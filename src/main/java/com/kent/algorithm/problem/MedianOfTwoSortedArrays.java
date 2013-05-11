@@ -26,6 +26,7 @@ public class MedianOfTwoSortedArrays extends Problem<List<int[]>, Double> {
 	public Double solve(final List<int[]> data) {
 		final int[] a = data.get(0);
 		final int[] b = data.get(1);
+		// init the variables
 		final int m = a.length;
 		final int n = b.length;
 		final int s = m + n;
@@ -36,40 +37,52 @@ public class MedianOfTwoSortedArrays extends Problem<List<int[]>, Double> {
 			return simpleMedian(a);
 		}
 
-		return findMedian(a, b, Math.max(0, (m + n) / 2 - n), Math.min(m - 1, (m + n) / 2), m, n);
+		return findMedian(a, b, Math.max(0, s / 2 - n), Math.min(m - 1, s / 2));
 
 	}
 
-	private double findMedian(final int[] a, final int[] b, final int left, final int right, final int m, final int n) {
+	/**
+	 * 
+	 * @param a
+	 * @param b
+	 * @param left
+	 * @param right
+	 * @param m
+	 * @param n
+	 * @return
+	 */
+	private double findMedian(final int[] a, final int[] b, final int left, final int right) {
+		final int m = a.length;
+		final int n = b.length;
+		final int s = m + n;
 		if (left > right) {
-			return findMedian(b, a, Math.max(0, (m + n) / 2 - m), Math.min(n - 1, (m + n) / 2), n, m);
+			return findMedian(b, a, Math.max(0, s / 2 - m), Math.min(n - 1, s / 2));
 
 		}
 		final int i = (left + right) / 2;
-		final int j = (m + n) / 2 - i - 1;
+		final int j = s / 2 - i - 1;
+		if (j >= 0 && a[i] < b[j]) {
+			return findMedian(a, b, i + 1, right);
+		}
 		if (j < n - 1 && a[i] > b[j + 1]) {
-			return findMedian(a, b, left, i - 1, m, n);
-		} else if (j >= 0 && a[i] < b[j]) {
-			return findMedian(a, b, i + 1, right, m, n);
+			return findMedian(a, b, left, i - 1);
+		}
+		if (s % 2 == 1) {
+			return a[i];
+		} else if (i > 0) {
+			final int pre = j < 0 ? a[i - 1] : Math.max(a[i - 1], b[j]);
+			return (a[i] + pre) / 2.0;
 		} else {
-
-			if ((m + n) % 2 == 1) {
-				return a[i];
-			} else if (i > 0) {
-				final int pre = j < 0 ? a[i - 1] : Math.max(a[i - 1], b[j]);
-				return (a[i] + pre) / 2.0;
-			} else {
-				return (a[i] + b[j]) / 2.0;
-			}
+			return (a[i] + b[j]) / 2.0;
 		}
 
 	}
 
-	private double simpleMedian(final int A[]) {
-		final int n = A.length;
+	private double simpleMedian(final int a[]) {
+		final int n = a.length;
 		if (n % 2 == 1) {
-			return A[n / 2];
+			return a[n / 2];
 		}
-		return (A[n / 2 - 1] + A[n / 2]) / 2.0;
+		return (a[n / 2 - 1] + a[n / 2]) / 2.0;
 	}
 }
