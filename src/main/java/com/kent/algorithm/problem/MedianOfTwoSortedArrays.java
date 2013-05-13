@@ -12,6 +12,32 @@ import com.kent.algorithm.Problem;
  * The overall run time complexity should be O(log (m+n)).
  * </p>
  * 
+ * <p>
+ * Solution: The basic idea is that if you are given two arrays A and B and know the length of each, you can check whether an element A[i] is the
+ * median in constant time. Suppose that the median is A[i]. Since the array is sorted, it is greater than exactly i − 1 values in array A. Then if it
+ * is the median, it is also greater than exactly
+ * 
+ * <pre>
+ * j = n / 2 - (i - 1)
+ * </pre>
+ * 
+ * elements in B. It requires constant time to check if
+ * </p>
+ * 
+ * <pre>
+ * B[j]<= A[i] <= B[j + 1].
+ * </pre>
+ * 
+ * <p>
+ * If A[i] is not the median, then depending on whether A[i] is greater or less than B[j] and B[j + 1], you know that A[i] is either greater than or
+ * less than the median. Thus you can binary search for A[i] in O(lg n) worst-case time.
+ * </p>
+ * 
+ * <p>
+ * the above solution works when the total number of elements is odd. if n is even. The found median is the larger element, need to find out the
+ * smaller element and do a average.
+ * </p>
+ * 
  * @author kent
  * 
  */

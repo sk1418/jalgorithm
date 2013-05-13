@@ -8,6 +8,7 @@ import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
+import com.kent.algorithm.demo.problem.MedianOfTwoSortedArraysDemo;
 import com.kent.algorithm.demo.problem.PlusOneDemo;
 import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
@@ -55,7 +56,8 @@ public class Demo {
 		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class),
 		Problem_TwoSumInArray(106, TwoSumInArrayDemo.class),
 		Problem_PlusOne(107, PlusOneDemo.class),
-		Problem_ReverseInteger(108, ReverseIntegerDemo.class);
+		Problem_ReverseInteger(108, ReverseIntegerDemo.class),
+		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class);
 		
 		// @formatter:on
 		private final int idx;
