@@ -2,6 +2,7 @@ package com.kent.datastructure;
 
 import java.util.List;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 
 /**
@@ -32,5 +33,10 @@ public class ListNode {
 			node = node.next;
 		}
 		return l;
+	}
+
+	@Override
+	public String toString() {
+		return Joiner.on(", ").join(toList());
 	}
 }
