@@ -2,6 +2,8 @@ package com.kent.algorithm.problem;
 
 import static org.junit.Assert.*;
 
+import com.kent.test.BaseTest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,7 +12,7 @@ import org.junit.Test;
 /**
  * The Class FindHeavyIntegerTest.
  */
-public class ReverseIntegerTest {
+public class ReverseIntegerTest extends BaseTest {
 
 	/** The Constant LOG. */
 	private static final Logger LOG = LoggerFactory.getLogger(ReverseIntegerTest.class);
