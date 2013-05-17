@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
+import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
@@ -59,7 +60,8 @@ public class Demo {
 		Problem_PlusOne(107, PlusOneDemo.class),
 		Problem_ReverseInteger(108, ReverseIntegerDemo.class),
 		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class),
-		Problem_AddTwoNumbers(110, AddTwoNumbersDemo.class);
+		Problem_AddTwoNumbers(110, AddTwoNumbersDemo.class),
+		Problem_FindAllSubSets(111, FindAllSubSetsDemo.class);
 		
 		// @formatter:on
 		private final int idx;
