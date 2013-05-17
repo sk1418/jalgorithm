@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
@@ -57,7 +58,8 @@ public class Demo {
 		Problem_TwoSumInArray(106, TwoSumInArrayDemo.class),
 		Problem_PlusOne(107, PlusOneDemo.class),
 		Problem_ReverseInteger(108, ReverseIntegerDemo.class),
-		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class);
+		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class),
+		Problem_AddTwoNumbers(110, AddTwoNumbersDemo.class);
 		
 		// @formatter:on
 		private final int idx;
@@ -112,6 +114,9 @@ public class Demo {
 					AlgUtil.clear();
 					AlgUtil.println("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
+					AlgUtil.println("\n" + AlgUtil.repeatString("=", 49));
+					AlgUtil.println("Press [Enter] to continue... ");
+					tmp = scanner.nextLine();
 					input = -9;
 				}
 			} catch (final Exception e) {
