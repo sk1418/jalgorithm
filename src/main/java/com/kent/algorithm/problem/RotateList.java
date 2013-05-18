@@ -6,9 +6,27 @@ import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
 
 /**
- * {1,2,3,4,5}, 9 {2,3,4,5,1} {2,3,4,5,1}
  * 
- * {1,2,3,4,5}, 10 {1,2,3,4,5} {1,2,3,4,5}
+ * Given a list, rotate the list to the right by k places, where k is non-negative.
+ * 
+ * <p>
+ * For example:
+ * </p>
+ * 
+ * <pre>
+ * Given 1->2->3->4->5->NULL and k = 2,
+ * return 4->5->1->2->3->NULL.
+ * 
+ * also 
+ * 
+ * {1,2,3,4,5}, 9 to {2,3,4,5,1}
+ * {1,2,3,4,5}, 10  to {1,2,3,4,5}
+ * </pre>
+ * 
+ * <p>
+ * <b> Algorithm </b> first make the linkedlist a circle, then calculate the new tail and head. Find the xth node from head. (x=length - k % length -
+ * 1) x-node is new tail and the x.next is new head.
+ * </p>
  * 
  * @author kent
  * 
@@ -38,7 +56,6 @@ public class RotateList extends Problem<Map<String, Object>, ListNode> {
 		node = head;
 
 		for (int i = 1; i <= c - n % c - 1; i++) {
-			head = node;
 			node = node.next;
 		}
 		head = node.next;
