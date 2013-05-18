@@ -1,5 +1,7 @@
 package com.kent.algorithm.demo.problem;
 
+import static com.kent.util.AlgUtil.*;
+
 import java.util.List;
 import java.util.Map;
 
@@ -41,7 +43,6 @@ public class RotateListDemo extends AbstractDemo {
 		input.put("times", 9);
 		print(String.format("Complexity: %s\n", problem.getBigO()));
 		doJob(input);
-		print("========");
 		// reset the input ListNode
 		prepareDemo();
 
@@ -54,8 +55,13 @@ public class RotateListDemo extends AbstractDemo {
 
 		print("Input LinkedList :" + input.get("head").toString());
 		print("Rotate " + input.get("times") + " times to the right:");
+		stopwatch.start();
 		final ListNode newHead = problem.solve(input);
+		stopwatch.stop();
 		print("Rotated LinkedList :" + newHead.toString());
+		print(stopwatch.readAsString());
+		print(repeatString("=", 50));
+		stopwatch.reset();
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package com.kent.algorithm.demo.problem;
 
+import static com.kent.util.AlgUtil.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -37,7 +39,9 @@ public class FindAllSubSetsDemo extends AbstractDemo {
 	private void doJob(final int[] input) {
 		print("\nArray: " + Arrays.toString(input));
 		print("All subsets:\n");
+		stopwatch.start();
 		final ArrayList<ArrayList<Integer>> result = problem.solve(input);
+		stopwatch.stop();
 		final String s;
 		int i = 1;
 		for (final ArrayList<Integer> l : result) {
@@ -48,8 +52,9 @@ public class FindAllSubSetsDemo extends AbstractDemo {
 			}
 			i++;
 		}
-
-		print("\n-=-=-=-=-=-=-");
+		print(stopwatch.readAsString());
+		print(repeatString("=", 50));
+		stopwatch.reset();
 	}
 
 	@Override

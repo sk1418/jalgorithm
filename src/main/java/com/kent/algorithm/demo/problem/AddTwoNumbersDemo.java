@@ -1,5 +1,7 @@
 package com.kent.algorithm.demo.problem;
 
+import static com.kent.util.AlgUtil.*;
+
 import java.util.List;
 
 import com.google.common.base.Joiner;
@@ -38,7 +40,12 @@ public class AddTwoNumbersDemo extends AbstractDemo {
 		print(String.format("Complexity: %s\n", problem.getBigO()));
 		print("LinkedList 1: " + input.get(0).toString());
 		print("LinkedList 2: " + input.get(1).toString());
+		stopwatch.start();
 		print("SUM         : " + problem.solve(input).toString());
+		stopwatch.stop();
+		print(stopwatch.readAsString());
+		print(repeatString("=", 50));
+		stopwatch.reset();
 	}
 
 	@Override
