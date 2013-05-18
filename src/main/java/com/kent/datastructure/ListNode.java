@@ -37,6 +37,6 @@ public class ListNode {
 
 	@Override
 	public String toString() {
-		return Joiner.on(", ").join(toList());
+		return "[" + Joiner.on(" -> ").join(toList()) + "]";
 	}
 }
