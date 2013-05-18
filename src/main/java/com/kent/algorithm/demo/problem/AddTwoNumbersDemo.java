@@ -36,8 +36,8 @@ public class AddTwoNumbersDemo extends AbstractDemo {
 	@Override
 	protected void specificDemo() {
 		print(String.format("Complexity: %s\n", problem.getBigO()));
-		print("LinkedList 1: [" + input.get(0).toString() + "]");
-		print("LinkedList 2: [" + input.get(1).toString() + "]");
+		print("LinkedList 1: " + input.get(0).toString());
+		print("LinkedList 2: " + input.get(1).toString());
 		print("SUM         : " + problem.solve(input).toString());
 	}
 

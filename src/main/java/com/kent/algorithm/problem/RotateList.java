@@ -7,8 +7,18 @@ import com.kent.datastructure.ListNode;
 
 /**
  * 
- * Given a list, rotate the list to the right by k places, where k is non-negative.
+ * Given a list, rotate the list to the right by k places, where k is non-negative.</br>
+ * single linkedlist:
  * 
+ * <pre>
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * </pre>
  * <p>
  * For example:
  * </p>
