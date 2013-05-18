@@ -147,7 +147,7 @@ public class Demo {
 			} else if (idx == 11) {
 				sb.append("\n-- Sorting in linear time --\n\n");
 			} else if (idx == 100) {
-				sb.append("\n-- Problems --\n\n");
+				sb.append("\n-- Problems --(from StackOverflow.com, leetcode.com ...)\n\n");
 			}
 			sb.append(String.format(format, type.getIdx(), AlgUtil.repeatString(".", 7), type));
 			sb.append(i == DemoType.values().length ? "" : "\n");
