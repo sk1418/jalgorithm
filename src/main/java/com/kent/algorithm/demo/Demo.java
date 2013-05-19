@@ -16,6 +16,7 @@ import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
 import com.kent.algorithm.demo.problem.RotateListDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
+import com.kent.algorithm.demo.problem.SwapListNodesInPairsDemo;
 import com.kent.algorithm.demo.problem.TwoSumInArrayDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.BucketSortDemo;
@@ -63,7 +64,8 @@ public class Demo {
 		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class),
 		Problem_AddTwoNumbers(110, AddTwoNumbersDemo.class),
 		Problem_FindAllSubSets(111, FindAllSubSetsDemo.class),
-		Problem_RotateList(112, RotateListDemo.class);
+		Problem_RotateList(112, RotateListDemo.class),
+		Problem_SwapListNodesInPairs(113, SwapListNodesInPairsDemo.class);
 		
 		// @formatter:on
 		private final int idx;

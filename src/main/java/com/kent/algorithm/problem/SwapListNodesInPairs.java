@@ -53,8 +53,7 @@ public class SwapListNodesInPairs extends Problem<ListNode, ListNode> {
 
 	@Override
 	public String getBigO() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(n)";
 	}
 
 	@Override
