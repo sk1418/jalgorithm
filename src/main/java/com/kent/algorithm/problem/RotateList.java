@@ -12,18 +12,22 @@ import com.kent.datastructure.ListNode;
  * 
  * <pre>
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
+ * 	int val;
+ * 	ListNode next;
+ * 
+ * 	ListNode(int x) {
+ * 		val = x;
+ * 		next = null;
+ * 	}
+ * }
  * </pre>
+ * 
  * <p>
  * For example:
  * </p>
  * 
  * <pre>
+ * {@code
  * Given 1->2->3->4->5->NULL and k = 2,
  * return 4->5->1->2->3->NULL.
  * 
@@ -31,6 +35,7 @@ import com.kent.datastructure.ListNode;
  * 
  * {1,2,3,4,5}, 9 to {2,3,4,5,1}
  * {1,2,3,4,5}, 10  to {1,2,3,4,5}
+ * }
  * </pre>
  * 
  * <p>
