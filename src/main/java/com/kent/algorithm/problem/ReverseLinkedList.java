@@ -85,7 +85,7 @@ public class ReverseLinkedList extends Problem<ListNode, ListNode> {
 		// initial newHead is the head of date (date)
 		ListNode newHead = data;
 		// data is current node
-		while (data != null && data.next != null) {
+		while (data.next != null) {
 			nn = data.next.next;
 			data.next.next = newHead; // move the data.next to the head
 			newHead = data.next; // date.next becomes newHead
