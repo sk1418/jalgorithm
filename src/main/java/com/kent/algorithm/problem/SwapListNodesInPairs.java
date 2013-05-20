@@ -53,7 +53,7 @@ public class SwapListNodesInPairs extends Problem<ListNode, ListNode> {
 
 	@Override
 	public String getBigO() {
-		return "O(n)";
+		return "Time: O(n); Space: O(1)";
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.MedianOfTwoSortedArraysDemo;
 import com.kent.algorithm.demo.problem.PlusOneDemo;
 import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
+import com.kent.algorithm.demo.problem.ReverseLinkedListDemo;
 import com.kent.algorithm.demo.problem.RotateListDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
@@ -62,10 +63,11 @@ public class Demo {
 		Problem_PlusOne(107, PlusOneDemo.class),
 		Problem_ReverseInteger(108, ReverseIntegerDemo.class),
 		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class),
-		Problem_AddTwoNumbers(110, AddTwoNumbersDemo.class),
-		Problem_FindAllSubSets(111, FindAllSubSetsDemo.class),
-		Problem_RotateList(112, RotateListDemo.class),
-		Problem_SwapListNodesInPairs(113, SwapListNodesInPairsDemo.class);
+		Problem_FindAllSubSets(110, FindAllSubSetsDemo.class),
+		Problem_AddTwoNumbers(111, AddTwoNumbersDemo.class),
+		Problem_ReverseLinkedList(112, ReverseLinkedListDemo.class),
+		Problem_RotateList(113, RotateListDemo.class),
+		Problem_SwapListNodesInPairs(114, SwapListNodesInPairsDemo.class);
 		
 		// @formatter:on
 		private final int idx;
