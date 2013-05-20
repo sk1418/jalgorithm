@@ -2,6 +2,7 @@ package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -72,6 +73,11 @@ public class SwapListNodesInPairs extends Problem<ListNode, ListNode> {
 			n.next = data;
 			pre = data;
 			data = data.next;
+
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("step status: " + head.toString());
+			}
 
 		}
 

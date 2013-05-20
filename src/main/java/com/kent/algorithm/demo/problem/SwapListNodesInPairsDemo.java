@@ -47,6 +47,7 @@ public class SwapListNodesInPairsDemo extends AbstractDemo {
 		m6.next = null;
 
 		problem = problem == null ? new SwapListNodesInPairs() : problem;
+		problem.setPrintSteps(true);
 	}
 
 	@Override
