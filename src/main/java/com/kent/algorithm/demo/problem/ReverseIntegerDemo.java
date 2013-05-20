@@ -17,6 +17,7 @@ public class ReverseIntegerDemo extends AbstractDemo {
 		input1 = 12345;
 		input2 = -12345;
 		problem = new ReverseInteger();
+		problem.setPrintSteps(true);
 	}
 
 	@Override

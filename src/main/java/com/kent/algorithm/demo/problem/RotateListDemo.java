@@ -34,6 +34,7 @@ public class RotateListDemo extends AbstractDemo {
 		n4.next = n5;
 		n5.next = null;
 		problem = problem == null ? new RotateList() : problem;
+		problem.setPrintSteps(true);
 	}
 
 	@Override

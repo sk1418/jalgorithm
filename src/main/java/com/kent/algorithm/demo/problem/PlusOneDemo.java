@@ -19,6 +19,7 @@ public class PlusOneDemo extends AbstractDemo {
 		input1 = new int[] { 2, 3, 4, 5, 9 };
 		input2 = new int[] { 9, 9, 9, 9, 9 };
 		problem = new PlusOne();
+		problem.setPrintSteps(true);
 	}
 
 	@Override

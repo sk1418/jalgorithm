@@ -1,6 +1,7 @@
 package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Problem;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -44,6 +45,10 @@ public class ReverseInteger extends Problem<Integer, Integer> {
 			result += a % 10 * (int) Math.pow(10, p);
 			a /= 10;
 			p--;
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("Step Status : " + result);
+			}
 		}
 		return negative ? -result : result;
 	}

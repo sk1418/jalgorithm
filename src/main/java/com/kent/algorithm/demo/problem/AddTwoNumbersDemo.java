@@ -32,6 +32,7 @@ public class AddTwoNumbersDemo extends AbstractDemo {
 		n2.next = n3;
 		m1.next = m2;
 		problem = new AddTwoNumbers();
+		problem.setPrintSteps(true);
 		input = ImmutableList.of(n1, m1);
 	}
 

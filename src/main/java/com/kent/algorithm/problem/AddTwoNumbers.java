@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -64,6 +65,10 @@ public class AddTwoNumbers extends Problem<List<ListNode>, ListNode> {
 			l1 = l1 == null ? l1 : l1.next;
 			l2 = l2 == null ? l2 : l2.next;
 			carry = v >= 10 ? 1 : 0;
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("Step Status : " + result);
+			}
 		}
 
 		return result;

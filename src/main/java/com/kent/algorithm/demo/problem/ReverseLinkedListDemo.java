@@ -39,6 +39,7 @@ public class ReverseLinkedListDemo extends AbstractDemo {
 		n8.next = null;
 
 		problem = new ReverseLinkedList();
+		problem.setPrintSteps(true);
 	}
 
 	@Override

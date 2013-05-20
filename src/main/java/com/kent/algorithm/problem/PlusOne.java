@@ -3,6 +3,7 @@ package com.kent.algorithm.problem;
 import java.util.Arrays;
 
 import com.kent.algorithm.Problem;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -22,6 +23,10 @@ public class PlusOne extends Problem<int[], int[]> {
 	@Override
 	public int[] solve(final int[] data) {
 		for (int i = data.length - 1; i >= 0; i--) {
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("Step Status : " + Arrays.toString(data));
+			}
 			if (data[i] < 9) {
 				data[i]++;
 				return data;

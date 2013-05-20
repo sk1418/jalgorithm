@@ -41,6 +41,7 @@ public class ReverseLinkedListEveryKNodesDemo extends AbstractDemo {
 
 		input = Maps.newHashMap();
 		problem = problem == null ? new ReverseLinkedListEveryKNodes() : problem;
+		problem.setPrintSteps(true);
 	}
 
 	@Override

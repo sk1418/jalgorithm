@@ -2,6 +2,7 @@ package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -90,6 +91,10 @@ public class ReverseLinkedList extends Problem<ListNode, ListNode> {
 			data.next.next = newHead; // move the data.next to the head
 			newHead = data.next; // date.next becomes newHead
 			data.next = nn; // data.next -> nn
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("step status : " + newHead);
+			}
 		}
 
 		return newHead;

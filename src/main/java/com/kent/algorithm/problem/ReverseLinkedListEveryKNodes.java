@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
+import com.kent.util.AlgUtil;
 
 /**
  * <p>
@@ -96,6 +97,11 @@ public class ReverseLinkedListEveryKNodes extends Problem<Map<String, Object>, L
 
 			// prepare for next round
 			head = tail.next;
+
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("Step Status : " + newHead.toString());
+			}
 		}
 
 		return newHead;
