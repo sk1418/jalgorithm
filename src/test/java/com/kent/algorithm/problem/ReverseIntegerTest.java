@@ -22,6 +22,7 @@ public class ReverseIntegerTest extends BaseTest {
 	 */
 	@Test
 	public void solutionTest() {
+		testInfo("Reverse Integer");
 		final ReverseInteger problem = new ReverseInteger();
 		final int input1 = 12345;
 		final int input2 = -12345;
