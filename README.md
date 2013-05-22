@@ -4,9 +4,6 @@ README file of project jalgorithm
 
 Some classic algorithm implemented in Java with demos. (only CLI available)
 
-##Requirement & Install
-todo
-
 ##Start
 todo
 
@@ -53,7 +50,7 @@ todo
 	=================================================
 	select the demo index (press 0 to exit):	
 
-###Some demoes as examples
+###Some demos as examples
 
 ####SortingComparasion
 
