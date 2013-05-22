@@ -41,4 +41,25 @@ public class RemoveDupsFromSortedListTest extends BaseTest {
 
 		assertEquals("[1 -> 2 -> 3]", result.toString());
 	}
+
+	@Test
+	public void removeDupsSinglePointer() {
+
+		final ListNode n1 = new ListNode(1);
+		final ListNode n2 = new ListNode(1);
+		final ListNode n3 = new ListNode(2);
+		final ListNode n4 = new ListNode(3);
+		final ListNode n5 = new ListNode(3);
+
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+
+		final RemoveDupsFromSortedLinkedList problem = new RemoveDupsFromSortedLinkedList();
+		problem.setPrintSteps(true);
+		final ListNode result = problem.removeDupSinglePointer(n1);
+
+		assertEquals("[1 -> 2 -> 3]", result.toString());
+	}
 }

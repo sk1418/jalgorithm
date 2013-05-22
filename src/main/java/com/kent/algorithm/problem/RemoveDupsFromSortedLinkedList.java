@@ -70,7 +70,7 @@ public class RemoveDupsFromSortedLinkedList extends Problem<ListNode, ListNode> 
 	}
 
 	// single pointer solution
-	private ListNode removeDup(ListNode data) {
+	public ListNode removeDupSinglePointer(ListNode data) {
 		if (data == null || data.next == null) {
 			return data;
 		}
