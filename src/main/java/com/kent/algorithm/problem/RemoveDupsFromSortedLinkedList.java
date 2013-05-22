@@ -30,7 +30,32 @@ public class RemoveDupsFromSortedLinkedList extends Problem<ListNode, ListNode> 
 	}
 
 	@Override
+	// double pointer solution
 	public ListNode solve(ListNode data) {
+		if (data == null || data.next == null) {
+			return data;
+		}
+
+		final ListNode head = data; // head, will be returned at the end
+		ListNode uniq = data; // uniq pointer
+
+		while (data != null) {
+			if (data.next != null && data.next.val == data.val) {
+				data = data.next;
+				continue;
+			} else {
+				uniq.next = data.next;
+				uniq = uniq.next;
+				data = data.next;
+			}
+
+		}
+
+		return head;
+	}
+
+	// single pointer solution
+	private ListNode removeDup(ListNode data) {
 		if (data == null || data.next == null) {
 			return data;
 		}
