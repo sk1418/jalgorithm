@@ -18,6 +18,14 @@ import com.kent.util.AlgUtil;
  * 
  * <b>Solution/Algorithm</b>
  * 
+ * [Please read source codes for single pointer solution.]
+ * 
+ * <pre>
+ * - create two pointers (uniq and work)
+ * - iterate the following steps:
+ *   - if work.next.val == work.val, work goes to next, till a work.next has different value from work
+ *   - uniq.next = work.next; uniq = uniq.next; work = work.next;
+ * </pre>
  * 
  * @author kent
  * 
@@ -40,6 +48,13 @@ public class RemoveDupsFromSortedLinkedList extends Problem<ListNode, ListNode> 
 		ListNode uniq = data; // uniq pointer
 
 		while (data != null) {
+			// only for demo
+			if (printSteps()) {
+				AlgUtil.println("[step] uniq  : " + uniq);
+				AlgUtil.println("[step] work  : " + data);
+				AlgUtil.println("[step] head  : " + head);
+				AlgUtil.println(AlgUtil.repeatString("-", 60));
+			}
 			if (data.next != null && data.next.val == data.val) {
 				data = data.next;
 				continue;
