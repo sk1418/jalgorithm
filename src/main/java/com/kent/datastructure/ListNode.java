@@ -22,6 +22,7 @@ public class ListNode {
 
 	/**
 	 * just for unit testing
+	 * should not be used in Problem solutions
 	 * 
 	 * @return
 	 */
@@ -35,6 +36,10 @@ public class ListNode {
 		return l;
 	}
 
+	/**
+	 * Just for unit testing/ Demos
+	 * should not be used in Problem solutions
+	 */
 	@Override
 	public String toString() {
 		return "[" + Joiner.on(" -> ").join(toList()) + "]";
