@@ -52,6 +52,10 @@ public class RemoveNthNodeFromEndOfLinkedList extends Problem<Map<String, Object
 			fast = fast.next;
 			if (n-- <= 0) {
 				slow = slow.next;
+				// only for demo
+				if (printSteps()) {
+					// AlgUtil.println("Slow pointer : " = )
+				}
 			}
 		}
 
