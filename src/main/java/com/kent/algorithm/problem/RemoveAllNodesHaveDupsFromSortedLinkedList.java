@@ -29,45 +29,36 @@ public class RemoveAllNodesHaveDupsFromSortedLinkedList extends Problem<ListNode
 	}
 
 	@Override
-	public ListNode solve(ListNode data) {
+	public ListNode solve(final ListNode data) {
 		if (data == null || data.next == null) {
 			return data;
 		}
 
-		ListNode head = null;
-		ListNode result = null;
-		ListNode tmp = null;
+		ListNode head = new ListNode(0);
+		final ListNode result = head; // dummy result node, finally result.next would be returned.
+		ListNode later = data;
+		ListNode checker = later.next;
+
 		boolean dup = false;
-		while (data != null) {
-			if (tmp == null) {
-				tmp = data;
-				data = data.next;
-			} else if (data.val == tmp.val) {
-				data = data.next;
+
+		while (checker != null) {
+			if (checker.val == later.val) {
 				dup = true;
 			} else {
 				if (!dup) {
-					if (head == null) {
-						head = tmp;
-						result = head;
-					} else {
-						head.next = tmp;
-						head = head.next;
-					}
+					head.next = later;
+					head = head.next;
 				}
-				tmp = data;
+
+				later = checker;
 				dup = false;
-				data = data.next;
 			}
 
+			checker = checker.next;
 		}
-		if (head == null) {
-			head = !dup ? tmp : null;
-			result = head;
-		} else {
-			head.next = !dup ? tmp : null;
-		}
+		head.next = !dup ? later : null;
 
-		return result;
+		return result.next;
 	}
+
 }
