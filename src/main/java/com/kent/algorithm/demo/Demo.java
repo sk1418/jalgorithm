@@ -12,6 +12,7 @@ import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.MedianOfTwoSortedArraysDemo;
 import com.kent.algorithm.demo.problem.PlusOneDemo;
+import com.kent.algorithm.demo.problem.RemoveAllNodesHaveDupsFromSortedLinkedListDemo;
 import com.kent.algorithm.demo.problem.RemoveDupsFromSortedLinkedListDemo;
 import com.kent.algorithm.demo.problem.RemoveNthNodeFromEndOfLinkedListDemo;
 import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
@@ -73,7 +74,7 @@ public class Demo {
 		Problem_SwapListNodesInPairs(114, SwapListNodesInPairsDemo.class),
 		Problem_ReverseLinkedListEveryKNodes(115, ReverseLinkedListEveryKNodesDemo.class),
 		Problem_RemoveDupsFromSortedLinkedList(116, RemoveDupsFromSortedLinkedListDemo.class),
-//		Problem_RemoveDupsFromSortedLinkedList(117, RemoveDupsFromSortedLinkedListDemo.class),
+		Problem_RemoveAllNodesHaveDupsFromSortedLinkedListDemo(117, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
 		Problem_RemoveNthNodeFromEndOfLinkedList(118, RemoveNthNodeFromEndOfLinkedListDemo.class);
 		
 		// @formatter:on
