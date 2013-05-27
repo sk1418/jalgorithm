@@ -17,6 +17,22 @@ import com.kent.datastructure.ListNode;
  * 
  * <b>Solution/Algorithm</b>
  * 
+ * <pre>
+ * Assume the given list with head node "data"
+ * - if data==null or data.next == null, data is the answer
+ * - create two pointer, one named later, one name checker, and a dup boolean flag
+ * - create one head node with dummy value. result pointer points to head. the result.next would be answer
+ * - later->data; checker->data.next
+ * - if checker!=null iterate following steps:
+ *   > later.val == checker.val? checker goes to next node, set dup flag=true, next iteration
+ *   > if later.val!=checker.val
+ *         if dup==false? head->later, head->head.next
+ *         reset dup flag later->checker, checker->checker.next; next iteration
+ *   > after last iteration, we need to check if the current later should be in answer:
+ *     head.next = !dup ? later : null;
+ *   > return result.next
+ * 
+ * </pre>
  * 
  * @author kent
  * 
