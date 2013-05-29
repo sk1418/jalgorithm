@@ -42,50 +42,58 @@ public class Demo {
 	private static Map<Integer, Class<? extends AbstractDemo>> demoTypeMap = new HashMap<Integer, Class<? extends AbstractDemo>>();
 
 	enum DemoType {
+		CompSort, LinearSort, Problems, ListProblem
+	}
+
+	enum DemoItem {
 		// @formatter:off
 		
 		//sortings
-		SortingComparasion(1, SortingComparasionDemo.class), 
-		InsertionSort(2, InsertionSortDemo.class), 
-		BubbleSort(3, BubbleSortDemo.class), 
-		MergeSort(4, MergeSortDemo.class), 
-		MergeSort_Optimized(5, OptimizedMergeSortDemo.class),   
-		HeapSort(6, HeapSortDemo.class), 
-		QuickSort(7 , QuickSortDemo.class), 
-		RandomizedQuickSort(8 , RandomizedQuickSortDemo.class), 
+		SortingComparasion(1,DemoType.CompSort, SortingComparasionDemo.class), 
+		InsertionSort(2,DemoType.CompSort, InsertionSortDemo.class), 
+		BubbleSort(3,DemoType.CompSort, BubbleSortDemo.class), 
+		MergeSort(4,DemoType.CompSort, MergeSortDemo.class), 
+		MergeSort_Optimized(5,DemoType.CompSort, OptimizedMergeSortDemo.class),   
+		HeapSort(6,DemoType.CompSort, HeapSortDemo.class), 
+		QuickSort(7 ,DemoType.CompSort, QuickSortDemo.class), 
+		RandomizedQuickSort(8 ,DemoType.CompSort, RandomizedQuickSortDemo.class), 
+
 		//sorting in linear time
-		CountingSort(11, CountingSortDemo.class), 
-		BucketSort(12, BucketSortDemo.class), 
-		RadixSort(13, RadixSortDemo.class), 
+		CountingSort(11, DemoType.LinearSort, CountingSortDemo.class), 
+		BucketSort(12, DemoType.LinearSort, BucketSortDemo.class), 
+		RadixSort(13, DemoType.LinearSort, RadixSortDemo.class), 
 		//problems
-		Problem_MaxSubArray(100, MaxSubArrayDemo.class), 
-		Problem_CountInversionPairs(101, CountInversionPairsDemo.class),
-		Problem_FindHeavyIntegers(102, FindHeavyIntegerDemo.class),
-		Problem_SortingIntegerWithNDigits(103, SortingIntegersWithNDigitsDemo.class),
-		Problem_SortingStringsWithNChars(104, SortingStringsWithNCharsDemo.class),
-		Problem_FindNextHigherNumber(105, FindNextHigherNumberDemo.class),
-		Problem_TwoSumInArray(106, TwoSumInArrayDemo.class),
-		Problem_PlusOne(107, PlusOneDemo.class),
-		Problem_ReverseInteger(108, ReverseIntegerDemo.class),
-		Problem_MedianOfTwoSortedArrays(109, MedianOfTwoSortedArraysDemo.class),
-		Problem_FindAllSubSets(110, FindAllSubSetsDemo.class),
-		Problem_AddTwoNumbers(111, AddTwoNumbersDemo.class),
-		Problem_ReverseLinkedList(112, ReverseLinkedListDemo.class),
-		Problem_RotateList(113, RotateListDemo.class),
-		Problem_SwapListNodesInPairs(114, SwapListNodesInPairsDemo.class),
-		Problem_ReverseLinkedListEveryKNodes(115, ReverseLinkedListEveryKNodesDemo.class),
-		Problem_RemoveDupsFromSortedLinkedList(116, RemoveDupsFromSortedLinkedListDemo.class),
-		Problem_RemoveAllNodesHaveDupsFromSortedLinkedListDemo(117, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
-		Problem_RemoveNthNodeFromEndOfLinkedList(118, RemoveNthNodeFromEndOfLinkedListDemo.class),
-		Problem_RemoveDupsFromSortedArray(119, RemoveDupsFromSortedArrayDemo.class);
-		
+		MaxSubArray(100, DemoType.Problems, MaxSubArrayDemo.class), 
+		CountInversionPairs(101, DemoType.Problems, CountInversionPairsDemo.class),
+		FindHeavyIntegers(102, DemoType.Problems, FindHeavyIntegerDemo.class),
+		SortingIntegerWithNDigits(103, DemoType.Problems, SortingIntegersWithNDigitsDemo.class),
+		SortingStringsWithNChars(104, DemoType.Problems, SortingStringsWithNCharsDemo.class),
+		FindNextHigherNumber(105, DemoType.Problems, FindNextHigherNumberDemo.class),
+		TwoSumInArray(106, DemoType.Problems, TwoSumInArrayDemo.class),
+		PlusOne(107, DemoType.Problems, PlusOneDemo.class),
+		ReverseInteger(108, DemoType.Problems, ReverseIntegerDemo.class),
+		MedianOfTwoSortedArrays(109, DemoType.Problems, MedianOfTwoSortedArraysDemo.class),
+		FindAllSubSets(110, DemoType.Problems, FindAllSubSetsDemo.class),
+		AddTwoNumbers(111, DemoType.Problems, AddTwoNumbersDemo.class),
+		ReverseLinkedList(112, DemoType.Problems, ReverseLinkedListDemo.class),
+		RotateList(113, DemoType.Problems, RotateListDemo.class),
+		SwapListNodesInPairs(114, DemoType.Problems, SwapListNodesInPairsDemo.class),
+		ReverseLinkedListEveryKNodes(115, DemoType.Problems, ReverseLinkedListEveryKNodesDemo.class),
+		RemoveDupsFromSortedLinkedList(116, DemoType.Problems, RemoveDupsFromSortedLinkedListDemo.class),
+		RemoveAllNodesHaveDupsFromSortedLinkedListDemo(117, DemoType.Problems, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
+		RemoveNthNodeFromEndOfLinkedList(118, DemoType.Problems, RemoveNthNodeFromEndOfLinkedListDemo.class),
+		RemoveDupsFromSortedArray(119, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class);
+
+
 		// @formatter:on
 		private final int idx;
 		private final Class<? extends AbstractDemo> demoClass;
+		private final DemoType type;
 
-		DemoType(final int idx, final Class<? extends AbstractDemo> demoClass) {
+		DemoItem(final int idx, final DemoType type, final Class<? extends AbstractDemo> demoClass) {
 			this.idx = idx;
 			this.demoClass = demoClass;
+			this.type = type;
 		}
 
 		public int getIdx() {
@@ -153,9 +161,9 @@ public class Demo {
 		final String format = "%4s %s %-30s";
 		final StringBuffer sb = new StringBuffer();
 		int i = 0, idx = 0;
-		for (final DemoType type : DemoType.values()) {
+		for (final DemoItem item : DemoItem.values()) {
 			i++;
-			idx = type.getIdx();
+			idx = item.getIdx();
 			if (idx == 1) {
 				sb.append("\n-- Sortings --\n\n");
 			} else if (idx == 11) {
@@ -163,9 +171,9 @@ public class Demo {
 			} else if (idx == 100) {
 				sb.append("\n-- Problems --(from StackOverflow.com, leetcode.com ...)\n\n");
 			}
-			sb.append(String.format(format, type.getIdx(), AlgUtil.repeatString(".", 7), type));
-			sb.append(i == DemoType.values().length ? "" : "\n");
-			demoTypeMap.put(type.getIdx(), type.getDemoClass());
+			sb.append(String.format(format, item.getIdx(), AlgUtil.repeatString(".", 7), item));
+			sb.append(i == DemoItem.values().length ? "" : "\n");
+			demoTypeMap.put(item.getIdx(), item.getDemoClass());
 		}
 		return sb.toString();
 	}
