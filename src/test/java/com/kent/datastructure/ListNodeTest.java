@@ -54,7 +54,7 @@ public class ListNodeTest extends BaseTest {
 	public void toStringTest() {
 		testInfo("ListNodeTest toString");
 
-		final String expect = "1, 2, 3, 4, 5";
+		final String expect = "[1 -> 2 -> 3 -> 4 -> 5]";
 		final String s = n1.toString();
 
 		Assert.assertEquals(expect, s);
