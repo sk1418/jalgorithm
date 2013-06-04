@@ -1,9 +1,15 @@
 package com.kent.algorithm.demo;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.ImmutableListMultimap;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
@@ -41,12 +47,29 @@ public class Demo {
 
 	private static Map<Integer, Class<? extends AbstractDemo>> demoTypeMap = new HashMap<Integer, Class<? extends AbstractDemo>>();
 
+	// @formatter:off
+	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT = new ImmutableListMultimap.Builder<Integer, DemoType>()
+			.putAll(1, DemoType.CompSort, DemoType.LinearSort)
+			.putAll(2, DemoType.Problems)
+			.build();
+	
+	private static final int MAX_ROWS_PER_TYPE = 7;
+
 	enum DemoType {
-		CompSort, LinearSort, Problems, ListProblem
+		CompSort("Comparison Sort"), 
+		LinearSort("Sorting in linear time"),
+		Problems("Problems (from StackOverflow.com, leetcode.com ...)"), 
+		ListProblem("blah");
+
+		private final String desc;
+
+		DemoType(final String text) {
+			desc = text;
+		}
+
 	}
 
-	enum DemoItem {
-		// @formatter:off
+	enum DemoItem{
 		
 		//sortings
 		SortingComparasion(1,DemoType.CompSort, SortingComparasionDemo.class), 
@@ -102,6 +125,16 @@ public class Demo {
 
 		public Class<? extends AbstractDemo> getDemoClass() {
 			return demoClass;
+		}
+
+		public static Collection<DemoItem> getItemsByDemoType(final DemoType type) {
+			return Collections2.filter(Arrays.asList(values()), new Predicate<DemoItem>() {
+
+				@Override
+				public boolean apply(final DemoItem input) {
+					return input.type == type;
+				}
+			});
 		}
 
 	}
@@ -176,5 +209,28 @@ public class Demo {
 			demoTypeMap.put(item.getIdx(), item.getDemoClass());
 		}
 		return sb.toString();
+	}
+
+	private static String printMenu() {
+		final int rows = MENU_LAYOUT.size();
+		final DemoType type = null;
+		for (int row = 1; row <= rows; row++) {
+			if (MENU_LAYOUT.get(row).size() == 1) {
+				printSingleColMenu(MENU_LAYOUT.get(row).get(0));
+			} else {
+				printDoubleColMenu(MENU_LAYOUT.get(row));
+			}
+		}
+		return "";
+
+	}
+
+	private static void printSingleColMenu(final DemoType type) {
+		final Collection<DemoItem> items = DemoItem.getItemsByDemoType(type);
+
+	}
+
+	private static void printDoubleColMenu(final List<DemoType> type) {
+
 	}
 }
