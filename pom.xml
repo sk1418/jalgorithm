@@ -153,16 +153,16 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					-<archive>
-						-    <manifest>
-							-        <mainClass>com.kent.algorithm.demo.Demo</mainClass>
-							-        <packageName>com.kent.algorithm.demo</packageName>
-							-    </manifest>
-						-    <manifestEntries>
-							-        <mode>development</mode>
-							-        <url>${project.url}</url>
-							-    </manifestEntries>
-						-</archive>
+					<archive>
+						<manifest>
+							<mainClass>com.kent.algorithm.demo.Demo</mainClass>
+							<packageName>com.kent.algorithm.demo</packageName>
+						</manifest>
+						<manifestEntries>
+							<mode>development</mode>
+							<url>${project.url}</url>
+						</manifestEntries>
+					</archive>
 				</configuration>
 				<executions>
 					<execution>
