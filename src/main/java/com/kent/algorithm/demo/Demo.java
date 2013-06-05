@@ -1,7 +1,6 @@
 package com.kent.algorithm.demo;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +9,7 @@ import java.util.Scanner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
+import com.google.common.collect.Lists;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
@@ -45,21 +45,21 @@ import com.kent.util.AlgUtil;
 
 public class Demo {
 
-	private static Map<Integer, Class<? extends AbstractDemo>> demoTypeMap = new HashMap<Integer, Class<? extends AbstractDemo>>();
-
 	// @formatter:off
-	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT = new ImmutableListMultimap.Builder<Integer, DemoType>()
+	//menu layout, define the left/right block.
+	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT = ImmutableListMultimap.<Integer, DemoType>builder()
 			.putAll(1, DemoType.CompSort, DemoType.LinearSort)
-			.putAll(2, DemoType.Problems)
+			.putAll(2, DemoType.Test)
+			.putAll(3, DemoType.Problems)
 			.build();
 	
-	private static final int MAX_ROWS_PER_TYPE = 7;
 
 	enum DemoType {
 		CompSort("Comparison Sort"), 
 		LinearSort("Sorting in linear time"),
 		Problems("Problems (from StackOverflow.com, leetcode.com ...)"), 
-		ListProblem("blah");
+		Test("This is a test separator/marker"); 
+//		ListProblem("blah");
 
 		private final String desc;
 
@@ -103,7 +103,7 @@ public class Demo {
 		SwapListNodesInPairs(114, DemoType.Problems, SwapListNodesInPairsDemo.class),
 		ReverseLinkedListEveryKNodes(115, DemoType.Problems, ReverseLinkedListEveryKNodesDemo.class),
 		RemoveDupsFromSortedLinkedList(116, DemoType.Problems, RemoveDupsFromSortedLinkedListDemo.class),
-		RemoveAllNodesHaveDupsFromSortedLinkedListDemo(117, DemoType.Problems, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
+		RemoveAllNodesHaveDupsFromSortedLinkedList(117, DemoType.Problems, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
 		RemoveNthNodeFromEndOfLinkedList(118, DemoType.Problems, RemoveNthNodeFromEndOfLinkedListDemo.class),
 		RemoveDupsFromSortedArray(119, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class);
 
@@ -127,14 +127,23 @@ public class Demo {
 			return demoClass;
 		}
 
-		public static Collection<DemoItem> getItemsByDemoType(final DemoType type) {
-			return Collections2.filter(Arrays.asList(values()), new Predicate<DemoItem>() {
-
+		public static List<DemoItem> getItemsByDemoType(final DemoType type) {
+			return Lists.newArrayList(Collections2.filter(Arrays.asList(values()), new Predicate<DemoItem>() {
 				@Override
 				public boolean apply(final DemoItem input) {
 					return input.type == type;
 				}
-			});
+			}));
+		}
+
+		public static Map<Integer, Class<? extends AbstractDemo>> getMenuDemoMap() {
+			// mapping the menu idx to demo class
+			final Map<Integer, Class<? extends AbstractDemo>> map = new HashMap<Integer, Class<? extends AbstractDemo>>();
+
+			for (final DemoItem item : DemoItem.values()) {
+				map.put(item.getIdx(), item.getDemoClass());
+			}
+			return map;
 		}
 
 	}
@@ -147,19 +156,22 @@ public class Demo {
 		int input = -9;
 		String tmp;
 		scanner = new Scanner(System.in);
+		final Map<Integer, Class<? extends AbstractDemo>> menuDemoMap = DemoItem.getMenuDemoMap();
+
+		// init
 
 		while (input != 0) {
 			try {
 
 				AlgUtil.println(AlgUtil.repeatString("\n", 3));
 				AlgUtil.println("Available Demos:");
-				AlgUtil.println(AlgUtil.repeatString("=", 49));
-				AlgUtil.println(getDemoTypePrintList());
-				AlgUtil.println(AlgUtil.repeatString("=", 49));
+				// AlgUtil.println(getDemoTypePrintList());
+				printMenu();
+				AlgUtil.println(AlgUtil.repeatString("=", 77));
 				if (input == -9) {
 
 					AlgUtil.println("select the demo index (press 0 to exit):");
-				} else if (!demoTypeMap.containsKey(input)) {
+				} else if (!menuDemoMap.containsKey(input)) {
 					AlgUtil.println("unknow demo index, please input a valid demo index (0 to exit):");
 				}
 				tmp = scanner.nextLine();
@@ -167,11 +179,11 @@ public class Demo {
 				if (input == 0) {
 					break;
 				}
-				if (demoTypeMap.containsKey(input)) {
-					final AbstractDemo demo = demoTypeMap.get(input).newInstance();
+				if (menuDemoMap.containsKey(input)) {
+					final AbstractDemo demo = DemoItem.getMenuDemoMap().get(input).newInstance();
 					AlgUtil.println(AlgUtil.repeatString("\n", 2));
 					AlgUtil.clear();
-					AlgUtil.println("[ " + demoTypeMap.get(input).getSimpleName() + " ]\n");
+					AlgUtil.println("[ " + menuDemoMap.get(input).getSimpleName() + " ]\n");
 					demo.doDemo();
 					AlgUtil.println("\n" + AlgUtil.repeatString("=", 49));
 					AlgUtil.println("Press [Enter] to continue... ");
@@ -189,48 +201,70 @@ public class Demo {
 		System.exit(0);
 	}
 
-	private static String getDemoTypePrintList() {
-		demoTypeMap.clear();
-		final String format = "%4s %s %-30s";
-		final StringBuffer sb = new StringBuffer();
-		int i = 0, idx = 0;
-		for (final DemoItem item : DemoItem.values()) {
-			i++;
-			idx = item.getIdx();
-			if (idx == 1) {
-				sb.append("\n-- Sortings --\n\n");
-			} else if (idx == 11) {
-				sb.append("\n-- Sorting in linear time --\n\n");
-			} else if (idx == 100) {
-				sb.append("\n-- Problems --(from StackOverflow.com, leetcode.com ...)\n\n");
-			}
-			sb.append(String.format(format, item.getIdx(), AlgUtil.repeatString(".", 7), item));
-			sb.append(i == DemoItem.values().length ? "" : "\n");
-			demoTypeMap.put(item.getIdx(), item.getDemoClass());
-		}
-		return sb.toString();
-	}
+	// the line format of two columns layout
+	private static final String FORMAT = "%4s %-35s |%4s %-35s";
 
-	private static String printMenu() {
-		final int rows = MENU_LAYOUT.size();
+	private static void printMenu() {
+		final int rows = MENU_LAYOUT.keySet().size();
 		final DemoType type = null;
 		for (int row = 1; row <= rows; row++) {
+			AlgUtil.println("\n" + AlgUtil.repeatString("=", 77));
 			if (MENU_LAYOUT.get(row).size() == 1) {
 				printSingleColMenu(MENU_LAYOUT.get(row).get(0));
 			} else {
 				printDoubleColMenu(MENU_LAYOUT.get(row));
 			}
 		}
-		return "";
-
 	}
 
 	private static void printSingleColMenu(final DemoType type) {
-		final Collection<DemoItem> items = DemoItem.getItemsByDemoType(type);
+		final List<DemoItem> items = DemoItem.getItemsByDemoType(type);
+		AlgUtil.println(type.desc);
+
+		final int size = items.size();
+		// if it is just a marker/separator, return
+		if (size == 0) {
+			AlgUtil.println(AlgUtil.repeatString("=", 77));
+			return;
+		}
+		AlgUtil.println(AlgUtil.repeatString("_", 77));
+		final int rows = size % 2 == 0 ? size / 2 : size / 2 + 1;
+		DemoItem iteml = null;
+		DemoItem itemr = null;
+		for (int i = 0; i < rows; i++) {
+			iteml = items.get(i);
+			itemr = i + rows < size ? items.get(i + rows) : null;
+			if (itemr != null) {
+				AlgUtil.println(String.format(FORMAT, iteml.idx, iteml, itemr.idx, itemr));
+			} else {
+				AlgUtil.println(String.format(FORMAT, iteml.idx, iteml, "", ""));
+			}
+		}
 
 	}
 
 	private static void printDoubleColMenu(final List<DemoType> type) {
+		assert type.size() == 2;
+		final List<DemoItem> itemsl = DemoItem.getItemsByDemoType(type.get(0));
+		final List<DemoItem> itemsr = DemoItem.getItemsByDemoType(type.get(1));
+		final int rows = itemsl.size() > itemsr.size() ? itemsl.size() : itemsr.size();
+		DemoItem iteml = null;
+		DemoItem itemr = null;
+
+		AlgUtil.println(String.format("%-40s |%-40s", type.get(0).desc, type.get(1).desc));
+		AlgUtil.println(AlgUtil.repeatString("_", 77));
+		for (int i = 0; i < rows; i++) {
+			itemr = i < itemsr.size() ? itemsr.get(i) : null;
+			iteml = i < itemsl.size() ? itemsl.get(i) : null;
+			if (iteml == null) {
+				AlgUtil.println(String.format(FORMAT, "", "", itemr.idx, itemr));
+			} else if (itemr == null) {
+				AlgUtil.println(String.format(FORMAT, iteml.idx, iteml, "", ""));
+			} else {
+				AlgUtil.println(String.format(FORMAT, iteml.idx, iteml, itemr.idx, itemr));
+			}
+
+		}
 
 	}
 }
