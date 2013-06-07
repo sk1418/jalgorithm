@@ -224,7 +224,6 @@ public class Demo {
 		final int size = items.size();
 		// if it is just a marker/separator, return
 		if (size == 0) {
-			AlgUtil.println(AlgUtil.repeatString("=", 77));
 			return;
 		}
 		AlgUtil.println(AlgUtil.repeatString("_", 77));
