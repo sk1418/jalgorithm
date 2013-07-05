@@ -11,44 +11,39 @@ todo
 	java -c xxx.jar
 	
 ###Implemented algorithms and demos so far:
-
 	Available Demos:
-	=================================================
-
-	-- Sortings --
-
-	   1 ....... SortingComparasion            
-	   2 ....... InsertionSort                 
-	   3 ....... BubbleSort                    
-	   4 ....... MergeSort                     
-	   5 ....... MergeSort_Optimized           
-	   6 ....... HeapSort                      
-	   7 ....... QuickSort                     
-	   8 ....... RandomizedQuickSort           
-
-	-- Sorting in linear time --
-
-	  11 ....... CountingSort                  
-	  12 ....... BucketSort                    
-	  13 ....... RadixSort                     
-
-	-- Problems --
-
-	 100 ....... Problem_MaxSubArray           
-	 101 ....... Problem_CountInversionPairs   
-	 102 ....... Problem_FindHeavyIntegers     
-	 103 ....... Problem_SortingIntegerWithNDigits
-	 104 ....... Problem_SortingStringsWithNChars
-	 105 ....... Problem_FindNextHigherNumber  
-	 106 ....... Problem_TwoSumInArray         
-	 107 ....... Problem_PlusOne               
-	 108 ....... Problem_ReverseInteger        
-	 109 ....... Problem_MedianOfTwoSortedArrays
-	 110 ....... Problem_AddTwoNumbers         
-	 111 ....... Problem_FindAllSubSets        
-	 112 ....... Problem_RotateList            
-	=================================================
-	select the demo index (press 0 to exit):	
+	
+	=============================================================================
+	Comparison Sort                          |Sorting in linear time                  
+	_____________________________________________________________________________
+	   1 SortingComparasion                  |  11 CountingSort                       
+	   2 InsertionSort                       |  12 BucketSort                         
+	   3 BubbleSort                          |  13 RadixSort                          
+	   4 MergeSort                           |                                        
+	   5 MergeSort_Optimized                 |                                        
+	   6 HeapSort                            |                                        
+	   7 QuickSort                           |                                        
+	   8 RandomizedQuickSort                 |                                        
+	
+	=============================================================================
+	This is a test separator/marker
+	=============================================================================
+	
+	=============================================================================
+	Problems (from StackOverflow.com, leetcode.com ...)
+	_____________________________________________________________________________
+	 100 MaxSubArray                         | 110 FindAllSubSets                     
+	 101 CountInversionPairs                 | 111 AddTwoNumbers                      
+	 102 FindHeavyIntegers                   | 112 ReverseLinkedList                  
+	 103 SortingIntegerWithNDigits           | 113 RotateList                         
+	 104 SortingStringsWithNChars            | 114 SwapListNodesInPairs               
+	 105 FindNextHigherNumber                | 115 ReverseLinkedListEveryKNodes       
+	 106 TwoSumInArray                       | 116 RemoveDupsFromSortedLinkedList     
+	 107 PlusOne                             | 117 RemoveAllNodesHaveDupsFromSortedLinkedList
+	 108 ReverseInteger                      | 118 RemoveNthNodeFromEndOfLinkedList   
+	 109 MedianOfTwoSortedArrays             | 119 RemoveDupsFromSortedArray          
+	=============================================================================
+	select the demo index (press 0 to exit):
 
 ###Some demos as examples
 
