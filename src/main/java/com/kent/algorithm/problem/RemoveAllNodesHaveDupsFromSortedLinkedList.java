@@ -4,6 +4,7 @@ import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
 
 /**
+ * From http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
  * <p>
  * Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
  * </p>

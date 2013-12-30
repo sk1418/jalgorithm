@@ -5,6 +5,7 @@ import java.util.List;
 import com.kent.algorithm.Problem;
 
 /**
+ * From http://oj.leetcode.com/problems/median-of-two-sorted-arrays/
  * <p>
  * There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays.
  * </p>

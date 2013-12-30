@@ -38,6 +38,11 @@ public class RemoveNthNodeFromEndOfLinkedListTest extends BaseTest {
 
 	}
 
+    private void initCornerList() {
+        n1.next= n2;
+        n2.next = null;
+    }
+
 	/**
 	 * Solution test.
 	 */
@@ -49,16 +54,27 @@ public class RemoveNthNodeFromEndOfLinkedListTest extends BaseTest {
 
 		final Map<String, Object> input = Maps.newHashMap();
 		input.put("head", n1);
-		input.put("n", 2);
+		input.put("n", 3);
 
 		ListNode result = problem.solve(input);
 
-		assertEquals("[1 -> 2 -> 3 -> 5]", result.toString());
+		assertEquals("[1 -> 2 -> 4 -> 5]", result.toString());
 
 		initList();
 		input.put("n", 5);
 		result = problem.solve(input);
 		assertEquals("[2 -> 3 -> 4 -> 5]", result.toString());
 
+        initList();
+        input.put("n", 1);
+        result = problem.solve(input);
+        assertEquals("[1 -> 2 -> 3 -> 4]", result.toString());
+
+
+        //corner case
+        initCornerList();
+        input.put("n", 1);
+        result = problem.solve(input);
+		assertEquals("[1]", result.toString());
 	}
 }

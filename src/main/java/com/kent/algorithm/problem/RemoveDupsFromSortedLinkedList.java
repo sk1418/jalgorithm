@@ -5,6 +5,7 @@ import com.kent.datastructure.ListNode;
 import com.kent.util.AlgUtil;
 
 /**
+ * From http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list/
  * <p>
  * Given a sorted linked list, delete all duplicates such that each element appear only once.
  * </p>

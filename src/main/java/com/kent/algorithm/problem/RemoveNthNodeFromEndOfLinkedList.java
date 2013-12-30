@@ -6,7 +6,7 @@ import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
 
 /**
- * 
+ * From http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
  * <p>
  * Given linked list:
  * 
@@ -50,16 +50,18 @@ public class RemoveNthNodeFromEndOfLinkedList extends Problem<Map<String, Object
 
 		while (fast.next != null) {
 			fast = fast.next;
-			if (n-- <= 0) {
+            n--;
+			if (n < 0) {
 				slow = slow.next;
 				// only for demo
 				if (printSteps()) {
-					// AlgUtil.println("Slow pointer : " = )
+//					 AlgUtil.println("Slow pointer : " = );
 				}
 			}
 		}
 
-		if (slow == head) {
+        // n==1 means, size of the list <=2, and n=1, so the slow didn't move, but we want to remove the last node
+		if (n==1) {
 			return head.next;
 		}
 		slow.next = slow.next.next;

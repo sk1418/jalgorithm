@@ -6,6 +6,7 @@ import com.kent.algorithm.Problem;
 import com.kent.util.AlgUtil;
 
 /**
+ * From http://oj.leetcode.com/problems/plus-one/
  * <p>
  * Given a number represented as an array of digits, plus one to the number.
  * </p>
