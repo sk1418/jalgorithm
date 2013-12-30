@@ -1,5 +1,7 @@
+.idea
 .project
 .classpath
 .settings
 .hgignore
+*.iml
 target/*
