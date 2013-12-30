@@ -6,7 +6,8 @@ import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
 
 /**
- * 
+ * From http://oj.leetcode.com/problems/rotate-list/
+ * <br/>
  * Given a list, rotate the list to the right by k places, where k is non-negative.</br>
  * single linkedlist:
  * 

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.kent.algorithm.Problem;
 
 /**
+ * From http://oj.leetcode.com/problems/two-sum/
  * <p>
  * Given an array of integers, find two numbers such that they add up to a specific target number.
  * </p>
@@ -58,7 +59,7 @@ public class TwoSumInArray extends Problem<Map<String, Object>, int[]> {
 
 			for (int j = i + 1; j < end; j++) {
 				if (t + sorted[j] == target) {
-					// here find out the orignal index
+					// here find out the original index
 					for (int x = 0; x < data.length; x++) {
 						if (result[0] * result[1] > 0) {
 							if (result[0] > result[1]) {
