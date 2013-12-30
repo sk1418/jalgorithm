@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>14.0.1</version>
+			<version>15.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -145,11 +145,6 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.kent.algorithm.demo.Demo</mainClass>
-						</manifest>
-					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
