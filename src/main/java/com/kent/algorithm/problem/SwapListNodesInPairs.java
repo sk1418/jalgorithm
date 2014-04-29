@@ -14,7 +14,7 @@ import com.kent.util.AlgUtil;
  * <pre>
  * {@code
  * [1->2->3->4] to [2->1->4->3]  
- * }</code> .
+ * }</pre> .
  * 
  * Your algorithm should use only <b>constant</b> space. You may not modify the values in the list, only nodes itself can be changed.
  * 

@@ -74,9 +74,7 @@ public class MedianOfTwoSortedArrays extends Problem<List<int[]>, Double> {
 	 * @param b
 	 * @param left
 	 * @param right
-	 * @param m
-	 * @param n
-	 * @return
+	 * @return the found median
 	 */
 	private double findMedian(final int[] a, final int[] b, final int left, final int right) {
 		final int m = a.length;
