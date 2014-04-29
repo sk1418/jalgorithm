@@ -31,9 +31,9 @@ public abstract class AbstractDemo {
 			warmingUp();
 		}
 		System.out.print("Done\n\n");
-		print(AlgUtil.repeatString("#", 70));
+		printLine("#", 0);
 		printDescription();
-		print(AlgUtil.repeatString("#", 70));
+		printLine("#", 0);
 		print("");
 		print("");
 		specificDemo();
@@ -68,5 +68,15 @@ public abstract class AbstractDemo {
 		System.out.println(text);
 	}
 
+
+	/**
+	 * print a line composed by give c character, length len
+	 * @param c
+	 * @param len take the default length (70) if less then 1
+	 */
+	protected final void printLine(String c, int len) {
+		len = len<=0? 70:len;
+		print(AlgUtil.repeatString(c,len));
+	}
 	protected abstract void printDescription();
 }
