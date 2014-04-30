@@ -11,6 +11,7 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Lists;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
+import com.kent.algorithm.demo.problem.CheckPalindromeNumberDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
@@ -107,7 +108,8 @@ public class Demo {
 		RemoveAllNodesHaveDupsFromSortedLinkedList(117, DemoType.Problems, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
 		RemoveNthNodeFromEndOfLinkedList(118, DemoType.Problems, RemoveNthNodeFromEndOfLinkedListDemo.class),
 		RemoveDupsFromSortedArray(119, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class),
-		FindLongestSubStrWithoutRepeatedChars(120, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class);
+		FindLongestSubStrWithoutRepeatedChars(120, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class),
+		CheckPalindromeNumber(121, DemoType.Problems, CheckPalindromeNumberDemo.class);
 
 
 
