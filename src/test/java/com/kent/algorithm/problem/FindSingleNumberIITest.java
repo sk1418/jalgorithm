@@ -13,9 +13,9 @@ import static org.junit.Assert.assertEquals;
  * @author: Kent
  * Created on 2014-05-07.
  */
-public class FindSingleUnumberIITest extends BaseTest {
+public class FindSingleNumberIITest extends BaseTest {
 	/** The Constant LOG. */
-	private static final Logger LOG = LoggerFactory.getLogger(FindSingleUnumberIITest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(FindSingleNumberIITest.class);
 
 	/**
 	 * Solution test.

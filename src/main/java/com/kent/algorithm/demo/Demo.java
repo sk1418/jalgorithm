@@ -18,6 +18,7 @@ import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindLongestSubStrWithoutRepeatedCharsDemo;
 import com.kent.algorithm.demo.problem.FindNextHigherNumberDemo;
 import com.kent.algorithm.demo.problem.FindSingleNumberDemo;
+import com.kent.algorithm.demo.problem.FindSingleNumberIIDemo;
 import com.kent.algorithm.demo.problem.MaxSubArrayDemo;
 import com.kent.algorithm.demo.problem.MedianOfTwoSortedArraysDemo;
 import com.kent.algorithm.demo.problem.PlusOneDemo;
@@ -111,7 +112,8 @@ public class Demo {
 		RemoveDupsFromSortedArray(119, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class),
 		FindLongestSubStrWithoutRepeatedChars(120, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class),
 		CheckPalindromeNumber(121, DemoType.Problems, CheckPalindromeNumberDemo.class),
-		FindSingleNumber(122, DemoType.Problems, FindSingleNumberDemo.class);
+		FindSingleNumber(122, DemoType.Problems, FindSingleNumberDemo.class),
+		FindSingleNumberII(123, DemoType.Problems, FindSingleNumberIIDemo.class);
 
 
 

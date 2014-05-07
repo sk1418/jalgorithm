@@ -10,8 +10,14 @@ import com.kent.algorithm.Problem;
  *
  * </p>
  *
- * <p>
  *     <b>Solution:</b>
+ *     <p>
+ *
+ * The requirement is space O(1), so bitwise operation is the direction to go. Integer is 32bits, declare an array with 32 elements, say a[32], the i-th element
+ * stores the sum of i-th bits of all numbers in given int[].
+ *
+ * Then get the mod (3) of each element in a[32], and finally combine the bits in a[32] to number again, to get the result.
+ *     </p>
  *
  * @author kent
  * 
@@ -34,7 +40,7 @@ public class FindSingleNumberII extends Problem<int[], Integer> {
 			}
 		}
 
-		//till here a[] stores the big digits of sums in reverse order
+		//till here a[] stores the sum of bits,  in reverse order
 		for (int b = 0; b < 32; b++) {
 			x |= ((a[b] % 3) << b);
 		}
