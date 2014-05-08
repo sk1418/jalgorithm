@@ -10,9 +10,11 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Range;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CheckPalindromeNumberDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
+import com.kent.algorithm.demo.problem.DetermineCircleInLinkedListDemo;
 import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindLongestSubStrWithoutRepeatedCharsDemo;
@@ -54,7 +56,9 @@ public class Demo {
 	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT = ImmutableListMultimap.<Integer, DemoType>builder()
 			.putAll(1, DemoType.CompSort, DemoType.LinearSort)
 			.putAll(2, DemoType.Test)
-			.putAll(3, DemoType.Problems)
+			.putAll(3, DemoType.LinkedList)
+			.putAll(4, DemoType.Test)
+			.putAll(5, DemoType.Problems)
 			.build();
 	
 
@@ -62,8 +66,8 @@ public class Demo {
 		CompSort("Comparison Sort"), 
 		LinearSort("Sorting in linear time"),
 		Problems("Problems (from StackOverflow.com, leetcode.com ...)"), 
-		Test("This is a test separator/marker"); 
-//		ListProblem("blah");
+		Test(""),
+		LinkedList("Single LinkedList Problem");
 
 		private final String desc;
 
@@ -73,52 +77,69 @@ public class Demo {
 
 	}
 
+
+
+	// idx for generating the number
+	static private int sortIdx = 0;
+	static private int sortLinearIdx = 10;
+	static private int listIdx = 99;
+	static private int problemIdx = 199;
+
 	enum DemoItem{
+
+
 		
 		//sortings
-		SortingComparasion(1,DemoType.CompSort, SortingComparasionDemo.class), 
-		InsertionSort(2,DemoType.CompSort, InsertionSortDemo.class), 
-		BubbleSort(3,DemoType.CompSort, BubbleSortDemo.class), 
-		MergeSort(4,DemoType.CompSort, MergeSortDemo.class), 
-		MergeSort_Optimized(5,DemoType.CompSort, OptimizedMergeSortDemo.class),   
-		HeapSort(6,DemoType.CompSort, HeapSortDemo.class), 
-		QuickSort(7 ,DemoType.CompSort, QuickSortDemo.class), 
-		RandomizedQuickSort(8 ,DemoType.CompSort, RandomizedQuickSortDemo.class), 
+		SortingComparasion(++sortIdx,DemoType.CompSort, SortingComparasionDemo.class),
+		InsertionSort(++sortIdx,DemoType.CompSort, InsertionSortDemo.class),
+		BubbleSort(++sortIdx,DemoType.CompSort, BubbleSortDemo.class),
+		MergeSort(++sortIdx,DemoType.CompSort, MergeSortDemo.class),
+		MergeSort_Optimized(++sortIdx,DemoType.CompSort, OptimizedMergeSortDemo.class),
+		HeapSort(++sortIdx,DemoType.CompSort, HeapSortDemo.class),
+		QuickSort(++sortIdx ,DemoType.CompSort, QuickSortDemo.class),
+		RandomizedQuickSort(++sortIdx ,DemoType.CompSort, RandomizedQuickSortDemo.class),
 
 		//sorting in linear time
-		CountingSort(11, DemoType.LinearSort, CountingSortDemo.class), 
-		BucketSort(12, DemoType.LinearSort, BucketSortDemo.class), 
-		RadixSort(13, DemoType.LinearSort, RadixSortDemo.class), 
+		CountingSort(++sortLinearIdx, DemoType.LinearSort, CountingSortDemo.class),
+		BucketSort(++sortLinearIdx, DemoType.LinearSort, BucketSortDemo.class),
+		RadixSort(++sortLinearIdx, DemoType.LinearSort, RadixSortDemo.class),
+
+		//linkedlist problems
+		ReverseLinkedList(++listIdx, DemoType.LinkedList, ReverseLinkedListDemo.class),
+		RotateList(++listIdx, DemoType.LinkedList, RotateListDemo.class),
+		SwapListNodesInPairs(++listIdx, DemoType.LinkedList, SwapListNodesInPairsDemo.class),
+		ReverseLinkedListEveryKNodes(++listIdx, DemoType.LinkedList, ReverseLinkedListEveryKNodesDemo.class),
+		RemoveDupsFromSortedLinkedList(++listIdx, DemoType.LinkedList, RemoveDupsFromSortedLinkedListDemo.class),
+		RemoveAllNodesHaveDupsFromSortedLinkedList(++listIdx, DemoType.LinkedList, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
+		RemoveNthNodeFromEndOfLinkedList(++listIdx, DemoType.LinkedList, RemoveNthNodeFromEndOfLinkedListDemo.class),
+		DetermineCircleInLinkedList(++listIdx, DemoType.LinkedList, DetermineCircleInLinkedListDemo.class),
+
 		//problems
-		MaxSubArray(100, DemoType.Problems, MaxSubArrayDemo.class), 
-		CountInversionPairs(101, DemoType.Problems, CountInversionPairsDemo.class),
-		FindHeavyIntegers(102, DemoType.Problems, FindHeavyIntegerDemo.class),
-		SortingIntegerWithNDigits(103, DemoType.Problems, SortingIntegersWithNDigitsDemo.class),
-		SortingStringsWithNChars(104, DemoType.Problems, SortingStringsWithNCharsDemo.class),
-		FindNextHigherNumber(105, DemoType.Problems, FindNextHigherNumberDemo.class),
-		TwoSumInArray(106, DemoType.Problems, TwoSumInArrayDemo.class),
-		PlusOne(107, DemoType.Problems, PlusOneDemo.class),
-		ReverseInteger(108, DemoType.Problems, ReverseIntegerDemo.class),
-		MedianOfTwoSortedArrays(109, DemoType.Problems, MedianOfTwoSortedArraysDemo.class),
-		FindAllSubSets(110, DemoType.Problems, FindAllSubSetsDemo.class),
-		AddTwoNumbers(111, DemoType.Problems, AddTwoNumbersDemo.class),
-		ReverseLinkedList(112, DemoType.Problems, ReverseLinkedListDemo.class),
-		RotateList(113, DemoType.Problems, RotateListDemo.class),
-		SwapListNodesInPairs(114, DemoType.Problems, SwapListNodesInPairsDemo.class),
-		ReverseLinkedListEveryKNodes(115, DemoType.Problems, ReverseLinkedListEveryKNodesDemo.class),
-		RemoveDupsFromSortedLinkedList(116, DemoType.Problems, RemoveDupsFromSortedLinkedListDemo.class),
-		RemoveAllNodesHaveDupsFromSortedLinkedList(117, DemoType.Problems, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
-		RemoveNthNodeFromEndOfLinkedList(118, DemoType.Problems, RemoveNthNodeFromEndOfLinkedListDemo.class),
-		RemoveDupsFromSortedArray(119, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class),
-		FindLongestSubStrWithoutRepeatedChars(120, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class),
-		CheckPalindromeNumber(121, DemoType.Problems, CheckPalindromeNumberDemo.class),
-		FindSingleNumber(122, DemoType.Problems, FindSingleNumberDemo.class),
-		FindSingleNumberII(123, DemoType.Problems, FindSingleNumberIIDemo.class);
+		MaxSubArray(++problemIdx, DemoType.Problems, MaxSubArrayDemo.class),
+		CountInversionPairs(++problemIdx, DemoType.Problems, CountInversionPairsDemo.class),
+		FindHeavyIntegers(++problemIdx, DemoType.Problems, FindHeavyIntegerDemo.class),
+		SortingIntegerWithNDigits(++problemIdx, DemoType.Problems, SortingIntegersWithNDigitsDemo.class),
+		SortingStringsWithNChars(++problemIdx, DemoType.Problems, SortingStringsWithNCharsDemo.class),
+		FindNextHigherNumber(++problemIdx, DemoType.Problems, FindNextHigherNumberDemo.class),
+		TwoSumInArray(++problemIdx, DemoType.Problems, TwoSumInArrayDemo.class),
+		PlusOne(++problemIdx, DemoType.Problems, PlusOneDemo.class),
+		ReverseInteger(++problemIdx, DemoType.Problems, ReverseIntegerDemo.class),
+		MedianOfTwoSortedArrays(++problemIdx, DemoType.Problems, MedianOfTwoSortedArraysDemo.class),
+		FindAllSubSets(++problemIdx, DemoType.Problems, FindAllSubSetsDemo.class),
+		AddTwoNumbers(++problemIdx, DemoType.Problems, AddTwoNumbersDemo.class),
+		RemoveDupsFromSortedArray(++problemIdx, DemoType.Problems, RemoveDupsFromSortedArrayDemo.class),
+		FindLongestSubStrWithoutRepeatedChars(++problemIdx, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class),
+		CheckPalindromeNumber(++problemIdx, DemoType.Problems, CheckPalindromeNumberDemo.class),
+		FindSingleNumber(++problemIdx, DemoType.Problems, FindSingleNumberDemo.class),
+		FindSingleNumberII(++problemIdx, DemoType.Problems, FindSingleNumberIIDemo.class);
 
 
 
 
 		// @formatter:on
+
+
+
 		private final int idx;
 		private final Class<? extends AbstractDemo> demoClass;
 		private final DemoType type;
