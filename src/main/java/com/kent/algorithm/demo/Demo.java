@@ -55,10 +55,10 @@ public class Demo {
 	//menu layout, define the left/right block.
 	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT = ImmutableListMultimap.<Integer, DemoType>builder()
 			.putAll(1, DemoType.CompSort, DemoType.LinearSort)
-			.putAll(2, DemoType.Test)
-			.putAll(3, DemoType.LinkedList)
-			.putAll(4, DemoType.Test)
-			.putAll(5, DemoType.Problems)
+//			.putAll(2, DemoType.Test)
+			.putAll(2, DemoType.LinkedList)
+//			.putAll(4, DemoType.Test)
+			.putAll(3, DemoType.Problems)
 			.build();
 	
 
@@ -239,7 +239,7 @@ public class Demo {
 		final int rows = MENU_LAYOUT.keySet().size();
 		final DemoType type = null;
 		for (int row = 1; row <= rows; row++) {
-			AlgUtil.println("\n" + AlgUtil.repeatString("=", 77));
+			AlgUtil.println( AlgUtil.repeatString("=", 77));
 			if (MENU_LAYOUT.get(row).size() == 1) {
 				printSingleColMenu(MENU_LAYOUT.get(row).get(0));
 			} else {
