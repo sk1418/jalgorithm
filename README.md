@@ -12,7 +12,6 @@ todo
 	
 ###Implemented algorithms and demos so far:
 	Available Demos:
-	
 	=============================================================================
 	Comparison Sort                          |Sorting in linear time                  
 	_____________________________________________________________________________
@@ -24,25 +23,26 @@ todo
 	   6 HeapSort                            |                                        
 	   7 QuickSort                           |                                        
 	   8 RandomizedQuickSort                 |                                        
-	
 	=============================================================================
-	This is a test separator/marker
-	=============================================================================
-	
+	Single LinkedList Problem
+	_____________________________________________________________________________
+	 100 ReverseLinkedList                   | 104 RemoveDupsFromSortedLinkedList     
+	 101 RotateList                          | 105 RemoveAllNodesHaveDupsFromSortedLinkedList
+	 102 SwapListNodesInPairs                | 106 RemoveNthNodeFromEndOfLinkedList   
+	 103 ReverseLinkedListEveryKNodes        | 107 DetermineCircleInLinkedList        
 	=============================================================================
 	Problems (from StackOverflow.com, leetcode.com ...)
 	_____________________________________________________________________________
-	 100 MaxSubArray                         | 110 FindAllSubSets                     
-	 101 CountInversionPairs                 | 111 AddTwoNumbers                      
-	 102 FindHeavyIntegers                   | 112 ReverseLinkedList                  
-	 103 SortingIntegerWithNDigits           | 113 RotateList                         
-	 104 SortingStringsWithNChars            | 114 SwapListNodesInPairs               
-	 105 FindNextHigherNumber                | 115 ReverseLinkedListEveryKNodes       
-	 106 TwoSumInArray                       | 116 RemoveDupsFromSortedLinkedList     
-	 107 PlusOne                             | 117 RemoveAllNodesHaveDupsFromSortedLinkedList
-	 108 ReverseInteger                      | 118 RemoveNthNodeFromEndOfLinkedList   
-	 109 MedianOfTwoSortedArrays             | 119 RemoveDupsFromSortedArray          
-	=============================================================================
+	 200 MaxSubArray                         | 209 MedianOfTwoSortedArrays            
+	 201 CountInversionPairs                 | 210 FindAllSubSets                     
+	 202 FindHeavyIntegers                   | 211 AddTwoNumbers                      
+	 203 SortingIntegerWithNDigits           | 212 RemoveDupsFromSortedArray          
+	 204 SortingStringsWithNChars            | 213 FindLongestSubStrWithoutRepeatedChars
+	 205 FindNextHigherNumber                | 214 CheckPalindromeNumber              
+	 206 TwoSumInArray                       | 215 FindSingleNumber                   
+	 207 PlusOne                             | 216 FindSingleNumberII                 
+	 208 ReverseInteger                      |                                        
+	============================================================================
 	select the demo index (press 0 to exit):
 
 ###Some demos as examples
