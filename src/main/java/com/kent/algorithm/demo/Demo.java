@@ -15,6 +15,7 @@ import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CheckPalindromeNumberDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
 import com.kent.algorithm.demo.problem.DetermineCircleInLinkedListDemo;
+import com.kent.algorithm.demo.problem.DetermineCircleInLinkedListIIDemo;
 import com.kent.algorithm.demo.problem.FindAllSubSetsDemo;
 import com.kent.algorithm.demo.problem.FindHeavyIntegerDemo;
 import com.kent.algorithm.demo.problem.FindLongestSubStrWithoutRepeatedCharsDemo;
@@ -113,6 +114,7 @@ public class Demo {
 		RemoveAllNodesHaveDupsFromSortedLinkedList(++listIdx, DemoType.LinkedList, RemoveAllNodesHaveDupsFromSortedLinkedListDemo.class),
 		RemoveNthNodeFromEndOfLinkedList(++listIdx, DemoType.LinkedList, RemoveNthNodeFromEndOfLinkedListDemo.class),
 		DetermineCircleInLinkedList(++listIdx, DemoType.LinkedList, DetermineCircleInLinkedListDemo.class),
+		DetermineCircleInLinkedListII(++listIdx, DemoType.LinkedList, DetermineCircleInLinkedListIIDemo.class),
 
 		//problems
 		MaxSubArray(++problemIdx, DemoType.Problems, MaxSubArrayDemo.class),
