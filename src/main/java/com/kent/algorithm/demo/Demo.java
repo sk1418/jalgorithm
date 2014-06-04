@@ -37,6 +37,7 @@ import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
 import com.kent.algorithm.demo.problem.SwapListNodesInPairsDemo;
 import com.kent.algorithm.demo.problem.TwoSumInArrayDemo;
+import com.kent.algorithm.demo.problem.ValidPalindromeDemo;
 import com.kent.algorithm.demo.sorting.BubbleSortDemo;
 import com.kent.algorithm.demo.sorting.BucketSortDemo;
 import com.kent.algorithm.demo.sorting.CountingSortDemo;
@@ -48,6 +49,7 @@ import com.kent.algorithm.demo.sorting.QuickSortDemo;
 import com.kent.algorithm.demo.sorting.RadixSortDemo;
 import com.kent.algorithm.demo.sorting.RandomizedQuickSortDemo;
 import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
+import com.kent.algorithm.problem.ValidPalindrome;
 import com.kent.util.AlgUtil;
 
 public class Demo {
@@ -133,7 +135,8 @@ public class Demo {
 		FindLongestSubStrWithoutRepeatedChars(++problemIdx, DemoType.Problems, FindLongestSubStrWithoutRepeatedCharsDemo.class),
 		CheckPalindromeNumber(++problemIdx, DemoType.Problems, CheckPalindromeNumberDemo.class),
 		FindSingleNumber(++problemIdx, DemoType.Problems, FindSingleNumberDemo.class),
-		FindSingleNumberII(++problemIdx, DemoType.Problems, FindSingleNumberIIDemo.class);
+		FindSingleNumberII(++problemIdx, DemoType.Problems, FindSingleNumberIIDemo.class),
+		ValidPalindrome(++problemIdx, DemoType.Problems, ValidPalindromeDemo.class);
 
 
 
