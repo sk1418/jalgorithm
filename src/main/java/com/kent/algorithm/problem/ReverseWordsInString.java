@@ -1,5 +1,7 @@
 package com.kent.algorithm.problem;
 
+import java.util.Stack;
+
 import com.kent.algorithm.Problem;
 
 /**
@@ -19,13 +21,18 @@ public class ReverseWordsInString extends Problem<String, String> {
 		if (words.length == 0) {
 			return data;
 		}
-		String result = "";
-		for (int i = words.length - 1;i>=0; i--) {
-			if(i<words.length -1)
-				result += " ";
-			result += words[i];
+		//till here special cases were checked
+		StringBuilder resultSB = new StringBuilder();
+		Stack<String> stack = new Stack();
+		for (String w : words) {
+			stack.push(w);
 		}
-		return result;
+		while (!stack.isEmpty()) {
+			resultSB.append(stack.pop());
+			if(!stack.isEmpty())
+				resultSB.append(" ");
+		}
+		return resultSB.toString();
 	}
 
 	@Override
