@@ -13,7 +13,7 @@ public class OptimizedMergeSort extends MergeSort {
 	}
 
 	@Override
-	protected void mergeSorting(int[] data, int f, int t) {
+	protected void mergeSort(int[] data, int f, int t) {
 		// if the array has 0 or 1 element, it is sorted.
 		final int len = t - f + 1;
 		if (len < INSERTIONSORT_THRESHOLD) {
@@ -44,9 +44,9 @@ public class OptimizedMergeSort extends MergeSort {
 		final int m = (f + t) / 2;
 
 		// sort
-		mergeSorting(data, f, m);
+		mergeSort(data, f, m);
 
-		mergeSorting(data, m + 1, t);
+		mergeSort(data, m + 1, t);
 
 		// merge
 		mergeWithoutSentinel(data, f, m, t);

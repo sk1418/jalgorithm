@@ -41,7 +41,7 @@ public class MergeSort extends Sorting {
 	/** {@inheritDoc} */
 	@Override
 	public int[] sort(int[] data) {
-		mergeSorting(data, 0, data.length - 1);
+		mergeSort(data, 0, data.length - 1);
 		return data;
 	}
 
@@ -55,7 +55,7 @@ public class MergeSort extends Sorting {
 	 * @param t
 	 *            the t
 	 */
-	protected void mergeSorting(int[] data, int f, int t) {
+	protected void mergeSort(int[] data, int f, int t) {
 
 		// if the array has 0 or 1 element, it is sorted.
 		if (f == t) {
@@ -66,9 +66,9 @@ public class MergeSort extends Sorting {
 		final int m = (f + t) / 2;
 
 		// sort
-		mergeSorting(data, f, m);
+		mergeSort(data, f, m);
 
-		mergeSorting(data, m + 1, t);
+		mergeSort(data, m + 1, t);
 
 		// merge
 		mergeWithoutSentinel(data, f, m, t);
