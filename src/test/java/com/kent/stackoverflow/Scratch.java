@@ -36,7 +36,20 @@ public class Scratch extends BaseTest {
 
 
 	}
+	@Test
+	public void testIt2() {
 
+
+		String s = "high*school";
+
+String newString = "";
+String[] arr = s.split("[*]");
+if (arr.length==2){
+	newString = new StringBuilder(arr[1]).reverse().toString()+arr[1];
+}
+		LOG.debug(newString);
+
+	}
 
 }
 
