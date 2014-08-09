@@ -30,6 +30,6 @@ public class ReverseWordsInString extends Problem<String, String> {
 
 	@Override
 	public String getBigO() {
-		return "Unknown";
+		return "Time: O(n); Space: O(n)";
 	}
 }
