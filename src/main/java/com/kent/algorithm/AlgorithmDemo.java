@@ -1,4 +1,4 @@
-package com.kent.algorithm.demo;
+package com.kent.algorithm;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,6 +11,7 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
+import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CheckPalindromeNumberDemo;
 import com.kent.algorithm.demo.problem.CountInversionPairsDemo;
@@ -53,7 +54,7 @@ import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
 import com.kent.algorithm.problem.ValidPalindrome;
 import com.kent.util.AlgUtil;
 
-public class Demo {
+public class AlgorithmDemo {
 
 	// @formatter:off
 	//menu layout, define the left/right block.

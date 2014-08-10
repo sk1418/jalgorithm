@@ -1,15 +1,15 @@
 package com.kent.stackoverflow;
 
-import java.io.IOException;
-import java.util.Calendar;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
+import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kent.algorithm.problem.RemoveDupsFromSortedListTest;
+import com.kent.algorithm.ui.Demo;
 import com.kent.test.BaseTest;
 
 /**
@@ -37,17 +37,21 @@ public class Scratch extends BaseTest {
 
 	}
 	@Test
-	public void testIt2() {
+	public void testIt2() throws  Exception{
+		 Reflections reflections = new Reflections("com.kent.algorithm.demo");
+
+		Set<Class<?>> subTypes = reflections.getTypesAnnotatedWith(Demo.class);
+
+		for (Class c : subTypes) {
+			LOG.debug(c.getCanonicalName());
+		}
 
 
-		String s = "high*school";
 
-String newString = "";
-String[] arr = s.split("[*]");
-if (arr.length==2){
-	newString = new StringBuilder(arr[1]).reverse().toString()+arr[1];
-}
-		LOG.debug(newString);
+
+
+
+		LOG.debug("ff");
 
 	}
 

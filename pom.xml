@@ -20,6 +20,11 @@
 			<artifactId>guava</artifactId>
 			<version>17.0</version>
 		</dependency>
+		 <dependency>
+			 <groupId>org.reflections</groupId>
+			 <artifactId>reflections</artifactId>
+			 <version>0.9.9-RC1</version>
+		 </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -150,7 +155,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.kent.algorithm.demo.Demo</mainClass>
+							<mainClass>com.kent.algorithm.AlgorithmDemo</mainClass>
 							<packageName>com.kent.algorithm.demo</packageName>
 						</manifest>
 						<manifestEntries>

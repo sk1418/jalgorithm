@@ -1,11 +1,15 @@
 package com.kent.algorithm.demo.sorting;
 
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.algorithm.sorting.BucketSort;
 import com.kent.util.AlgUtil;
 
 /**
  * The Class BucketSortDemo.
  */
+@Demo( name="Bucket Sort",
+		type = DemoType.LinearSort)
 public class BucketSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
