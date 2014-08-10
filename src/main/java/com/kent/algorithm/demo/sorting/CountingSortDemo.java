@@ -1,11 +1,14 @@
 package com.kent.algorithm.demo.sorting;
 
 import com.kent.algorithm.sorting.CountingSort;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
 /**
  * The Class CountingSortDemo.
  */
+@Demo( name="Counting Sort", type = DemoType.LinearSort)
 public class CountingSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */

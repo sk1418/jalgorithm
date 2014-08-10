@@ -5,8 +5,11 @@ import static com.kent.util.AlgUtil.*;
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.RemoveAllNodesHaveDupsFromSortedLinkedList;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 
+@Demo(type = DemoType.LinkedList, name="Remove all dups Nodes From List")
 public class RemoveAllNodesHaveDupsFromSortedLinkedListDemo extends AbstractDemo {
 
 	ListNode n1 = new ListNode(1);

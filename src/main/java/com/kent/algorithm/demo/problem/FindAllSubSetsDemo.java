@@ -8,8 +8,11 @@ import java.util.Arrays;
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindAllSubSets;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Find All Subsets")
 public class FindAllSubSetsDemo extends AbstractDemo {
 
 	private int[] input1;

@@ -10,7 +10,6 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Range;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.demo.problem.AddTwoNumbersDemo;
 import com.kent.algorithm.demo.problem.CheckPalindromeNumberDemo;
@@ -50,8 +49,7 @@ import com.kent.algorithm.demo.sorting.OptimizedMergeSortDemo;
 import com.kent.algorithm.demo.sorting.QuickSortDemo;
 import com.kent.algorithm.demo.sorting.RadixSortDemo;
 import com.kent.algorithm.demo.sorting.RandomizedQuickSortDemo;
-import com.kent.algorithm.demo.sorting.SortingComparasionDemo;
-import com.kent.algorithm.problem.ValidPalindrome;
+import com.kent.algorithm.demo.sorting.SortingComparisionDemo;
 import com.kent.util.AlgUtil;
 
 public class AlgorithmDemo {
@@ -95,7 +93,7 @@ public class AlgorithmDemo {
 
 		
 		//sortings
-		SortingComparasion(++sortIdx,DemoType.CompSort, SortingComparasionDemo.class),
+		SortingComparasion(++sortIdx,DemoType.CompSort, SortingComparisionDemo.class),
 		InsertionSort(++sortIdx,DemoType.CompSort, InsertionSortDemo.class),
 		BubbleSort(++sortIdx,DemoType.CompSort, BubbleSortDemo.class),
 		MergeSort(++sortIdx,DemoType.CompSort, MergeSortDemo.class),

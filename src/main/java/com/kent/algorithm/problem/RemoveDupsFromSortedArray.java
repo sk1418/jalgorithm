@@ -1,6 +1,8 @@
 package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Problem;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
 /**
  * From http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
@@ -31,6 +33,7 @@ import com.kent.algorithm.Problem;
  * @author kent
  * 
  */
+@Demo(type = DemoType.Problems, name="Remove Dups From Sorted Array")
 public class RemoveDupsFromSortedArray extends Problem<int[], Integer> {
 
 	@Override

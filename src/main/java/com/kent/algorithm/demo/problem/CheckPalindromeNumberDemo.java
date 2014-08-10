@@ -10,8 +10,11 @@ import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.CheckPalindromeNumber;
 import com.kent.algorithm.problem.FindLongestSubStrWithoutRepeatedChars;
 import com.kent.algorithm.problem.PlusOne;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Check Palindrome Number")
 public class CheckPalindromeNumberDemo extends AbstractDemo {
 
 	/** The problem. */

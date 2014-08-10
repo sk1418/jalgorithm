@@ -10,7 +10,10 @@ import com.kent.algorithm.Problem;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindLongestSubStrWithoutRepeatedChars;
 import com.kent.algorithm.problem.FindSingleNumber;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
+@Demo(type = DemoType.Problems, name="Find Single Number in Array")
 public class FindSingleNumberDemo extends AbstractDemo {
 
 	/** The problem. */

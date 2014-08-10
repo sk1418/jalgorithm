@@ -4,11 +4,14 @@ import java.util.Arrays;
 
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.CountInversionPairs;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
 /**
  * The Class CountInversionPairsDemo.
  */
+@Demo(type = DemoType.Problems, name="Count Inversion Pairs in Array")
 public class CountInversionPairsDemo extends AbstractDemo {
 
 	/** The small array. */

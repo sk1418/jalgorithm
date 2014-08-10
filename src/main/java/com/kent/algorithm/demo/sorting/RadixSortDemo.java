@@ -1,11 +1,15 @@
 package com.kent.algorithm.demo.sorting;
 
 import com.kent.algorithm.sorting.RadixSort;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
 /**
  * The Class RadixSortDemo.
  */
+
+@Demo(type = DemoType.LinearSort, name="Radix Sort")
 public class RadixSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */

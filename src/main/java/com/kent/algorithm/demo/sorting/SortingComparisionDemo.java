@@ -13,12 +13,16 @@ import com.kent.algorithm.sorting.OptimizedMergeSort;
 import com.kent.algorithm.sorting.QuickSort;
 import com.kent.algorithm.sorting.RandomizedQuickSort;
 import com.kent.algorithm.sorting.SelectionSort;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
 /**
- * The Class SortingComparasionDemo.
+ * The Class SortingComparisionDemo.
  */
-public class SortingComparasionDemo extends AbstractDemo {
+
+@Demo(type = DemoType.CompSort, name="* Compare Sort algorithms *")
+public class SortingComparisionDemo extends AbstractDemo {
 
 	/** The Constant FMT. */
 	private static final String FMT = "%-20s| %-21s| %7s ms.";

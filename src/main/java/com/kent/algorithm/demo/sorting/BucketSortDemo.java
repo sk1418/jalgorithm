@@ -8,8 +8,7 @@ import com.kent.util.AlgUtil;
 /**
  * The Class BucketSortDemo.
  */
-@Demo( name="Bucket Sort",
-		type = DemoType.LinearSort)
+@Demo( name="Bucket Sort", type = DemoType.LinearSort)
 public class BucketSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */

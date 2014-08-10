@@ -7,8 +7,11 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.TwoSumInArrayII;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Find Two Sum in Array")
 public class TwoSumInArrayDemo extends AbstractDemo {
 	private Map<String, Object> inputMap1;
 	private Map<String, Object> inputMap2;

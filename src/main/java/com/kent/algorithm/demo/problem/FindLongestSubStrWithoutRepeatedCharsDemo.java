@@ -9,8 +9,11 @@ import com.kent.algorithm.Problem;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindLongestSubStrWithoutRepeatedChars;
 import com.kent.algorithm.problem.PlusOne;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Longest Substr no-Repeated Chars")
 public class FindLongestSubStrWithoutRepeatedCharsDemo extends AbstractDemo {
 
 	/** The problem. */

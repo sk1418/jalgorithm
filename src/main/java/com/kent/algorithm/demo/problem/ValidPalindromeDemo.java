@@ -7,12 +7,15 @@ import com.google.common.collect.ImmutableList;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.AddTwoNumbers;
 import com.kent.algorithm.problem.ValidPalindrome;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 import com.kent.util.AlgUtil;
 
 import static com.kent.util.AlgUtil.println;
 import static com.kent.util.AlgUtil.repeatString;
 
+@Demo(type = DemoType.Problems, name="Check Palindrome String")
 public class ValidPalindromeDemo extends AbstractDemo {
 
 	private ValidPalindrome problem;

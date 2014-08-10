@@ -1,6 +1,8 @@
 package com.kent.algorithm.problem;
 
 import com.kent.algorithm.Problem;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
 public class BinarySearchProblem extends Problem<int[][], Integer> {
 

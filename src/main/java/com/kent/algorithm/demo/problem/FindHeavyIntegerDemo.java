@@ -5,7 +5,10 @@ import static com.kent.util.AlgUtil.*;
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindHeavyIntegers;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
+@Demo(type = DemoType.Problems, name="Find Heavy Integers")
 public class FindHeavyIntegerDemo extends AbstractDemo {
 	private int[] firstRun, secondRun;
 

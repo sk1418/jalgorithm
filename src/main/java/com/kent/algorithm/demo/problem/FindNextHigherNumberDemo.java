@@ -4,7 +4,10 @@ import com.google.common.base.Joiner;
 import com.kent.algorithm.Problem;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindNextHigherNumber;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
+@Demo(type = DemoType.Problems, name="Find Next Higher Number")
 public class FindNextHigherNumberDemo extends AbstractDemo {
 	private Long givenNumber;
 	private Problem problem;

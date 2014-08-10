@@ -7,8 +7,11 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.MedianOfTwoSortedArrays;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Median Of Two Sorted Arrays")
 public class MedianOfTwoSortedArraysDemo extends AbstractDemo {
 	private List<int[]> input1;
 	private List<int[]> input2;

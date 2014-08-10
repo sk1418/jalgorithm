@@ -6,10 +6,13 @@ import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.DetermineCircleInLinkedList;
 import com.kent.algorithm.problem.DetermineCircleInLinkedListII;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 
 import static com.kent.util.AlgUtil.repeatString;
 
+@Demo(type = DemoType.LinkedList, name="Find Circle Begin Node")
 public class DetermineCircleInLinkedListIIDemo extends AbstractDemo {
 
 	ListNode n1 = new ListNode(1);

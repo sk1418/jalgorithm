@@ -8,8 +8,11 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.AddTwoNumbers;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 
+@Demo(type = DemoType.LinkedList, name="Add two numbers")
 public class AddTwoNumbersDemo extends AbstractDemo {
 
 	ListNode n1 = new ListNode(7);

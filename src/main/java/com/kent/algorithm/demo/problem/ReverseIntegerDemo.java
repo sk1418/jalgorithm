@@ -3,8 +3,11 @@ package com.kent.algorithm.demo.problem;
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.ReverseInteger;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Reverse Integer")
 public class ReverseIntegerDemo extends AbstractDemo {
 
 	/** The problem. */

@@ -7,7 +7,10 @@ import com.kent.algorithm.Problem;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.FindSingleNumber;
 import com.kent.algorithm.problem.FindSingleNumberII;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
+@Demo(type = DemoType.Problems, name="Find Single Number Space: O(1)")
 public class FindSingleNumberIIDemo extends AbstractDemo {
 
 	/** The problem. */

@@ -3,6 +3,8 @@ package com.kent.algorithm.problem;
 import java.util.Map;
 
 import com.kent.algorithm.Problem;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 
 /**
@@ -47,6 +49,7 @@ import com.kent.datastructure.ListNode;
  * @author kent
  * 
  */
+@Demo(type = DemoType.LinkedList, name="Rotate List")
 public class RotateList extends Problem<Map<String, Object>, ListNode> {
 
 	@Override

@@ -1,5 +1,6 @@
 package com.kent.algorithm.ui;
 
+import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Set;
 
@@ -84,10 +85,10 @@ public class UiHelper {
 			iteml = items.get(i);
 			itemr = i + rows < size ? items.get(i + rows) : null;
 			if (itemr != null) {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml, itemr.getIndex(), itemr));
+				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName()));
 			}
 			else {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml, "", ""));
+				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), "", ""));
 			}
 		}
 
@@ -107,11 +108,11 @@ public class UiHelper {
 			itemr = i < itemsr.size() ? itemsr.get(i) : null;
 			iteml = i < itemsl.size() ? itemsl.get(i) : null;
 			if (iteml == null) {
-				AlgUtil.println(String.format(FORMAT, "", "", itemr.getIndex(), itemr));
+				AlgUtil.println(String.format(FORMAT, "", "", itemr.getIndex(), itemr.getName()));
 			} else if (itemr == null) {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml, "", ""));
+				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), "", ""));
 			} else {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml, itemr.getIndex(), itemr));
+				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName()));
 			}
 
 		}

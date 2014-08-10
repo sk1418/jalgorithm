@@ -5,8 +5,11 @@ import java.util.Arrays;
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.RemoveDupsFromSortedArray;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Remove Dups From Sorted Array")
 public class RemoveDupsFromSortedArrayDemo extends AbstractDemo {
 
 	/** The problem. */

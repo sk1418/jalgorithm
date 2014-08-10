@@ -5,8 +5,11 @@ import java.util.Arrays;
 import com.kent.algorithm.Problem;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.PlusOne;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.util.AlgUtil;
 
+@Demo(type = DemoType.Problems, name="Plus One")
 public class PlusOneDemo extends AbstractDemo {
 
 	/** The problem. */

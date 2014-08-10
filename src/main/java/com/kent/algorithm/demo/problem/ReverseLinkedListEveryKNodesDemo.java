@@ -8,8 +8,11 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.ReverseLinkedListEveryKNodes;
+import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;
 
+@Demo(type = DemoType.LinkedList, name="Reverse every K nodes in List")
 public class ReverseLinkedListEveryKNodesDemo extends AbstractDemo {
 
 	ListNode n1 = new ListNode(1);
