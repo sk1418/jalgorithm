@@ -69,6 +69,10 @@ public abstract class AbstractDemo {
 	}
 
 
+	protected final void printf(final String format, Object...args) {
+		System.out.printf(format, args);
+	}
+
 	/**
 	 * print a line composed by give c character, length len
 	 * @param c

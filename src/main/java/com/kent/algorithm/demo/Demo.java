@@ -32,6 +32,7 @@ import com.kent.algorithm.demo.problem.RemoveNthNodeFromEndOfLinkedListDemo;
 import com.kent.algorithm.demo.problem.ReverseIntegerDemo;
 import com.kent.algorithm.demo.problem.ReverseLinkedListDemo;
 import com.kent.algorithm.demo.problem.ReverseLinkedListEveryKNodesDemo;
+import com.kent.algorithm.demo.problem.ReverseWordsInStringDemo;
 import com.kent.algorithm.demo.problem.RotateListDemo;
 import com.kent.algorithm.demo.problem.SortingIntegersWithNDigitsDemo;
 import com.kent.algorithm.demo.problem.SortingStringsWithNCharsDemo;
@@ -128,6 +129,7 @@ public class Demo {
 		TwoSumInArray(++problemIdx, DemoType.Problems, TwoSumInArrayDemo.class),
 		PlusOne(++problemIdx, DemoType.Problems, PlusOneDemo.class),
 		ReverseInteger(++problemIdx, DemoType.Problems, ReverseIntegerDemo.class),
+		ReverseWordsInString(++problemIdx, DemoType.Problems, ReverseWordsInStringDemo.class),
 		MedianOfTwoSortedArrays(++problemIdx, DemoType.Problems, MedianOfTwoSortedArraysDemo.class),
 		FindAllSubSets(++problemIdx, DemoType.Problems, FindAllSubSetsDemo.class),
 		AddTwoNumbers(++problemIdx, DemoType.Problems, AddTwoNumbersDemo.class),
