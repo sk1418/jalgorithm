@@ -30,7 +30,7 @@ public abstract class AbstractDemo {
 			System.out.print(x + "...");
 			warmingUp();
 		}
-		System.out.print("Done\n\n");
+		print("Done\n\n");
 		printLine("#", 0);
 		printDescription();
 		printLine("#", 0);
