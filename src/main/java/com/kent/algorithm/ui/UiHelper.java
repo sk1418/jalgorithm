@@ -1,14 +1,22 @@
 package com.kent.algorithm.ui;
 
 import java.lang.annotation.Annotation;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 import org.reflections.Reflections;
 
+import com.google.common.base.Function;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.ListMultimap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Ordering;
+import com.google.common.primitives.Ints;
+import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.util.AlgUtil;
 
 /**
@@ -31,6 +39,12 @@ public class UiHelper {
 					.build();
 	//@formatter: on
 
+	private static class OrderingByName extends Ordering<DemoItem> {
+		@Override
+		public int compare(DemoItem i1, DemoItem i2) {
+			return i1.getName().compareTo(i2.getName());
+		}
+	}
 	/**
 	 * generate a multimap, to represent the demos need to be displayed on UI.
 	 * The key is the {@link DemoType}, the value is a list of {@link DemoItem}
@@ -43,11 +57,29 @@ public class UiHelper {
 
 		Set<Class<?>> demoClasses = reflections.getTypesAnnotatedWith(Demo.class);
 
-		Demo demoAnnotation = null;
-		for (Class cls : demoClasses) {
-			demoAnnotation = (Demo) cls.getAnnotation(Demo.class);
-			DemoType demoType = demoAnnotation.type();
-			demoMap.put(demoType, new DemoItem(demoType.nextIdx(), demoAnnotation.name(), demoType, cls));
+		//the demoItem in demoItems  has no index, since index needs to be set after sorting
+		List<DemoItem> demoItems = Lists.newArrayList(Collections2.transform(demoClasses, new Function<Class<?>, DemoItem>() {
+			Demo demoAnnotation = null;
+			@Override
+			public DemoItem apply(Class<?> input) {
+				if (AbstractDemo.class.isAssignableFrom(input)) {
+					demoAnnotation = (Demo) input.getAnnotation(Demo.class);
+					DemoType demoType = demoAnnotation.type();
+					return new DemoItem(demoAnnotation.name(), demoType, (Class<AbstractDemo>)input);
+				}else
+					return null;
+			}
+		}));
+
+		demoItems = Lists.newArrayList(Collections2.filter(demoItems, Predicates.notNull()));
+
+
+		Collections.sort(demoItems, new OrderingByName());
+
+		for (DemoItem item : demoItems) {
+			//set index
+			item.setIndex(item.getDemoType().nextIdx());
+			demoMap.put(item.getDemoType(), item);
 		}
 		return demoMap;
 	}
@@ -98,6 +130,7 @@ public class UiHelper {
 		assert type.size() == 2;
 		final List<DemoItem> itemsl = demoMap.get(type.get((0)));
 		final List<DemoItem> itemsr = demoMap.get(type.get((1)));
+
 		final int rows = itemsl.size() > itemsr.size() ? itemsl.size() : itemsr.size();
 		DemoItem iteml = null;
 		DemoItem itemr = null;

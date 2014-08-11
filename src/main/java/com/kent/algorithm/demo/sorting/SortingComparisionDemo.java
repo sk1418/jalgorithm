@@ -21,7 +21,7 @@ import com.kent.util.AlgUtil;
  * The Class SortingComparisionDemo.
  */
 
-@Demo(type = DemoType.CompSort, name="* Compare Sort algorithms *")
+@Demo(type = DemoType.CompSort, name="~> Compare Sort algorithms <~")
 public class SortingComparisionDemo extends AbstractDemo {
 
 	/** The Constant FMT. */

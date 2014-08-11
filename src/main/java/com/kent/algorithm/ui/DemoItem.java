@@ -12,11 +12,15 @@ public class DemoItem {
 	private int index;
 	private DemoType demoType;
 
-	public DemoItem(int index, String name, DemoType demoType, Class<? extends AbstractDemo> demoClass) {
+	public DemoItem( String name, DemoType demoType, Class<? extends AbstractDemo> demoClass) {
 		this.name = name;
-		this.index = index;
+		this.index =0;
 		this.demoType = demoType;
 		this.demoClass = demoClass;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 
 	public int getIndex() {
