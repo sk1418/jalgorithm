@@ -62,7 +62,7 @@ public class CheckPalindromeNumberDemo extends AbstractDemo {
 
 			);
 			//@formatter:on
-
+	print(d);
 
 	}
 }
