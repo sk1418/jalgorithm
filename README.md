@@ -11,38 +11,39 @@ todo
 	java -c xxx.jar
 	
 ###Implemented algorithms and demos so far:
+
 	Available Demos:
 	=============================================================================
 	Comparison Sort                          |Sorting in linear time                  
 	_____________________________________________________________________________
-	   1 SortingComparasion                  |  11 CountingSort                       
-	   2 InsertionSort                       |  12 BucketSort                         
-	   3 BubbleSort                          |  13 RadixSort                          
-	   4 MergeSort                           |                                        
-	   5 MergeSort_Optimized                 |                                        
-	   6 HeapSort                            |                                        
-	   7 QuickSort                           |                                        
-	   8 RandomizedQuickSort                 |                                        
+	   1 Heap Sort                           |  11 Bubble Sort                        
+	   2 Insertion Sort                      |  12 Bucket Sort                        
+	   3 Merge Sort                          |  13 Counting Sort                      
+	   4 Merge(Optimized) Sort               |  14 Radix Sort                         
+	   5 Quick Sort                          |                                        
+	   6 Quick(Randomized) Sort              |                                        
+	   7 ~> Compare Sort algorithms <~       |                                        
 	=============================================================================
 	Single LinkedList Problem
 	_____________________________________________________________________________
-	 100 ReverseLinkedList                   | 104 RemoveDupsFromSortedLinkedList     
-	 101 RotateList                          | 105 RemoveAllNodesHaveDupsFromSortedLinkedList
-	 102 SwapListNodesInPairs                | 106 RemoveNthNodeFromEndOfLinkedList   
-	 103 ReverseLinkedListEveryKNodes        | 107 DetermineCircleInLinkedList        
+	 100 Add two numbers                     | 105 Remove all dups Nodes From List    
+	 101 Determine Circle in List            | 106 Reverse List                       
+	 102 Find Circle Begin Node              | 107 Reverse every K nodes in List      
+	 103 Remove Dups From Sorted List        | 108 Swap List Nodes in pair            
+	 104 Remove N-th Node From End           |                                        
 	=============================================================================
 	Problems (from StackOverflow.com, leetcode.com ...)
 	_____________________________________________________________________________
-	 200 MaxSubArray                         | 209 MedianOfTwoSortedArrays            
-	 201 CountInversionPairs                 | 210 FindAllSubSets                     
-	 202 FindHeavyIntegers                   | 211 AddTwoNumbers                      
-	 203 SortingIntegerWithNDigits           | 212 RemoveDupsFromSortedArray          
-	 204 SortingStringsWithNChars            | 213 FindLongestSubStrWithoutRepeatedChars
-	 205 FindNextHigherNumber                | 214 CheckPalindromeNumber              
-	 206 TwoSumInArray                       | 215 FindSingleNumber                   
-	 207 PlusOne                             | 216 FindSingleNumberII                 
-	 208 ReverseInteger                      |                                        
-	============================================================================
+	 100 Check Palindrome Number             | 109 Find Two Sum in Array              
+	 101 Check Palindrome String             | 110 Longest Substr no-Repeated Chars   
+	 102 Count Inversion Pairs in Array      | 111 Median Of Two Sorted Arrays        
+	 103 Find All Subsets                    | 112 Plus One                           
+	 104 Find Heavy Integers                 | 113 Remove Dups From Sorted Array      
+	 105 Find Max Sub-Array                  | 114 Reverse Integer                    
+	 106 Find Next Higher Number             | 115 Reverse Words in String            
+	 107 Find Single Number Space: O(1)      | 116 Sort Int with N Digits             
+	 108 Find Single Number in Array         | 117 Sort Strings with n Chars          
+	=============================================================================
 	select the demo index (press 0 to exit):
 
 ###Some demos as examples
