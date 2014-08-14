@@ -1,9 +1,11 @@
 package com.kent.algorithm.problem;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;
+import com.kent.util.AlgUtil;
 
 /**
  * From https://oj.leetcode.com/problems/sort-list/
@@ -29,7 +31,7 @@ public class SortList extends Problem<ListNode, ListNode> {
 
 	@Override
 	public String getBigO() {
-		return "O(nlog(n)); Space: O(1)";
+		return "Time: O(nlog(n)); Space: O(1)";
 	}
 
 	@Override
@@ -72,6 +74,11 @@ public class SortList extends Problem<ListNode, ListNode> {
 		//dummy Node
 		ListNode result = new ListNode(0);
 		ListNode head = result;
+		// print info
+		if (printSteps()) {
+			printMergeStep(left, right);
+		}
+
 		while (left != null && right != null) {
 
 			if ( left.val <= right.val) {
@@ -88,6 +95,28 @@ public class SortList extends Problem<ListNode, ListNode> {
 		} else {
 			result.next = left;
 		}
+
+		// print info
+		if (printSteps()) {
+			printMergeResult(head.next);
+		}
 		return head.next;
+	}
+
+
+	//print functions just for Demo outputs
+
+	/** only for printing info */
+	private static final String MERGING = "Merging : ";
+	private static final String PLACE_H = "          ";
+	private void printMergeStep(ListNode left, ListNode right) {
+		AlgUtil.println(MERGING + left + " <=> " + right);
+		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", left.toString().length() - 2) + " \\     / ");
+
+	}
+
+	protected void printMergeResult(ListNode list) {
+		AlgUtil.println(PLACE_H + AlgUtil.repeatString(" ", list.toString().length() / 4) + list);
+		AlgUtil.println("");
 	}
 }
