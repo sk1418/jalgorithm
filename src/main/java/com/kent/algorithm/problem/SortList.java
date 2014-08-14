@@ -15,6 +15,11 @@ import com.kent.datastructure.ListNode;
  * <p/>
  * <b>Solution:</b>
  * Merge sort with List could do in-place merge!
+ * <pre>
+ *     - finding the mid node by two pointer, one slow one fast (2x slow)
+ *     - then cut the original list into two parts: head->...->mid->null and (mid.next)->..->last->null
+ *     - recursively mergesort and merge each part.
+ * </pre>
  * </P>
  *
  * @author: Kent
@@ -32,37 +37,37 @@ public class SortList extends Problem<ListNode, ListNode> {
 		if (data == null || data.next == null) {
 			return data;
 		}
-
 		return mergeSortList(data);
-
-
 	}
 
 
 	private ListNode mergeSortList(ListNode list) {
 		if (list.next == null) {
-			return null;
+			return list;
 		}
-		//get the middle node
 		ListNode slow = list;
 		ListNode fast = list;
+		//mid node, it would the last node of the first half
 		ListNode mid = slow;
+
+		//get the middle node
 		while (fast != null && fast.next != null) {
 			mid = slow;
 			slow = slow.next;
 			fast = fast.next.next;
 		}
 
-		ListNode r = slow;
+		ListNode right = slow;
 
-		//cut the list into two
+		//cut the list into two halves
 		mid.next = null;
 
-		mergeSortList(list);
-		mergeSortList(r);
-		return merge(list, r);
+		list = mergeSortList(list);
+		right = mergeSortList(right);
+		return merge(list, right);
 	}
 
+	//merge two lists with O(1)
 	private ListNode merge(ListNode left, ListNode right) {
 		//dummy Node
 		ListNode result = new ListNode(0);
