@@ -1,4 +1,8 @@
 README file of project jalgorithm
+Build Status:
+
+![Build Status](https://travis-ci.org/sk1418/jalgorithm.svg?branch=master)
+
 
 ##Introduction
 
