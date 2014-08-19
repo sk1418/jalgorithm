@@ -15,7 +15,6 @@ todo
 	java -jar xxx.jar
 	
 ###Implemented algorithms and demos so far:
-
 	Available Demos:
 	=============================================================================
 	Comparison Sort                          |Sorting in linear time                  
@@ -33,20 +32,21 @@ todo
 	 100 Add two numbers                     | 105 Remove all dups Nodes From List    
 	 101 Determine Circle in List            | 106 Reverse List                       
 	 102 Find Circle Begin Node              | 107 Reverse every K nodes in List      
-	 103 Remove Dups From Sorted List        | 108 Swap List Nodes in pair            
-	 104 Remove N-th Node From End           |                                        
+	 103 Remove Dups From Sorted List        | 108 Sort List                          
+	 104 Remove N-th Node From End           | 109 Swap List Nodes in pair            
 	=============================================================================
 	Problems (from StackOverflow.com, leetcode.com ...)
 	_____________________________________________________________________________
-	 100 Check Palindrome Number             | 109 Find Two Sum in Array              
-	 101 Check Palindrome String             | 110 Longest Substr no-Repeated Chars   
-	 102 Count Inversion Pairs in Array      | 111 Median Of Two Sorted Arrays        
-	 103 Find All Subsets                    | 112 Plus One                           
-	 104 Find Heavy Integers                 | 113 Remove Dups From Sorted Array      
-	 105 Find Max Sub-Array                  | 114 Reverse Integer                    
-	 106 Find Next Higher Number             | 115 Reverse Words in String            
-	 107 Find Single Number Space: O(1)      | 116 Sort Int with N Digits             
-	 108 Find Single Number in Array         | 117 Sort Strings with n Chars          
+	 100 Check Palindrome Number             | 110 Longest Substr no-Repeated Chars   
+	 101 Check Palindrome String             | 111 Median Of Two Sorted Arrays        
+	 102 Count Inversion Pairs in Array      | 112 Merge 2 Sorted Arrays              
+	 103 Find All Subsets                    | 113 Plus One                           
+	 104 Find Heavy Integers                 | 114 Remove Dups From Sorted Array      
+	 105 Find Max Sub-Array                  | 115 Reverse Integer                    
+	 106 Find Next Higher Number             | 116 Reverse Words in String            
+	 107 Find Single Number Space: O(1)      | 117 Sort Int with N Digits             
+	 108 Find Single Number in Array         | 118 Sort Strings with n Chars          
+	 109 Find Two Sum in Array               |                                        
 	=============================================================================
 	select the demo index (press 0 to exit):
 
