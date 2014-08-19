@@ -1,8 +1,10 @@
 package com.kent.algorithm.problem;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import com.kent.algorithm.Problem;
+import com.kent.util.AlgUtil;
 
 /**
  * From https://oj.leetcode.com/problems/merge-sorted-array/
@@ -57,13 +59,25 @@ public class Merge2SortedArrays extends Problem<Map<String, Object>, int[]> {
 			else {
 				A[t--] = B[n--];
 			}
+			//only for demo
+			printStepStatus(A,B);
 		}
 		//if there is left element in B
 		while (n >= 0) {
 			A[t--] = B[n--];
+			//only for demo
+			printStepStatus(A,B);
 		}
 
 		return A;
 	}
 
+	private void printStepStatus(int[] A, int[] B) {
+		if (printSteps()) {
+			AlgUtil.println(" ..... step status ..... ");
+			AlgUtil.println("Array A[]: " + Arrays.toString(A));
+			AlgUtil.println("Array B[]: " + Arrays.toString(B));
+		}
+
+	}
 }
