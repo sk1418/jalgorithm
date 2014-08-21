@@ -24,7 +24,7 @@ public class ListNode {
 	 * just for unit testing
 	 * should not be used in Problem solutions
 	 * 
-	 * @return
+	 * @return a java.util.List containing ListNodes
 	 */
 	public List<Integer> toList() {
 		final List<Integer> l = Lists.newArrayList();
