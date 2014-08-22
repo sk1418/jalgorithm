@@ -15,6 +15,7 @@ todo
 	java -jar xxx.jar
 	
 ###Implemented algorithms and demos so far:
+
 	Available Demos:
 	=============================================================================
 	Comparison Sort                          |Sorting in linear time                  
@@ -29,24 +30,25 @@ todo
 	=============================================================================
 	Single LinkedList Problem
 	_____________________________________________________________________________
-	 100 Add two numbers                     | 105 Remove all dups Nodes From List    
-	 101 Determine Circle in List            | 106 Reverse List                       
-	 102 Find Circle Begin Node              | 107 Reverse every K nodes in List      
-	 103 Remove Dups From Sorted List        | 108 Sort List                          
-	 104 Remove N-th Node From End           | 109 Swap List Nodes in pair            
+	 100 Add two numbers                     | 106 Remove all dups Nodes From List    
+	 101 Determine Circle in List            | 107 Reverse List                       
+	 102 Find Circle Begin Node              | 108 Reverse every K nodes in List      
+	 103 Least Recently Used (LRU) cache     | 109 Sort List                          
+	 104 Remove Dups From Sorted List        | 110 Swap List Nodes in pair            
+	 105 Remove N-th Node From End           |                                        
 	=============================================================================
-	Problems (from StackOverflow.com, leetcode.com ...)
+	Problems
 	_____________________________________________________________________________
-	 100 Check Palindrome Number             | 110 Longest Substr no-Repeated Chars   
-	 101 Check Palindrome String             | 111 Median Of Two Sorted Arrays        
-	 102 Count Inversion Pairs in Array      | 112 Merge 2 Sorted Arrays              
-	 103 Find All Subsets                    | 113 Plus One                           
-	 104 Find Heavy Integers                 | 114 Remove Dups From Sorted Array      
-	 105 Find Max Sub-Array                  | 115 Reverse Integer                    
-	 106 Find Next Higher Number             | 116 Reverse Words in String            
-	 107 Find Single Number Space: O(1)      | 117 Sort Int with N Digits             
-	 108 Find Single Number in Array         | 118 Sort Strings with n Chars          
-	 109 Find Two Sum in Array               |                                        
+	 200 Check Palindrome Number             | 210 Longest Substr no-Repeated Chars   
+	 201 Check Palindrome String             | 211 Median Of Two Sorted Arrays        
+	 202 Count Inversion Pairs in Array      | 212 Merge 2 Sorted Arrays              
+	 203 Find All Subsets                    | 213 Plus One                           
+	 204 Find Heavy Integers                 | 214 Remove Dups From Sorted Array      
+	 205 Find Max Sub-Array                  | 215 Reverse Integer                    
+	 206 Find Next Higher Number             | 216 Reverse Words in String            
+	 207 Find Single Number Space: O(1)      | 217 Sort Int with N Digits             
+	 208 Find Single Number in Array         | 218 Sort Strings with n Chars          
+	 209 Find Two Sum in Array               |                                        
 	=============================================================================
 	select the demo index (press 0 to exit):
 
