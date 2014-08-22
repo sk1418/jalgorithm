@@ -1,5 +1,6 @@
 package com.kent.algorithm.demo.datastructure;
 
+import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.ui.Demo;
 import com.kent.algorithm.ui.DemoType;
@@ -57,6 +58,23 @@ public class LRUCacheDemo extends AbstractDemo {
 
     @Override
     protected void printDescription() {
+        String[] d  = new String[]{
+                " Design and implement a data structure for Least Recently Used (LRU) cache.",
+                " It should support the following operations: get and set.",
+                " ",
+                " get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.",
+                " set(key, value) - Set or insert the value if the key is not already present.",
+                "				   When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.",
+                " ",
+                "Solution",
+                " ",
+                "    - Idea is using a double-linked list to store the k-v pairs",
+                "    - when get/set, just re-arrange the node in the linkedlist, thus O(1)",
+                "    - using a map(hashmap) to store the reference of k -> node, so that get() has O(1)",
+                "    - if with built-in LinkedHashMap, the problem could be much easiser implemented. (with protected boolean removeEldestEntry(Map.Entry eldest)",
+                " ",
+        };
+        print(Joiner.on("\n").join(d));
 
     }
 }

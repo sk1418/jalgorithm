@@ -7,7 +7,7 @@ package com.kent.algorithm.ui;
 public enum DemoType {
 		CompSort("Comparison Sort", 0),
 		LinearSort("Sorting in linear time", 10),
-		Problems("Problems (from StackOverflow.com, leetcode.com ...)", 99),
+		Problems("Problems", 199),
 		Test("",0),
 		LinkedList("Single LinkedList Problem",99);
 
