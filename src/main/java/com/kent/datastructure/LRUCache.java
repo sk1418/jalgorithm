@@ -15,7 +15,7 @@ import java.util.Map;
  * set(key, value) - Set or insert the value if the key is not already present.
  * 					 When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
  * </pre>
- *
+ * <p/>
  * <pre>
  *    - Idea is using a double-linked list to store the k-v pairs
  *    - when get/set, just re-arrange the node in the linkedlist, thus O(1)
@@ -115,9 +115,9 @@ public class LRUCache {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         String nodeFmt = "[k:%d, v:%d]";
-        sb.append( String.format("LRUCache(%d) :", capacity));
+        sb.append(String.format("LRUCache(%d) :", capacity));
         if (innerMap.size() == 0) {
-            sb.append( "[null]");
+            sb.append("[null]");
         } else {
             Node n = innerList.first;
             sb.append(String.format(nodeFmt, n.key, n.value));
