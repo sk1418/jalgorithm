@@ -27,9 +27,9 @@ public class SameDigitsProductTest extends BaseTest {
         testInfo("Same Digit Product");
         Map<String, Integer> input = ImmutableMap.of("a",21, "d", 1);
         SameDigitsProduct problem = new SameDigitsProduct();
-        Assert.assertEquals("5291",problem.solve(input));
+        Assert.assertEquals("5291",problem.solve(input).get("b"));
         input = ImmutableMap.of("a",28, "d", 1);
-        Assert.assertEquals("-1",problem.solve(input));
+        Assert.assertEquals("-1",problem.solve(input).get("b"));
     }
    }
 
