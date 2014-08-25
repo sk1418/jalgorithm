@@ -53,9 +53,9 @@ public class AddTwoNumbersDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				"  You are given two linked lists (ListNode Type) representing two non-negative numbers. The digits are stored in reverse order and each of their",
 				"  nodes contain a single digit. Add the two numbers and return it as a linked list.",
 				"  ",
@@ -77,7 +77,6 @@ public class AddTwoNumbersDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

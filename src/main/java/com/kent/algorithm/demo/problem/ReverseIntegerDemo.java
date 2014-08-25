@@ -57,9 +57,9 @@ public class ReverseIntegerDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-				final String d =Joiner.on("\n").join(
+				return Joiner.on("\n").join(
 						"Reverse a given Integer:",
 						"",
 						"  Example1: x = 123, return 321",
@@ -77,7 +77,6 @@ public class ReverseIntegerDemo extends AbstractDemo {
 						);
 				//@formatter:on
 
-		print(d);
 
 	}
 }

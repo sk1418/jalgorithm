@@ -63,9 +63,9 @@ public class SortingStringsWithNCharsDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				"You are given an array of strings, where different strings may have different",
 				"numbers of characters, but the total number of characters over all the",
 				"strings is n. Show how to sort the strings in O(n) time. (Note that the",
@@ -82,7 +82,6 @@ public class SortingStringsWithNCharsDemo extends AbstractDemo {
 				"first letter removed."
 		);
 		//@formatter:on
-		print(d);
 
 	}
 }

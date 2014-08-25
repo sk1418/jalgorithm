@@ -19,7 +19,7 @@ public class RandomizedQuickSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("RandomizedQuickSort Demo");
 	}
 

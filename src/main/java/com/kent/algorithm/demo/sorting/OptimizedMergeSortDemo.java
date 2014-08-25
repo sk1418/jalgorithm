@@ -19,8 +19,8 @@ public class OptimizedMergeSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
-		print("Optimized Merge Sort Demo");
+	protected String demoDescription() {
+		return "Optimized Merge Sort Demo";
 	}
 
 }

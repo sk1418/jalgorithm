@@ -24,7 +24,7 @@ public class RadixSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Radix Sort Demo");
 	}
 

@@ -61,9 +61,9 @@ public class RemoveDupsFromSortedLinkedListDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 " Given a sorted linked list, delete all duplicates such that each element appear only once.",
 				 " ",
 				 " For example,",
@@ -82,7 +82,6 @@ public class RemoveDupsFromSortedLinkedListDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

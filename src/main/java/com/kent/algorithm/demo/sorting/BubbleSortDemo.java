@@ -19,7 +19,7 @@ public class BubbleSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Bubble Sort Demo");
 	}
 

@@ -23,7 +23,7 @@ public class CountingSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Counting Sort Demo");
 	}
 

@@ -19,8 +19,8 @@ public class InsertionSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
-		print("Insertion Sort Demo");
+	protected String demoDescription() {
+		return "Insertion Sort Demo";
 	}
 
 }

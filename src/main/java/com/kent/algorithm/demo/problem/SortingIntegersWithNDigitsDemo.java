@@ -61,9 +61,9 @@ public class SortingIntegersWithNDigitsDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 
 				"You are given an array of integers, where different integers may have",
 				"different numbers of digits, but the total number of digits over all the",
@@ -77,7 +77,6 @@ public class SortingIntegersWithNDigitsDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 
 	}
 }

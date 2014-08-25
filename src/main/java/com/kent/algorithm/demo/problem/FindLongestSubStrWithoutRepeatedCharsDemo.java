@@ -45,9 +45,9 @@ public class FindLongestSubStrWithoutRepeatedCharsDemo extends AbstractDemo {
 
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 //@formatter:off
-			final String d = Joiner.on("\n").join(
+			return Joiner.on("\n").join(
 
 					"From http://oj.leetcode.com/problems/longest-substring-without-repeating-characters/",
 					"",
@@ -70,7 +70,6 @@ public class FindLongestSubStrWithoutRepeatedCharsDemo extends AbstractDemo {
 						);
 				//@formatter:on
 
-		print(d);
 
 	}
 }

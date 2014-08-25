@@ -69,9 +69,9 @@ public class RemoveNthNodeFromEndOfLinkedListDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 " Given linked list:",
 				 " ",
 				 "   1->2->3->4->5, and n = 2.",
@@ -89,7 +89,6 @@ public class RemoveNthNodeFromEndOfLinkedListDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

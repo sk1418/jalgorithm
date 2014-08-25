@@ -24,15 +24,15 @@ public abstract class AbstractDemo {
 	 */
 	public final void doDemo() {
 		prepareDemo();
-		System.out.print("Warming JVM up....");
+		print("Warming JVM up....");
 		// warming up
 		for (int x = WARMING_UP_LOOPS; x > 0; x--) {
-			System.out.print(x + "...");
+			print(x + "...");
 			warmingUp();
 		}
 		print("Done\n\n");
 		printLine("#", 0);
-		printDescription();
+		print(demoDescription());
 		printLine("#", 0);
 		print("");
 		print("");
@@ -82,5 +82,5 @@ public abstract class AbstractDemo {
 		len = len<=0? 70:len;
 		print(AlgUtil.repeatString(c,len));
 	}
-	protected abstract void printDescription();
+	protected abstract String demoDescription();
 }

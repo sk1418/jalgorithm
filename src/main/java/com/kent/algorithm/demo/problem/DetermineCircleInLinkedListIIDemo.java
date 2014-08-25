@@ -64,9 +64,9 @@ public class DetermineCircleInLinkedListIIDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				"From http://oj.leetcode.com/problems/linked-list-cycle-ii/",
 				"",
 				"Given a linked list, return the node where the cycle begins. If there is no cycle, return null.",
@@ -94,7 +94,6 @@ public class DetermineCircleInLinkedListIIDemo extends AbstractDemo {
 				);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

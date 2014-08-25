@@ -31,10 +31,10 @@ public class FindNextHigherNumberDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 
 		//@formatter:off
-			final String d =Joiner.on("\n").join(
+			return Joiner.on("\n").join(
 						
 					"Given a number, find the next higher number which has the exact same set of digits as the original number. For example: given 38276 return 38627",
 					"",
@@ -62,7 +62,6 @@ public class FindNextHigherNumberDemo extends AbstractDemo {
 						);
 				//@formatter:on
 
-		print(d);
 
 	}
 }

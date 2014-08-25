@@ -74,9 +74,9 @@ public class TwoSumInArrayDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				"Given an array of integers, find two numbers such that they add up to a specific target number.",
 				"",
 				"The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please",
@@ -96,7 +96,6 @@ public class TwoSumInArrayDemo extends AbstractDemo {
 				);
 		//@formatter:on
 
-		print(d);
 
 	}
 }

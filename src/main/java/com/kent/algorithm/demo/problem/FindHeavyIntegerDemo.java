@@ -56,10 +56,10 @@ public class FindHeavyIntegerDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				"Finding Heavy integers:",
 				"A non-negative integer is called heavy if the average value of its digits in decimal representation",
 				"exceeds 7. For example the number 8698 is heavy, because the average value of its digits equal to",
@@ -79,8 +79,5 @@ public class FindHeavyIntegerDemo extends AbstractDemo {
 				"and average of digits becomes greater than 7.0"		
 		);
 		//@formatter:on
-
-		print(d);
-
 	}
 }

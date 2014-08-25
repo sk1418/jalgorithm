@@ -64,9 +64,9 @@ public class ReverseLinkedListDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 " Reverse a singly linkedlist.",
 				 " ",
 				 " For example",
@@ -119,7 +119,6 @@ public class ReverseLinkedListDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

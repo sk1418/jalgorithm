@@ -57,7 +57,7 @@ public class LRUCacheDemo extends AbstractDemo {
     }
 
     @Override
-    protected void printDescription() {
+    protected String demoDescription() {
         String[] d  = new String[]{
                 " Design and implement a data structure for Least Recently Used (LRU) cache.",
                 " It should support the following operations: get and set.",

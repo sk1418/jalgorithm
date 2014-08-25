@@ -42,9 +42,9 @@ public class FindSingleNumberDemo extends AbstractDemo {
 
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 //@formatter:off
-			final String d = Joiner.on("\n").join(
+			return Joiner.on("\n").join(
 
 					"From http://oj.leetcode.com/problems/single-number/",
 					"",
@@ -65,7 +65,6 @@ public class FindSingleNumberDemo extends AbstractDemo {
 						);
 				//@formatter:on
 
-		print(d);
 
 	}
 }

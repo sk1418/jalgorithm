@@ -92,7 +92,7 @@ public class SortingComparisionDemo extends AbstractDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("compare different sort algorithms:");
 	}
 

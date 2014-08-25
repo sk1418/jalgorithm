@@ -25,7 +25,7 @@ public class BucketSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Bucket Sort Demo");
 	}
 

@@ -18,7 +18,7 @@ public class HeapSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Heap Sort Demo");
 	}
 

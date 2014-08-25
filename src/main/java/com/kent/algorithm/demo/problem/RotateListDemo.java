@@ -66,9 +66,9 @@ public class RotateListDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				" Given a list, rotate the list to the right by k places, where k is non-negative.",
 				" single linkedlist:",
 				" ",
@@ -101,7 +101,6 @@ public class RotateListDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

@@ -57,9 +57,9 @@ public class ReverseWordsInStringDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 	//@formatter:off
-		final String d = Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 			" from leetcode:https://oj.leetcode.com/problems/reverse-words-in-a-string/",
 			"",
 			" Given an input string, reverse the string word by word.",
@@ -87,7 +87,6 @@ public class ReverseWordsInStringDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 
 	}
 }

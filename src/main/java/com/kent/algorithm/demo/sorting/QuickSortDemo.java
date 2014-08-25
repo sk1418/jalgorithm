@@ -19,7 +19,7 @@ public class QuickSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Quick Sort Demo");
 	}
 

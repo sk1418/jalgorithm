@@ -60,7 +60,7 @@ public class PlusOneDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 
 		print(" Given a number represented as an array of digits, plus one to the number. ");
 

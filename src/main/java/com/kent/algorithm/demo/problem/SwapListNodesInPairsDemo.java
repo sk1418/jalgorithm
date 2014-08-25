@@ -73,9 +73,9 @@ public class SwapListNodesInPairsDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 "Given a linked list, swap every two adjacent nodes and return its head.",
 				 " ",
 				 " For example",
@@ -112,7 +112,6 @@ public class SwapListNodesInPairsDemo extends AbstractDemo {
 		);
 		//@formatter:on
 
-		print(d);
 	}
 
 }

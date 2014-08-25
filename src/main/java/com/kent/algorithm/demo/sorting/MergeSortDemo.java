@@ -19,7 +19,7 @@ public class MergeSortDemo extends AbstractSortingDemo {
 
 	/** {@inheritDoc} */
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		print("Merge Sort Demo");
 	}
 

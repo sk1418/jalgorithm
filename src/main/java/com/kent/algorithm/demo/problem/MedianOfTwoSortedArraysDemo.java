@@ -65,9 +65,9 @@ public class MedianOfTwoSortedArraysDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 " There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays.",
 				 " ",
 				 " The overall run time complexity should be O(log (m+n)).",
@@ -91,7 +91,6 @@ public class MedianOfTwoSortedArraysDemo extends AbstractDemo {
 				);
 		//@formatter:on
 
-		print(d);
 
 	}
 }

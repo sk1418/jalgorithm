@@ -69,9 +69,9 @@ public class MaxSubArrayDemo extends AbstractDemo {
 	}
 
 	@Override
-	protected void printDescription() {
+	protected String demoDescription() {
 		//@formatter:off
-		final String d =Joiner.on("\n").join(
+		return Joiner.on("\n").join(
 				 "Finding Max Subarray problem:",
 				 "Find the nonempty, contiguous subarray of given array, whose values have the largest sum.",
 				 "",
@@ -83,7 +83,6 @@ public class MaxSubArrayDemo extends AbstractDemo {
 				);
 		//@formatter:on
 
-		print(d);
 
 	}
 }
