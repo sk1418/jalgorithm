@@ -9,27 +9,31 @@ import com.kent.util.AlgUtil;
  * The Class RadixSortDemo.
  */
 
-@Demo(type = DemoType.LinearSort, name="Radix Sort")
+@Demo(type = DemoType.LinearSort, name = "Radix Sort")
 public class RadixSortDemo extends AbstractSortingDemo {
 
-	/** {@inheritDoc} */
-	@Override
-	protected void prepareDemo() {
-		data = AlgUtil.getRandomIntArray(SMALL_ARRAY_SIZE, SMALL_ARRAY_SIZE * 300, false);
-		final RadixSort rs = new RadixSort();
-		rs.setPrintSteps(true);
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void prepareDemo() {
+        data = AlgUtil.getRandomIntArray(SMALL_ARRAY_SIZE, SMALL_ARRAY_SIZE * 300, false);
+        final RadixSort rs = new RadixSort();
+        rs.setPrintSteps(true);
 
-		sorting = rs;
-	}
+        sorting = rs;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected String demoDescription() {
-		print("Radix Sort Demo");
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String demoDescription() {
+        return "Radix Sort Demo";
+    }
 
-	@Override
-	protected void warmingUp() {
-		// warmingUp is not needed.
-	}
+    @Override
+    protected void warmingUp() {
+        // warmingUp is not needed.
+    }
 }

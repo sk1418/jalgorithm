@@ -58,7 +58,7 @@ public class LRUCacheDemo extends AbstractDemo {
 
     @Override
     protected String demoDescription() {
-        String[] d  = new String[]{
+         return Joiner.on("\n").join(new String[]{
                 " Design and implement a data structure for Least Recently Used (LRU) cache.",
                 " It should support the following operations: get and set.",
                 " ",
@@ -73,8 +73,6 @@ public class LRUCacheDemo extends AbstractDemo {
                 "    - using a map(hashmap) to store the reference of k -> node, so that get() has O(1)",
                 "    - if with built-in LinkedHashMap, the problem could be much easiser implemented. (with protected boolean removeEldestEntry(Map.Entry eldest)",
                 " ",
-        };
-        print(Joiner.on("\n").join(d));
-
+        });
     }
 }

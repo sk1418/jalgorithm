@@ -8,19 +8,23 @@ import com.kent.algorithm.ui.DemoType;
  * The Class RandomizedQuickSortDemo.
  */
 
-@Demo(type = DemoType.CompSort, name="Quick(Randomized) Sort")
+@Demo(type = DemoType.CompSort, name = "Quick(Randomized) Sort")
 public class RandomizedQuickSortDemo extends AbstractSortingDemo {
 
-	/** {@inheritDoc} */
-	@Override
-	protected void prepareDemo() {
-		sorting = new RandomizedQuickSort();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void prepareDemo() {
+        sorting = new RandomizedQuickSort();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected String demoDescription() {
-		print("RandomizedQuickSort Demo");
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String demoDescription() {
+        return "RandomizedQuickSort Demo";
+    }
 
 }

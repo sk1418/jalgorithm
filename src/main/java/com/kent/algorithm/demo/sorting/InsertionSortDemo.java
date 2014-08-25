@@ -8,19 +8,23 @@ import com.kent.algorithm.ui.DemoType;
  * The Class InsertionSortDemo.
  */
 
-@Demo(type = DemoType.CompSort, name="Insertion Sort")
+@Demo(type = DemoType.CompSort, name = "Insertion Sort")
 public class InsertionSortDemo extends AbstractSortingDemo {
 
-	/** {@inheritDoc} */
-	@Override
-	protected void prepareDemo() {
-		sorting = new InsertionSort();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void prepareDemo() {
+        sorting = new InsertionSort();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected String demoDescription() {
-		return "Insertion Sort Demo";
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String demoDescription() {
+        return "Insertion Sort Demo";
+    }
 
 }
