@@ -49,13 +49,13 @@ public class PlusOneDemo extends AbstractDemo {
 
         print("\n\narray with " + a.length + " elements:");
         print("Array : " + Arrays.toString(a));
-        print(AlgUtil.repeatString("=", 50));
+        printLine("=", 50);
 
         stopwatch.start();
         final int[] result = problem.solve(a);
         stopwatch.stop();
         print("Result: " + Arrays.toString(result));
-        print(AlgUtil.repeatString("=", 50));
+        printLine("=", 50);
         print(stopwatch.readAsString());
         stopwatch.reset();
     }
