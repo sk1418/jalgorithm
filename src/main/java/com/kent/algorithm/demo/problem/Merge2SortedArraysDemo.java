@@ -41,11 +41,6 @@ public class Merge2SortedArraysDemo extends AbstractDemo {
 		doJob();
 	}
 
-	@Override
-	protected void warmingUp() {
-		// warmingUp is not required
-	}
-
 	/**
 	 * Do job.
 	 * 

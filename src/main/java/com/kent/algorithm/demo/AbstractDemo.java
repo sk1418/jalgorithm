@@ -46,7 +46,7 @@ public abstract class AbstractDemo {
 	 * 
 	 * if warmingUp phase is not necessary, just leave an empty impl. in sub-class
 	 */
-	protected abstract void warmingUp();
+	protected void warmingUp(){};
 
 	/**
 	 * Prepare demo.
