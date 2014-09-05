@@ -6,26 +6,27 @@ import com.kent.algorithm.Problem;
  * @author: Kent
  * Created on 2014-09-04.
  */
-public class PrintNumInAlphabetOrder extends Problem<Integer, String[]> {
+public class PrintNumInAlphabetOrder extends Problem<Integer, int[]> {
     @Override
     public String getBigO() {
-        return "Time: O()";
+        return "Time: O(n)";
     }
 
     @Override
-    public String[] solve(Integer data) {
-        String[] result = new String[data];
+    public int[] solve(Integer data) {
+        int[] result = new int[data];
         int a = 0;
         for (int i = 1; i <= 9; i++) {
-            String t = "" + i;
+            int t = i;
             result[a++] = t;
             for (int d = 0; d <= 9; d++) {
-                if (t.length() > 1)
-                    t = t.substring(0, t.length() - 1);
+                //if t has two digits, cut the last one
+                if (t >= 10)
+                    t /= 10;
                 while (true) {
-                    if (Integer.valueOf(t + d) > data)
+                    if (10 * t + d > data)
                         break;
-                    t += d;
+                    t = 10 * t + d;
                     result[a++] = t;
                 }
             }

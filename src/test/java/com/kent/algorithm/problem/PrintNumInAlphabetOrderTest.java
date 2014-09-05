@@ -11,7 +11,7 @@ import java.util.Arrays;
  * Created on 2014-09-04.
  */
 public class PrintNumInAlphabetOrderTest extends BaseTest{
-   private Problem<Integer,String[]> problem = new PrintNumInAlphabetOrder();
+   private Problem<Integer,int[]> problem = new PrintNumInAlphabetOrder();
 
     @Test
     public void testSolution() {

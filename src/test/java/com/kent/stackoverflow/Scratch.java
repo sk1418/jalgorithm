@@ -25,8 +25,6 @@ public class Scratch extends BaseTest {
 
 	@Test
 	public void testIt() {
-
-
 		String s = "en_actions_.add(new ClusterEntry<String>(\"photography\",-1, 2, 620554,\"photography \",null));";
 		Pattern p = Pattern.compile("(?<=>\\()[^)]*");
 		Matcher m = p.matcher(s);
@@ -56,4 +54,5 @@ public class Scratch extends BaseTest {
 	}
 
 }
+
 
