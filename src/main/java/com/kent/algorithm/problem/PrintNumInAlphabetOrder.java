@@ -12,27 +12,27 @@ public class PrintNumInAlphabetOrder extends Problem<Integer, int[]> {
         return "Time: O(n)";
     }
 
+    //index of the result array
+    private int index;
     @Override
     public int[] solve(Integer data) {
         int[] result = new int[data];
-        int a = 0;
+        index = 0;
         for (int i = 1; i <= 9; i++) {
-            int t = i;
-            result[a++] = t;
-            for (int d = 0; d <= 9; d++) {
-                //if t has two digits, cut the last one
-                if (t >= 10)
-                    t /= 10;
-                while (true) {
-                    if (10 * t + d > data)
-                        break;
-                    t = 10 * t + d;
-                    result[a++] = t;
-                }
-            }
+            takeSection(i, data, result);
         }
 
         return result;
+    }
+
+    private void takeSection(int current, int n, int[] result) {
+        if (current > n) {
+            return;
+        }
+        result[index++] = current;
+        for (int i = 0; i <= 9; i++) {
+           takeSection(current*10+i  , n, result);
+        }
     }
 
 }
