@@ -35,10 +35,6 @@ public class PlusOneDemo extends AbstractDemo {
         doJob(input2);
     }
 
-    @Override
-    protected void warmingUp() {
-        // warmingUp is not required
-    }
 
     /**
      * Do job.
