@@ -52,7 +52,7 @@ public class Scratch extends BaseTest {
 
     @Test
     public void printRestRange() {
-        int[] arr = new int[]{0, 1, 3, 50, 75,97,98};
+        int[] arr = {0, 1, 3, 50, 75, 97, 98};
         int min = 0, max = 99;
         System.out.print("[");
         printStep(arr, 0, min, max);
@@ -60,17 +60,48 @@ public class Scratch extends BaseTest {
 
     private void printStep(int[] arr, int idx, int flag, int max) {
         if (arr[idx] > flag)
-            System.out.printf("%s%s,", flag, arr[idx] == flag + 1 ? "" :"-" + (arr[idx] - 1));
+            System.out.printf("%s%s,", flag, arr[idx] == flag + 1 ? "" : "-" + (arr[idx] - 1));
         flag = arr[idx] + 1;
         if (++idx < arr.length)
             printStep(arr, idx, flag, max);
         else
-            System.out.printf("%s]\n",  flag == max ? max : flag + "-" + max);
-
-
+            System.out.printf("%s]\n", flag == max ? max : flag + "-" + max);
     }
 
-   
+
+    public void printRestRangeLoop(int[] arr, int min, int max) {
+        System.out.print("[");
+        int flag = min;
+        for (int idx = 0; idx < arr.length; idx++) {
+            if (arr[idx] > flag)
+                System.out.printf("%s%s,", flag, arr[idx] == flag + 1 ? "" : "-" + (arr[idx] - 1));
+            flag = arr[idx] + 1;
+        }
+        System.out.printf("%s]\n", flag == max ? max : flag + "-" + max);
+    }
+
+    @Test
+    public void test2dArray() {
+        double[][] arr = {
+                {0.5, 0.62, 0.35, 0.6, 0.5},
+                {1, 2, 3, 4, 5},
+                {0.65, 0.85, 0.2, 0.2, 0.8},
+                {10, 20, 30, 40, 50},
+                {0.65, 0.85, 0.2, 0.2, 0.8},
+                {100, 200, 300, 400, 500},
+        };
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 1) {
+                for (int j = arr[i].length - 1; j >= 0; j--)
+                    System.out.printf("%-10s", arr[i][j]);
+            } else {
+                for (int j = 0; j < arr[i].length; j++)
+                    System.out.printf("%-10s", arr[i][j]);
+            }
+            System.out.println("");
+        }
+    }
 }
 
 
