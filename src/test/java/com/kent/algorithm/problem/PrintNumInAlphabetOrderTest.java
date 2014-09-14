@@ -30,8 +30,7 @@ public class PrintNumInAlphabetOrderTest extends BaseTest{
             expected[i] = Integer.valueOf(expectedStr.get(i));
         }
 
-
-            log.debug(Arrays.toString(problem.solve(n)));
+//            log.debug(Arrays.toString(problem.solve(n)));
             Assert.assertArrayEquals(expected, problem.solve(n));
         }
 }
