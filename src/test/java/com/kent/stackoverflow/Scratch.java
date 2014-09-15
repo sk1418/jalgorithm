@@ -68,16 +68,28 @@ public class Scratch extends BaseTest {
             System.out.printf("%s]\n", flag == max ? max : flag + "-" + max);
     }
 
+    @Test
+    public void testRestInLoop() {
+        int min = 0, max=99;
+        int[] arr = {0,1,3,50,75};
+        printRestRangeLoop(arr,min,max);
+    }
 
     public void printRestRangeLoop(int[] arr, int min, int max) {
         System.out.print("[");
-        int flag = min;
+        int current = min;
+        boolean hasElement = false;
         for (int idx = 0; idx < arr.length; idx++) {
-            if (arr[idx] > flag)
-                System.out.printf("%s%s,", flag, arr[idx] == flag + 1 ? "" : "-" + (arr[idx] - 1));
-            flag = arr[idx] + 1;
+            if (arr[idx] > current) {
+                System.out.printf("%s%s%s", hasElement ? "," : "", current,
+                        arr[idx] == current + 1 ? "" : "-" + (arr[idx] - 1));
+                hasElement = true;
+            }
+            current = arr[idx] + 1;
         }
-        System.out.printf("%s]\n", flag == max ? max : flag + "-" + max);
+        if (current <= max)
+            System.out.printf("%s%s", hasElement?",":"", current == max ? max : current + "-" + max);
+        System.out.println("]");
     }
 
     @Test
