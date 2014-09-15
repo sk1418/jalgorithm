@@ -1,16 +1,16 @@
 package com.kent.stackoverflow;
 
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.kent.algorithm.ui.Demo;
+import com.kent.datastructure.ListNode;
+import com.kent.test.BaseTest;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kent.algorithm.ui.Demo;
-import com.kent.test.BaseTest;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * only for quick test
@@ -51,31 +51,13 @@ public class Scratch extends BaseTest {
 
 
     @Test
-    public void printRestRange() {
-        int[] arr = {0, 1, 3, 50, 75, 97, 98};
-        int min = 0, max = 99;
-        System.out.print("[");
-        printStep(arr, 0, min, max);
-    }
-
-    private void printStep(int[] arr, int idx, int flag, int max) {
-        if (arr[idx] > flag)
-            System.out.printf("%s%s,", flag, arr[idx] == flag + 1 ? "" : "-" + (arr[idx] - 1));
-        flag = arr[idx] + 1;
-        if (++idx < arr.length)
-            printStep(arr, idx, flag, max);
-        else
-            System.out.printf("%s]\n", flag == max ? max : flag + "-" + max);
-    }
-
-    @Test
     public void testRestInLoop() {
-        int min = 0, max=99;
-        int[] arr = {0,1,3,50,75};
-        printRestRangeLoop(arr,min,max);
+        int min = 0, max = 99;
+        int[] arr = {0, 1, 3, 50, 75};
+        printRestRangeLoop(arr, min, max);
     }
 
-    public void printRestRangeLoop(int[] arr, int min, int max) {
+    private void printRestRangeLoop(int[] arr, int min, int max) {
         System.out.print("[");
         int current = min;
         boolean hasElement = false;
@@ -88,7 +70,7 @@ public class Scratch extends BaseTest {
             current = arr[idx] + 1;
         }
         if (current <= max)
-            System.out.printf("%s%s", hasElement?",":"", current == max ? max : current + "-" + max);
+            System.out.printf("%s%s", hasElement ? "," : "", current == max ? max : current + "-" + max);
         System.out.println("]");
     }
 
@@ -113,6 +95,60 @@ public class Scratch extends BaseTest {
             }
             System.out.println("");
         }
+    }
+
+    @Test
+    public void testMergeList() {
+        final ListNode list1 = new ListNode(1);
+        final ListNode n2 = new ListNode(2);
+        final ListNode n3 = new ListNode(3);
+        final ListNode n4 = new ListNode(4);
+        final ListNode n5 = new ListNode(5);
+
+        list1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+
+        final ListNode list2 = new ListNode(6);
+        final ListNode n7 = new ListNode(7);
+        final ListNode n8 = new ListNode(8);
+        final ListNode n9 = new ListNode(9);
+        final ListNode n10 = new ListNode(10);
+
+        list2.next = n7;
+        n7.next = n8;
+        n8.next = n9;
+        n9.next = n10;
+
+        ListNode result = mergeLists(list1, list2);
+        log.debug(result.toString());
+
+
+    }
+
+    private ListNode mergeLists(ListNode list1, ListNode list2) {
+        ListNode result = new ListNode(-1);
+        ListNode head = result;
+        if (list1 == null) {
+            return list2;
+        }
+        if (list2 == null) {
+            return list1;
+        }
+        ListNode[] pool = {list1, list2};
+        ListNode working = null;
+        int i = 0;
+        while (true) {
+            int idx = i++ % 2;
+            working = pool[idx];
+            head.next = working;
+            head = head.next;
+            if (working.next == null) break;
+            pool[idx] = working.next;
+        }
+        head.next = pool[i % 2];
+        return result.next;
     }
 }
 
