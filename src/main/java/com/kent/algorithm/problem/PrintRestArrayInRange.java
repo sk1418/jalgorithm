@@ -5,6 +5,14 @@ import com.kent.algorithm.Problem;
 import java.util.Map;
 
 /**
+ * Given a sorted integer array with positive unique numbers between min and max.
+ * Print/return the rest element from the min-max sequence in range.
+ *
+ * Example:
+ * <pre>
+ *     array: [0,1,3,50,75] min:0, max:99
+ *     output in string: [2,4-49,51-74,76-99]
+ * </pre>
  * @author: Kent
  * Created on 2014-09-15.
  */
