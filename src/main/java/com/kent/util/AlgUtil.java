@@ -2,7 +2,9 @@ package com.kent.util;
 
 import com.kent.datastructure.MyTreeNode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -198,29 +200,44 @@ public final class AlgUtil {
     }
 
 
-    final static String vfmt = "%s[ %s ]\n";
-    final static String EmptyPH = repeatString(" ", 5) + "|";
-    final static String NodePH = repeatString(" ", 5) + "|";
-    final static String LastPH = repeatString(" ", 5) + "\\";
+    final static String vfmt = "%s%s [ %s ]\n";
+    final static String PH = repeatString(" ", 5);
+    final static String EmptyPH = PH + " ";
+    final static String NodePH = PH + "|";
+    final static String LastPH = PH + "\\";
 
     public static <T> void printTreeNode(MyTreeNode<T> node) {
-        _printTreeNode(node, "");
+        _printTreeNode(node, new ArrayList<Boolean>());
     }
 
-    private static <T> void _printTreeNode(MyTreeNode<T> node, String pre) {
-        String vStr = String.format(vfmt, pre + (pre.equals("") ? "" : "_ "), node.getValue());
+    /**
+     *  recursive print MyTreeNode
+     * @param node
+     * @param tailInfo a boolean list, to store the isLastNode info for each level
+     * @param <T>
+     */
+    private static <T> void _printTreeNode(MyTreeNode<T> node,  List<Boolean> tailInfo) {
+        String pre = "";
+
+        if (!tailInfo.isEmpty()) {
+            int preSize = tailInfo.size();
+            //0-> n-1
+            for (int i = 0; i < preSize - 1; i++) {
+                pre += tailInfo.get(i) ? EmptyPH : NodePH;
+            }
+            pre += tailInfo.get(preSize - 1) ? LastPH : NodePH;
+        }
+
+        String vStr = String.format(vfmt, pre,tailInfo.isEmpty()?" ":"_", node.getValue());
         print(vStr);
         int size = node.getChildren().size();
-        String npre;
         for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                pre = pre.replaceFirst("(\\\\)([| ]*)$", " $2");
-                npre = pre + (pre.length() > 0 ? LastPH : EmptyPH);
-            } else {
-                npre = pre + (pre.length() > 0 ? NodePH : EmptyPH);
-            }
-            _printTreeNode(node.getChildren().get(i), npre);
+            tailInfo.add(i == size - 1);
+            _printTreeNode(node.getChildren().get(i), tailInfo);
         }
+        //remove the current flag
+        if(!tailInfo.isEmpty())
+            tailInfo.remove(tailInfo.size() - 1);
     }
 
     /**
