@@ -2,13 +2,17 @@ package com.kent.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+import com.kent.datastructure.MyTreeNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import javax.swing.tree.TreeNode;
 
 //import org.apache.log4j.Logger;
 
@@ -17,6 +21,48 @@ import org.junit.Test;
  */
 public class AlgUtilTest {
 	private static final Logger log = LoggerFactory.getLogger(AlgUtilTest.class);
+
+
+    @Test
+    public void testPrintMyTreeNode() {
+        MyTreeNode<String> root = new MyTreeNode<>(null, null, "root");
+        MyTreeNode<String> c1 = new MyTreeNode<>(root, null, "c1");
+        MyTreeNode<String> c2= new MyTreeNode<>(root, null, "c2");
+        MyTreeNode<String> c3= new MyTreeNode<>(root, null, "c3");
+
+        root.addChild(c1);
+        root.addChild(c2);
+        root.addChild(c3);
+
+
+        MyTreeNode<String> c11 = new MyTreeNode<>(null, null, "c1-1");
+        MyTreeNode<String> c12= new MyTreeNode<>(null, null, "c1-2");
+        MyTreeNode<String> c13= new MyTreeNode<>(null, null, "c1-3");
+
+        MyTreeNode<String> c21 = new MyTreeNode<>(null, null, "c2-1");
+        MyTreeNode<String> c22= new MyTreeNode<>(null, null, "c2-2");
+        MyTreeNode<String> c23= new MyTreeNode<>(null, null, "c2-3");
+
+        c1.addChild(c11);
+        c1.addChild(c12);
+        c1.addChild(c13);
+
+        c2.addChild(c21);
+        c2.addChild(c22);
+        c2.addChild(c23);
+
+        MyTreeNode<String> c231 = new MyTreeNode<>(null, null, "c2-3-1");
+        MyTreeNode<String> c232= new MyTreeNode<>(null, null, "c2-3-2");
+
+        c23.addChild(c231);
+        c23.addChild(c232);
+
+        MyTreeNode<String> c31= new MyTreeNode<>(null, null, "c3-1");
+        MyTreeNode<String> c32= new MyTreeNode<>(null, null, "c3-2");
+        c3.addChild(c31);
+        c3.addChild(c32);
+        AlgUtil.printTreeNode(root);
+    }
 
 	/**
 	 * Gets the random int array test.
@@ -71,50 +117,5 @@ public class AlgUtilTest {
 		Assert.assertArrayEquals(b, resultB);
 	}
 
-	@Test
-	public void testIt2() {
-		final String s = "My name is not eugene. my pet name is not eugene.";
-		final String tmp = s.toLowerCase().replaceAll("[^a-zA-Z]", " ");// here we need the placeholder (blank)
-		final String w1 = "my "; // leave a blank at the end to avoid those words e.g. "myself", "myth"..
-		final String w2 = "eugene ";// same as above
-		final List<Integer> l1 = getList(tmp, w1); // indexes list
-		final List<Integer> l2 = getList(tmp, w2);
-		int min = Integer.MAX_VALUE;
-		final int[] idx = new int[] { 0, 0 };
 
-		// loop to find out the result
-		for (final int i : l1) {
-			for (final int j : l2) {
-				if (Math.abs(j - i) < min) {
-					final int x = j - i;
-					min = Math.abs(j - i);
-					idx[0] = j - i > 0 ? i : j;
-					idx[1] = j - i > 0 ? j + w2.length() + 2 : i + w1.length() + 2;
-				}
-			}
-
-		}
-
-		System.out.println("indexes: " + Arrays.toString(idx));
-		System.out.println("result: " + s.substring(idx[0], idx[1]));
-	}
-
-	private List<Integer> getList(final String input, final String search) {
-		String t = new String(input);
-		final List<Integer> list = new ArrayList<Integer>();
-		int tmp = 0;
-		while (t.length() > 0) {
-			final int x = t.indexOf(search);
-
-			if (x < 0 || x > t.length()) {
-				break;
-			}
-			tmp += x;
-			list.add(tmp);
-			t = t.substring(search.length() + x);
-
-		}
-		return list;
-
-	}
 }
