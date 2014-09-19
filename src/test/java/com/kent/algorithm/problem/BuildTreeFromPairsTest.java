@@ -25,7 +25,6 @@ public class BuildTreeFromPairsTest extends BaseTest {
     @Before
     public void init() {
         String root  = "root"; //root node
-        List<String> f = ImmutableList.of("a", "b");
         List<List<String>> pairs = Lists.newArrayList();
         pairs.addAll(Arrays.asList(
                 ImmutableList.of("c1", "root"),

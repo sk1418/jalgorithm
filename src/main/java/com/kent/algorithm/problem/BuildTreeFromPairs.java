@@ -6,6 +6,25 @@ import com.kent.datastructure.MyTreeNode;
 import java.util.*;
 
 /**
+ * <p>
+ *     Given a List of String pairs and a rootString value, build a tree.
+ *     </p>
+ * <p>
+ *     The first element is the child of the 2nd element, that is, the 2nd element is the parent of the 1st one.
+ *     The given {@code rootString} would be the root node of built tree.
+ * </p>
+ *
+ * <p>
+ *     solution:
+ * </p>
+ * <pre>
+ *     - design a TreeNode datastructure: {@link com.kent.datastructure.MyTreeNode}
+ *     - convert the given pair list into hashtable/hashmap. (in fact Multimap). The key is the parent string, the value
+ *     is a list, storing the children of the parent string.
+ *     - from the given rootString, get and add all children of root from the hashmap, then recursively add all tree nodes
+ *     from the hashmap.
+ * </pre>
+ *
  * @author: Kent
  * Created on 2014-09-18.
  */
