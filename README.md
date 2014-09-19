@@ -39,16 +39,18 @@ todo
 	=============================================================================
 	Problems
 	_____________________________________________________________________________
-	 200 Check Palindrome Number             | 210 Longest Substr no-Repeated Chars   
-	 201 Check Palindrome String             | 211 Median Of Two Sorted Arrays        
-	 202 Count Inversion Pairs in Array      | 212 Merge 2 Sorted Arrays              
-	 203 Find All Subsets                    | 213 Plus One                           
-	 204 Find Heavy Integers                 | 214 Remove Dups From Sorted Array      
-	 205 Find Max Sub-Array                  | 215 Reverse Integer                    
-	 206 Find Next Higher Number             | 216 Reverse Words in String            
-	 207 Find Single Number Space: O(1)      | 217 Sort Int with N Digits             
-	 208 Find Single Number in Array         | 218 Sort Strings with n Chars          
-	 209 Find Two Sum in Array               |                                        
+	 200 Build Tree from Pair List           | 212 Median Of Two Sorted Arrays        
+	 201 Check Palindrome Number             | 213 Merge 2 Sorted Arrays              
+	 202 Check Palindrome String             | 214 Plus One                           
+	 203 Count Inversion Pairs in Array      | 215 Print Num in Alphabet Ord          
+	 204 Find All Subsets                    | 216 Print Rest Array In Range          
+	 205 Find Heavy Integers                 | 217 Product With Same Digit            
+	 206 Find Max Sub-Array                  | 218 Remove Dups From Sorted Array      
+	 207 Find Next Higher Number             | 219 Reverse Integer                    
+	 208 Find Single Number Space: O(1)      | 220 Reverse Words in String            
+	 209 Find Single Number in Array         | 221 Sort Int with N Digits             
+	 210 Find Two Sum in Array               | 222 Sort Strings with n Chars          
+	 211 Longest Substr no-Repeated Chars    | 223 count non-continuous '1' bin-str   
 	=============================================================================
 	select the demo index (press 0 to exit):
 
