@@ -8,7 +8,7 @@ import com.kent.algorithm.ui.DemoType;
  * The Class BubbleSortDemo.
  */
 @Demo(name = "Bubble Sort",
-        type = DemoType.LinearSort)
+        type = DemoType.CompSort)
 public class BubbleSortDemo extends AbstractSortingDemo {
 
     /**
