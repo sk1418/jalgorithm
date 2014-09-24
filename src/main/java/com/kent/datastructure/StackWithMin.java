@@ -15,15 +15,18 @@ public class StackWithMin<E extends Comparable<E>> extends Stack<E> {
     }
 
     public E push(E value) {
-        if (value.compareTo(min())<0) {
+
+        if (minStack.empty()) {
             minStack.push(value);
+        } else  if (value.compareTo(min()) <= 0) {
+                minStack.push(value);
         }
         return super.push(value);
     }
 
     public E pop() {
         E value = super.pop();
-        if (value .compareTo( min())==0) {
+        if (!minStack.empty() && value.compareTo(min()) == 0) {
             minStack.pop();
         }
         return value;
@@ -31,8 +34,7 @@ public class StackWithMin<E extends Comparable<E>> extends Stack<E> {
 
     public E min() {
         if (minStack.empty()) {
-            //TODO throw exception
-            return  null;
+            throw new IndexOutOfBoundsException("Stack is empty");
         } else {
             return minStack.peek();
         }
