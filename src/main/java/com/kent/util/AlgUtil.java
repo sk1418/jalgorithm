@@ -2,10 +2,7 @@ package com.kent.util;
 
 import com.kent.datastructure.MyTreeNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * The Class AlgUtil.
@@ -324,4 +321,26 @@ public final class AlgUtil {
 
     }
 
+    /**
+     * print out a Stack data structure, for demo purpose.
+     * @param stack the Stack to print
+     * @param <E> The type of element in Stack
+     * @param size the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
+     *             since the method is just for demo, don't give too big / small size.
+     */
+    public static <E> void printStack(Stack<E> stack, int size) {
+
+    }
+
+    /**
+     * print out two Stack data structure, for demo purpose.
+     * @param stack1 the Stack to print
+     * @param stack2 the Stack to print
+     * @param <E> The type of element in Stack
+     * @param size the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
+     *             since the method is just for demo, don't give too big / small size.
+     */
+    public static <E> void printStackPair(Stack<E> stack1, Stack<E> stack2, int size) {
+
+    }
 }

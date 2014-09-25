@@ -3,6 +3,14 @@ package com.kent.datastructure;
 import java.util.Stack;
 
 /**
+ * Build a stack with a {@code min()} function, which returns the minimal value in current stack in O(1).
+ *
+ * Solution:
+ *<pre>
+ *     - build a inner stack (minStack), when the stack push/pop, maintain the minStack
+ *     - min() returns minStack.peek()
+ *</pre>
+ *
  * @author: Kent
  * Created on 2014-09-21.
  */
