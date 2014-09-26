@@ -1,5 +1,6 @@
 package com.kent.util;
 
+import com.google.common.base.Joiner;
 import com.kent.datastructure.MyTreeNode;
 
 import java.util.*;
@@ -131,7 +132,7 @@ public final class AlgUtil {
      */
     public static void printIntArrayVertically(final int[] a) {
         for (final int x : a) {
-            System.out.printf("%7d\n", x);
+            printf("%7d\n", x);
         }
     }
 
@@ -168,16 +169,8 @@ public final class AlgUtil {
         System.out.print(text);
     }
 
-    /**
-     * Append newline.
-     *
-     * @param sb   the sb
-     * @param text the text
-     */
-    public static void appendNewline(final StringBuffer sb, final String text) {
-        if (sb != null) {
-            sb.append(text).append("\n");
-        }
+    public static void printf(final String format, Object... params) {
+        System.out.printf(format, params);
     }
 
     /**
@@ -208,12 +201,13 @@ public final class AlgUtil {
     }
 
     /**
-     *  recursive print MyTreeNode
+     * recursive print MyTreeNode
+     *
      * @param node
      * @param tailInfo a boolean list, to store the isLastNode info for each level
      * @param <T>
      */
-    private static <T> void _printTreeNode(MyTreeNode<T> node,  List<Boolean> tailInfo) {
+    private static <T> void _printTreeNode(MyTreeNode<T> node, List<Boolean> tailInfo) {
         String pre = "";
 
         if (!tailInfo.isEmpty()) {
@@ -225,7 +219,7 @@ public final class AlgUtil {
             pre += tailInfo.get(preSize - 1) ? LastPH : NodePH;
         }
 
-        String vStr = String.format(vfmt, pre,tailInfo.isEmpty()?" ":"_", node.getValue());
+        String vStr = String.format(vfmt, pre, tailInfo.isEmpty() ? " " : "_", node.getValue());
         print(vStr);
         int size = node.getChildren().size();
         for (int i = 0; i < size; i++) {
@@ -233,7 +227,7 @@ public final class AlgUtil {
             _printTreeNode(node.getChildren().get(i), tailInfo);
         }
         //remove the current flag
-        if(!tailInfo.isEmpty())
+        if (!tailInfo.isEmpty())
             tailInfo.remove(tailInfo.size() - 1);
     }
 
@@ -321,26 +315,60 @@ public final class AlgUtil {
 
     }
 
+
+    private final static int Stack_Width = 14;
+    private final static String Stack_Line = repeatString("-", Stack_Width);
+
     /**
      * print out a Stack data structure, for demo purpose.
+     *
      * @param stack the Stack to print
-     * @param <E> The type of element in Stack
-     * @param size the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
-     *             since the method is just for demo, don't give too big / small size.
+     * @param <E>   The type of element in Stack
+     * @param size  the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
+     *              since the method is just for demo, don't give too big / small size.
      */
-    public static <E> void printStack(Stack<E> stack, int size) {
+    public static <E> void printStack(Stack<E> stack, String label, int size) {
+        println(Joiner.on("\n").join(stackToStringList(stack, label, size)));
+    }
 
+    private static <E> List<String> stackToStringList(Stack<E> stack, String label, int size) {
+        List<String> result = new ArrayList<>(size);
+        List<E> list = new ArrayList<>(stack);
+        int emptySlots = size - list.size();
+        int free = Stack_Width - 2;
+        result.add(label+" :");
+        result.add(Stack_Line);
+        for (int i = 0; i < emptySlots; i++) {
+            result.add("|" + repeatString(" ", free) + "|");
+            result.add(Stack_Line);
+        }
+        for (E e : list) {
+            int behind = free - e.toString().length();
+            result.add(String.format("| %s%" + behind + "s", e, "|"));
+            result.add(Stack_Line);
+        }
+       return result;
     }
 
     /**
      * print out two Stack data structure, for demo purpose.
+     *
      * @param stack1 the Stack to print
      * @param stack2 the Stack to print
-     * @param <E> The type of element in Stack
-     * @param size the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
-     *             since the method is just for demo, don't give too big / small size.
+     * @param <E>    The type of element in Stack
+     * @param size   the max size to output. The size has nothing to do with stack's capacity. It is just for displaying.
+     *               since the method is just for demo, don't give too big / small size.
      */
-    public static <E> void printStackPair(Stack<E> stack1, Stack<E> stack2, int size) {
+    public static <E> void printStackPair(Stack<E> stack1, String label1, Stack<E> stack2, String label2, int size) {
+        List<String> left = stackToStringList(stack1, label1, size);
+        List<String> right = stackToStringList(stack2, label2, size);
+        int spaces = 7;
+        for (int i = 0; i < left.size(); i++) {
+            String l = left.get(i);
+            String r = right.get(i);
+            int between =  spaces + Stack_Width - l.length();
+            println(left.get(i) + repeatString(" ", between) + right.get(i));
+        }
 
     }
 }

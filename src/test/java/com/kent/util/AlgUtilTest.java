@@ -1,9 +1,6 @@
 package com.kent.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import com.kent.datastructure.MyTreeNode;
 import org.slf4j.Logger;
@@ -117,5 +114,30 @@ public class AlgUtilTest {
 		Assert.assertArrayEquals(b, resultB);
 	}
 
+    @Test
+    public void testPrintStack() {
+        Stack<String> stack = new Stack<>();
+        stack.push("one");
+        stack.push("two");
+        stack.push("three");
+        stack.push("four");
+        AlgUtil.printStack(stack, "test1",7);
+        Stack<String> stack2 = new Stack<>();
+        AlgUtil.printStack(stack2,"testempty",  7);
+    }
 
+    @Test
+    public void testPrintStackPair() {
+        Stack<String> stack = new Stack<>();
+        stack.push("one");
+        stack.push("two");
+        stack.push("three");
+        stack.push("four");
+        Stack<String> stack2 = new Stack<>();
+        stack2.push("001");
+        stack2.push("002");
+        stack2.push("003");
+
+        AlgUtil.printStackPair(stack, "stack1", stack2,"PairStack",  7);
+    }
 }
