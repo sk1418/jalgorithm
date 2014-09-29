@@ -51,7 +51,7 @@ public class AlgorithmDemo {
 
 					AlgUtil.println("select the demo index (press 0 to exit):");
 				} else if (!menuMap.containsKey(input)) {
-					AlgUtil.println("unknow demo index, please input a valid demo index (0 to exit):");
+					AlgUtil.println("unknown demo index, please input a valid demo index (0 to exit):");
 				}
 				tmp = scanner.nextLine();
 				input = Integer.valueOf(tmp);

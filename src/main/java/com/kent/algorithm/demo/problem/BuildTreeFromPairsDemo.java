@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.algorithm.problem.BuildTreeFromPairs;
 import com.kent.algorithm.ui.Demo;
+import com.kent.algorithm.ui.DemoType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +20,7 @@ import static com.kent.util.AlgUtil.repeatString;
  * @author: Kent
  * Created on 2014-09-19.
  */
-@Demo(name = "Build Tree from Pair List")
+@Demo(type= DemoType.DataStructure,name = "Build Tree from Pair List")
 public class BuildTreeFromPairsDemo extends AbstractDemo {
 
     BuildTreeFromPairs problem = new BuildTreeFromPairs();

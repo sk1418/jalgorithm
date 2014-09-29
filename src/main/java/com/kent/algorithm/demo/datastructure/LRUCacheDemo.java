@@ -11,7 +11,7 @@ import com.kent.util.AlgUtil;
  * @author: Kai Yuan
  * Created on 2014-08-21.
  */
-@Demo(type= DemoType.LinkedList, name = "Least Recently Used (LRU) cache")
+@Demo(type= DemoType.DataStructure, name = "Least Recently Used (LRU) cache")
 public class LRUCacheDemo extends AbstractDemo {
    LRUCache cache;
 

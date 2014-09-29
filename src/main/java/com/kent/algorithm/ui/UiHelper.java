@@ -4,16 +4,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import com.google.common.collect.*;
 import org.reflections.Reflections;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicates;
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Collections2;
-import com.google.common.collect.ImmutableListMultimap;
-import com.google.common.collect.ListMultimap;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
 import com.google.common.primitives.Ints;
 import com.kent.algorithm.demo.AbstractDemo;
 import com.kent.util.AlgUtil;
@@ -25,7 +20,7 @@ import com.kent.util.AlgUtil;
 public class UiHelper {
 
 	// the line format of two columns layout
-	private static final String FORMAT = "%4s %-35s |%4s %-35s";
+	private static final String FORMAT = "%4s %-35s |%4s %-35s\n";
 	// @formatter:off
 	//menu layout, define the left/right block.
 	private static final ImmutableListMultimap<Integer, DemoType> MENU_LAYOUT =
@@ -33,8 +28,9 @@ public class UiHelper {
 					.putAll(1, DemoType.CompSort, DemoType.LinearSort)
 							//			.putAll(2, DemoType.Test)
 					.putAll(2, DemoType.LinkedList)
+                    .putAll(3, DemoType.DataStructure)
 							//			.putAll(4, DemoType.Test)
-					.putAll(3, DemoType.Problems)
+					.putAll(4, DemoType.Problems)
 					.build();
 	//@formatter: on
 
@@ -116,10 +112,10 @@ public class UiHelper {
 			iteml = items.get(i);
 			itemr = i + rows < size ? items.get(i + rows) : null;
 			if (itemr != null) {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName()));
+				AlgUtil.printf(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName());
 			}
 			else {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), "", ""));
+				AlgUtil.printf(FORMAT, iteml.getIndex(), iteml.getName(), "", "");
 			}
 		}
 
@@ -134,17 +130,17 @@ public class UiHelper {
 		DemoItem iteml = null;
 		DemoItem itemr = null;
 
-		AlgUtil.println(String.format("%-40s |%-40s", type.get(0).desc, type.get(1).desc));
+		AlgUtil.printf("%-40s |%-40s\n", type.get(0).desc, type.get(1).desc);
 		AlgUtil.println(AlgUtil.repeatString("_", 77));
 		for (int i = 0; i < rows; i++) {
 			itemr = i < itemsr.size() ? itemsr.get(i) : null;
 			iteml = i < itemsl.size() ? itemsl.get(i) : null;
 			if (iteml == null) {
-				AlgUtil.println(String.format(FORMAT, "", "", itemr.getIndex(), itemr.getName()));
+				AlgUtil.printf(FORMAT, "", "", itemr.getIndex(), itemr.getName());
 			} else if (itemr == null) {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), "", ""));
+				AlgUtil.printf(FORMAT, iteml.getIndex(), iteml.getName(), "", "");
 			} else {
-				AlgUtil.println(String.format(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName()));
+				AlgUtil.printf(FORMAT, iteml.getIndex(), iteml.getName(), itemr.getIndex(), itemr.getName());
 			}
 
 		}
