@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 
 public class StackWithMin<E extends Comparable<E>> extends Stack<E> {
-    Stack<E> minStack;
+    private Stack<E> minStack;
 
     public StackWithMin() {
         minStack = new Stack<E>();
@@ -46,5 +46,16 @@ public class StackWithMin<E extends Comparable<E>> extends Stack<E> {
         } else {
             return minStack.peek();
         }
+    }
+
+    /**
+     * @deprecated
+     * This method is only for demo usage. To print the minStack status. Otherwise, this method
+     * should NOT be used.
+     *
+     * @return the inner minStack.
+     */
+    public Stack<E> getMinStack() {
+        return minStack;
     }
 }

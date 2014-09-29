@@ -1,6 +1,7 @@
 package com.kent.util;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import com.kent.datastructure.MyTreeNode;
 
 import java.util.*;
@@ -333,7 +334,7 @@ public final class AlgUtil {
 
     private static <E> List<String> stackToStringList(Stack<E> stack, String label, int size) {
         List<String> result = new ArrayList<>(size);
-        List<E> list = new ArrayList<>(stack);
+        List<E> list = Lists.reverse(new ArrayList(stack));
         int emptySlots = size - list.size();
         int free = Stack_Width - 2;
         result.add(label+" :");
