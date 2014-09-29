@@ -27,36 +27,39 @@ public class StackWithMinDemo extends AbstractDemo {
     @Override
     protected void specificDemo() {
         print("Initial status:");
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel , 5);
         print(repeatString("=", 50));
         print("After pushed value:  0");
         stack.push(0);
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("After pushed value:  -1");
         stack.push(-1);
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel  + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("After pushed value:  1");
         stack.push(1);
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("After pushed value:  -1");
         stack.push(-1);
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("After pushed value:  0");
         stack.push(0);
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("Pop!");
         stack.pop();
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
         print(repeatString("=", 50));
         print("Pop!");
         stack.pop();
-        printStackPair(stack, label, stack.getMinStack(), minLabel, 5);
-
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
+        print(repeatString("=", 50));
+        print("Pop!");
+        stack.pop();
+        printStackPair(stack, label, stack.getMinStack(), minLabel + " min()="+stack.min(), 5);
 
     }
 
