@@ -1,4 +1,4 @@
-package com.kent.algorithm.problem;
+package com.kent.algorithm.problem.linkedlist;
 
 import java.util.List;
 

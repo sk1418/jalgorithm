@@ -1,8 +1,8 @@
-package com.kent.algorithm.demo.problem;
+package com.kent.algorithm.demo.problem.linkedlist;
 
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
-import com.kent.algorithm.problem.RemoveDupsFromSortedLinkedList;
+import com.kent.algorithm.problem.linkedlist.RemoveDupsFromSortedLinkedList;
 import com.kent.algorithm.ui.Demo;
 import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;

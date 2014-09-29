@@ -1,12 +1,10 @@
 package com.kent.algorithm.problem;
 
-import java.util.Map;
-
+import com.kent.algorithm.problem.linkedlist.SortList;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Maps;
 import com.kent.datastructure.ListNode;
 import com.kent.test.BaseTest;
 

@@ -1,11 +1,8 @@
-package com.kent.algorithm.demo.problem;
-
-import java.util.List;
+package com.kent.algorithm.demo.problem.linkedlist;
 
 import com.google.common.base.Joiner;
 import com.kent.algorithm.demo.AbstractDemo;
-import com.kent.algorithm.problem.ReverseLinkedList;
-import com.kent.algorithm.problem.SortList;
+import com.kent.algorithm.problem.linkedlist.SortList;
 import com.kent.algorithm.ui.Demo;
 import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;

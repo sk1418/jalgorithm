@@ -1,4 +1,4 @@
-package com.kent.algorithm.problem;
+package com.kent.algorithm.problem.linkedlist;
 
 import com.kent.algorithm.Problem;
 import com.kent.datastructure.ListNode;

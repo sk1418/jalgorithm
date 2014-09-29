@@ -1,4 +1,4 @@
-package com.kent.algorithm.demo.problem;
+package com.kent.algorithm.demo.problem.linkedlist;
 
 import static com.kent.util.AlgUtil.*;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.kent.algorithm.demo.AbstractDemo;
-import com.kent.algorithm.problem.AddTwoNumbers;
+import com.kent.algorithm.problem.linkedlist.AddTwoNumbers;
 import com.kent.algorithm.ui.Demo;
 import com.kent.algorithm.ui.DemoType;
 import com.kent.datastructure.ListNode;

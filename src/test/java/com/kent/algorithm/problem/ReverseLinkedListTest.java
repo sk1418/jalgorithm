@@ -2,6 +2,7 @@ package com.kent.algorithm.problem;
 
 import static org.junit.Assert.*;
 
+import com.kent.algorithm.problem.linkedlist.ReverseLinkedList;
 import com.kent.datastructure.ListNode;
 import com.kent.test.BaseTest;
 
