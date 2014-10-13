@@ -39,6 +39,25 @@ public class Scratch extends BaseTest {
 
     }
 
+
+    @Test
+    //http://stackoverflow.com/questions/26336486/pyramid-numbers-in-alternative-reverse-order/26337599#26337599
+    public void printPyramid() {
+        int x = 105;
+        int rows = Double.valueOf(Math.sqrt(2 * x)).intValue();
+        int n = 1;
+        for (int r = 1; r <= rows; r++) {
+            System.out.print(new String(new char[rows - r]).replace("\0", " "));
+            if ((r & 1) != 0)
+                for (int i = n; i < n + r && n + r <= x; i++)
+                    System.out.printf("%s%s", i, i == n + r - 1 || i == x ? "\n" : " ");
+            else
+                for (int i = n + r - 1 > x ? x : n + r - 1; i >= n; i--)
+                    System.out.printf("%s%s", i, i == n ? "\n" : " ");
+            n = n + r;
+        }
+    }
+
     @Test
     public void testIt2() throws Exception {
         Reflections reflections = new Reflections("com.kent.algorithm.demo");
@@ -155,51 +174,52 @@ public class Scratch extends BaseTest {
     }
 
     @Test
-	public void testIt02() {
+    public void testIt02() {
         //http://stackoverflow.com/questions/11284581/find-shortest-part-of-sentence-containing-given-words
-		final String s = "My name is not eugene. my pet name is not eugene.";
-		final String tmp = s.toLowerCase().replaceAll("[^a-zA-Z]", " ");// here we need the placeholder (blank)
-		final String w1 = "my "; // leave a blank at the end to avoid those words e.g. "myself", "myth"..
-		final String w2 = "eugene ";// same as above
-		final List<Integer> l1 = getList(tmp, w1); // indexes list
-		final List<Integer> l2 = getList(tmp, w2);
-		int min = Integer.MAX_VALUE;
-		final int[] idx = new int[] { 0, 0 };
+        final String s = "My name is not eugene. my pet name is not eugene.";
+        final String tmp = s.toLowerCase().replaceAll("[^a-zA-Z]", " ");// here we need the placeholder (blank)
+        final String w1 = "my "; // leave a blank at the end to avoid those words e.g. "myself", "myth"..
+        final String w2 = "eugene ";// same as above
+        final List<Integer> l1 = getList(tmp, w1); // indexes list
+        final List<Integer> l2 = getList(tmp, w2);
+        int min = Integer.MAX_VALUE;
+        final int[] idx = new int[]{0, 0};
 
-		// loop to find out the result
-		for (final int i : l1) {
-			for (final int j : l2) {
-				if (Math.abs(j - i) < min) {
-					final int x = j - i;
-					min = Math.abs(j - i);
-					idx[0] = j - i > 0 ? i : j;
-					idx[1] = j - i > 0 ? j + w2.length() + 2 : i + w1.length() + 2;
-				}
-			}
+        // loop to find out the result
+        for (final int i : l1) {
+            for (final int j : l2) {
+                if (Math.abs(j - i) < min) {
+                    final int x = j - i;
+                    min = Math.abs(j - i);
+                    idx[0] = j - i > 0 ? i : j;
+                    idx[1] = j - i > 0 ? j + w2.length() + 2 : i + w1.length() + 2;
+                }
+            }
 
-		}
+        }
 
-		System.out.println("indexes: " + Arrays.toString(idx));
-		System.out.println("result: " + s.substring(idx[0], idx[1]));
-	}
+        System.out.println("indexes: " + Arrays.toString(idx));
+        System.out.println("result: " + s.substring(idx[0], idx[1]));
+    }
 
-	private List<Integer> getList(final String input, final String search) {
-		String t = new String(input);
-		final List<Integer> list = new ArrayList<Integer>();
-		int tmp = 0;
-		while (t.length() > 0) {
-			final int x = t.indexOf(search);
+    private List<Integer> getList(final String input, final String search) {
+        String t = new String(input);
+        final List<Integer> list = new ArrayList<Integer>();
+        int tmp = 0;
+        while (t.length() > 0) {
+            final int x = t.indexOf(search);
 
-			if (x < 0 || x > t.length()) {
-				break;
-			}
-			tmp += x;
-			list.add(tmp);
-			t = t.substring(search.length() + x);
+            if (x < 0 || x > t.length()) {
+                break;
+            }
+            tmp += x;
+            list.add(tmp);
+            t = t.substring(search.length() + x);
 
-		}
-		return list;
+        }
+        return list;
 
-	}}
+    }
+}
 
 
