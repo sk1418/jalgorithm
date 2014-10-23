@@ -39,6 +39,22 @@ public class Scratch extends BaseTest {
 
     }
 
+    @Test
+//    http://stackoverflow.com/questions/26532111/java-nested-for-loops-to-get-numbers-triangle
+    public void printTriangle() {
+        int rows = 8;
+        for (int r = 0; r <= rows; r++) {
+            System.out.print(new String(new char[rows - r]).replace("\0", "  "));
+            for (int i = 0; i <= r; i++) {
+                System.out.printf("%s%s", 1<<i, r == 0?  "\n" : " ");
+            }
+            if (r > 0) {
+                for (int i = r-1; i >= 0; i--) {
+                    System.out.printf("%s%s", 1<<i, i == 0?  "\n" : " ");
+                }
+            }
+        }
+    }
 
     @Test
     //http://stackoverflow.com/questions/26336486/pyramid-numbers-in-alternative-reverse-order/26337599#26337599
