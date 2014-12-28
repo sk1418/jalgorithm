@@ -1,14 +1,23 @@
 package com.kent.stackoverflow;
 
+import com.google.common.primitives.Bytes;
+import com.google.common.primitives.Primitives;
 import com.kent.algorithm.ui.Demo;
 import com.kent.datastructure.ListNode;
 import com.kent.test.BaseTest;
 import org.apache.commons.logging.Log;
+import org.bouncycastle.crypto.engines.CAST5Engine;
+import org.bouncycastle.crypto.modes.CFBBlockCipher;
+import org.bouncycastle.crypto.params.KeyParameter;
+import org.bouncycastle.crypto.params.ParametersWithIV;
+import org.bouncycastle.util.Strings;
+import org.bouncycastle.util.encoders.Hex;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -23,6 +32,48 @@ import java.util.regex.Pattern;
 
 
 public class Scratch extends BaseTest {
+
+    @Test
+    public void testCipher() throws UnsupportedEncodingException {
+        String plain = "I am a plain String, yohoo!";
+        int blockSize = 8;
+        byte[] oBytes = plain.getBytes();
+        byte[] enBytes =  new byte[oBytes.length];
+        byte[] deBytes =  new byte[oBytes.length];
+        log.debug("plain:"+plain);
+        String key = "kent.yuan";
+
+
+        //encryption
+        boolean doEn = true;
+        CAST5Engine cast5 = new CAST5Engine();
+        Random r = new Random(new Date().getTime());
+        byte[] iv = new byte[8];
+        r.nextBytes(iv);
+        ParametersWithIV ivPara = new ParametersWithIV(new KeyParameter(Strings.toByteArray(key)), iv);
+        CFBBlockCipher cfbCipher = new CFBBlockCipher(cast5, blockSize);
+        cfbCipher.init(doEn, ivPara);
+        for(int i=0;i<oBytes.length;i++)
+            cfbCipher.processBlock(oBytes, i, enBytes, i);
+        enBytes = Bytes.concat(iv, enBytes);
+        String enStr = Hex.toHexString(enBytes);
+        log.debug("encrtyped:"+ enStr);
+
+        //decryption from String
+        doEn = false;
+        enBytes = Hex.decode(enStr);
+        iv = Arrays.copyOfRange(enBytes, 0, 8);
+        byte[] msgArray = Arrays.copyOfRange(enBytes, 8, enBytes.length);
+        cfbCipher = new CFBBlockCipher(cast5, 8);
+        cfbCipher.init(doEn, new ParametersWithIV(new KeyParameter(key.getBytes()),iv ));
+        for(int i=0;i<msgArray.length;i++)
+            cfbCipher.processBlock(msgArray, i, deBytes, i);
+        log.debug("decrtyped:" + Strings.fromByteArray(deBytes));
+
+
+
+
+    }
 
     @Test
 //    http://stackoverflow.com/questions/26532111/java-nested-for-loops-to-get-numbers-triangle
@@ -223,6 +274,7 @@ public class Scratch extends BaseTest {
     }
 
     @Test
+    //http://stackoverflow.com/questions/27336026/java-recursion-example/
     public void testAddingComma() {
         System.out.println(commas(10234500l));
     }
