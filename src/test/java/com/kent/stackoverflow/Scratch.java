@@ -3,15 +3,14 @@ package com.kent.stackoverflow;
 import com.kent.algorithm.ui.Demo;
 import com.kent.datastructure.ListNode;
 import com.kent.test.BaseTest;
+import org.apache.commons.logging.Log;
 import org.junit.Test;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,20 +24,6 @@ import java.util.regex.Pattern;
 
 public class Scratch extends BaseTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Scratch.class);
-
-    @Test
-    public void testIt() {
-        String s = "en_actions_.add(new ClusterEntry<String>(\"photography\",-1, 2, 620554,\"photography \",null));";
-        Pattern p = Pattern.compile("(?<=>\\()[^)]*");
-        Matcher m = p.matcher(s);
-        if (m.find()) {
-            System.out.println(m.group());
-        }
-
-
-    }
-
     @Test
 //    http://stackoverflow.com/questions/26532111/java-nested-for-loops-to-get-numbers-triangle
     public void printTriangle() {
@@ -46,11 +31,11 @@ public class Scratch extends BaseTest {
         for (int r = 0; r <= rows; r++) {
             System.out.print(new String(new char[rows - r]).replace("\0", "  "));
             for (int i = 0; i <= r; i++) {
-                System.out.printf("%s%s", 1<<i, r == 0?  "\n" : " ");
+                System.out.printf("%s%s", 1 << i, r == 0 ? "\n" : " ");
             }
             if (r > 0) {
-                for (int i = r-1; i >= 0; i--) {
-                    System.out.printf("%s%s", 1<<i, i == 0?  "\n" : " ");
+                for (int i = r - 1; i >= 0; i--) {
+                    System.out.printf("%s%s", 1 << i, i == 0 ? "\n" : " ");
                 }
             }
         }
@@ -76,15 +61,15 @@ public class Scratch extends BaseTest {
 
     @Test
     public void testIt2() throws Exception {
-        Reflections reflections = new Reflections("com.kent.algorithm.demo");
+        TreeMap<String, List<String>> treeMap1 = null;
+        TreeMap<String, List<String>> treeMap2 = null;
+        TreeMap<String, List<String>> treeMap3 = new TreeMap<>(treeMap1);
 
-        Set<Class<?>> subTypes = reflections.getTypesAnnotatedWith(Demo.class);
-
-        for (Class c : subTypes) {
-            LOG.debug(c.getCanonicalName());
+        for (String k : treeMap3.keySet()) {
+            if (treeMap2.containsKey(k)) {
+                treeMap3.get(k).addAll(treeMap2.get(k));
+            }
         }
-
-        LOG.debug("ff");
     }
 
 
@@ -236,6 +221,23 @@ public class Scratch extends BaseTest {
         return list;
 
     }
+
+    @Test
+    public void testAddingComma() {
+        System.out.println(commas(10234500l));
+    }
+    public static String commas(long l) {
+        if (l < 1000) {
+            return String.valueOf(l);
+        } else {
+            long pt1Number = l / 1000;
+            long pt2Number = l % 1000;
+            return commas(pt1Number) + "," + (pt2Number == 0l ? "000" : String.valueOf(pt2Number));
+
+        }
+
+    }
+
 }
 
 
