@@ -13,6 +13,11 @@ import org.bouncycastle.crypto.params.ParametersWithIV;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.Test;
+
+import java.io.UnsupportedEncodingException;
+import java.util.*;
+
+import static org.junit.Assert.*;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,10 +44,8 @@ public class Scratch extends BaseTest {
         int blockSize = 8;
         byte[] oBytes = plain.getBytes();
         byte[] enBytes =  new byte[oBytes.length];
-        byte[] deBytes =  new byte[oBytes.length];
-        log.debug("plain:"+plain);
-        String key = "kent.yuan";
-
+        log.debug("plain :"+plain);
+        String key = "Iamakey";
 
         //encryption
         boolean doEn = true;
@@ -57,7 +60,7 @@ public class Scratch extends BaseTest {
             cfbCipher.processBlock(oBytes, i, enBytes, i);
         enBytes = Bytes.concat(iv, enBytes);
         String enStr = Hex.toHexString(enBytes);
-        log.debug("encrtyped:"+ enStr);
+        log.debug("Encrypted :"+ enStr);
 
         //decryption from String
         doEn = false;
@@ -66,13 +69,12 @@ public class Scratch extends BaseTest {
         byte[] msgArray = Arrays.copyOfRange(enBytes, 8, enBytes.length);
         cfbCipher = new CFBBlockCipher(cast5, 8);
         cfbCipher.init(doEn, new ParametersWithIV(new KeyParameter(key.getBytes()),iv ));
+
+        byte[] deBytes =  new byte[msgArray.length];
         for(int i=0;i<msgArray.length;i++)
             cfbCipher.processBlock(msgArray, i, deBytes, i);
-        log.debug("decrtyped:" + Strings.fromByteArray(deBytes));
-
-
-
-
+        log.debug("Decrypted :" + Strings.fromByteArray(deBytes));
+        assertEquals(plain, Strings.fromByteArray(deBytes));
     }
 
     @Test
