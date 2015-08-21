@@ -5,6 +5,7 @@ import com.google.common.primitives.Primitives;
 import com.kent.algorithm.ui.Demo;
 import com.kent.datastructure.ListNode;
 import com.kent.test.BaseTest;
+import com.kent.util.AlgUtil;
 import org.apache.commons.logging.Log;
 import org.bouncycastle.crypto.engines.CAST5Engine;
 import org.bouncycastle.crypto.modes.CFBBlockCipher;
@@ -291,6 +292,43 @@ public class Scratch extends BaseTest {
         }
 
     }
+
+    @Test
+//    http://stackoverflow.com/questions/32135868/count-number-of-1-digits-in-11-to-the-power-of-n
+    public void findOnes() {
+        System.out.println(findOnes(1000));
+    }
+
+    private int findOnes(int n) {
+        int result = 0;
+        List<Integer> list = new ArrayList<>();
+        if (n==0) result = 1;
+        if (n==1) result = 2;
+        list.add(1);
+        list.add(1);
+        for (int i = 2; i <= n; i++) {
+            result = 0;
+            int carry = 0;
+            list.add(0);
+            int last = list.size()-1;
+            for (int t = last; t>0; t--) {
+                int s = list.get(t) + list.get(t - 1) + carry;
+                carry = s>9?1:0;
+                s %= 10;
+                result += s==1?1:0;
+                list.set(t, s);
+            }
+            int first = list.get(0) + carry;
+            list.set(0, first%10);
+            result += first%10 ==1?1:0;
+            if (first > 9) {
+                list.add(0, 1);
+                result ++;
+            }
+        }
+        return result;
+    }
+
 
 }
 
