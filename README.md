@@ -4,17 +4,17 @@ Build Status:
 ![Build Status](https://travis-ci.org/sk1418/jalgorithm.svg?branch=master)
 
 
-##Introduction
+## Introduction
 
 Some classic algorithm implemented in Java with demos. (only CLI available)
 
-##Start
+## Start
 todo
 
 
 	java -jar xxx.jar
 	
-###Implemented algorithms and demos so far:
+### Implemented algorithms and demos so far:
 
 	Available Demos:
 	=============================================================================
@@ -54,9 +54,9 @@ todo
 	=============================================================================
 	select the demo index (press 0 to exit):
 
-###Some demos as examples
+### Some demos as examples
 
-####Compare Sort Algorithms
+#### Compare Sort Algorithms
 
 	[ SortingComparasionDemo ]
 	
@@ -88,7 +88,7 @@ todo
 	RandomizedQuickSort | O(n^2)-O(nlog(n))    |     4.0 ms.
 	-----------------------------------------------------------------
 	
-####Merge Sort Demo
+#### Merge Sort Demo
 
 	######################################################################
 	Merge Sort Demo
@@ -140,7 +140,7 @@ todo
 	======================================================================
 	Time elapsed:1.8
 
-####Heap Sort Demo
+#### Heap Sort Demo
 	[ HeapSortDemo ]
 	
 	Warming JVM up....3...2...1...Done
@@ -371,10 +371,10 @@ todo
 	Time elapsed:36.2
 
 
-##Requirement & Install
+## Requirement & Install
 todo
 
-##Start
+## Start
 
 ##screencast/screenshot?
 
